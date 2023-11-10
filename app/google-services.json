@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "4287535264",
+    "project_id": "foreign-f9573",
+    "storage_bucket": "foreign-f9573.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:4287535264:android:8a3f7f9ad632b6a03dd1c5",
+        "android_client_info": {
+          "package_name": "com.azimuton.foreign"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4plRKXclbWw7Wn3i0hdhF_xw9CdZTXX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

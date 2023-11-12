@@ -5,6 +5,7 @@
     android:id="@+id/clSplash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/yellow"
     tools:context=".SplashActivity">
 
     <ImageView
@@ -13,7 +14,7 @@
         android:layout_height="70dp"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
-        app:srcCompat="@drawable/foreign" />
+        app:srcCompat="@drawable/worldflagsglobe" />
 
     <TextView
         android:id="@+id/tvForeign"
@@ -26,7 +27,7 @@
         android:shadowDy="5"
         android:shadowRadius="5"
         android:text="Foreign"
-        android:textColor="@color/red"
+        android:textColor="@color/broun"
         android:textSize="80sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,9 +47,10 @@
         android:shadowDy="5"
         android:shadowRadius="5"
         android:text="Language"
-        android:textColor="@color/red"
+        android:textColor="@color/broun"
         android:textSize="60sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

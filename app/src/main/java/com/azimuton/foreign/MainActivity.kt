@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private var seconds = 0
     private var running = false
     private var openmainmenu = false
+    private var openmainenglishmenu = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         Glide.with(this).asGif().load(R.drawable.flagspain).into(binding.ivFlagSpain)
         Glide.with(this).asGif().load(R.drawable.flaggermany).into(binding.ivFlagGermany)
         Glide.with(this).asGif().load(R.drawable.flagitaly).into(binding.ivFlagItaly)
+        Glide.with(this).asGif().load(R.drawable.flagengland).into(binding.ivMainEnglishMenu)
         binding.ivMainMenu.setOnClickListener {
             if (openmainmenu) {
                 val dpValue = 150
@@ -52,6 +54,28 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainmenu = true
+            }
+        }
+        binding.tvMainClose.setOnClickListener { finishAffinity() }
+        binding.ivMainEnglishMenu.setOnClickListener {
+            if (openmainenglishmenu) {
+                val dpValue = 180
+                val pxValue = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP, dpValue.toFloat(), resources.displayMetrics)
+                ObjectAnimator.ofFloat(binding.svEnglish, "translationX", pxValue).apply{
+                    duration = 1000
+                    start()
+                }
+                openmainenglishmenu = false
+            } else {
+                val dpValue = 180
+                val pxValue = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP, dpValue.toFloat(), resources.displayMetrics)
+                ObjectAnimator.ofFloat(binding.svEnglish, "translationX", -pxValue).apply{
+                    duration = 1000
+                    start()
+                }
+                openmainenglishmenu = true
             }
         }
         binding.ivFlagEngland.setOnClickListener {  }

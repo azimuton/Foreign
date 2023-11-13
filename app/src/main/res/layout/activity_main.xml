@@ -306,14 +306,58 @@
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/flagengland" />
 
+    <ImageView
+        android:id="@+id/ivMainFrenchMenu"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flagfrance" />
+
+    <ImageView
+        android:id="@+id/ivMainSpanishMenu"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flagspain" />
+
+    <ImageView
+        android:id="@+id/ivMainGermanMenu"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flaggermany" />
+
+    <ImageView
+        android:id="@+id/ivMainItalianMenu"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flagitaly" />
 
     <ScrollView
         android:id="@+id/svEnglish"
-        android:layout_width="200dp"
+        android:layout_width="160dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
@@ -356,17 +400,17 @@
                         android:shadowRadius="5"
                         android:text="Learn new words"
                         android:textColor="@color/green"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold|italic"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnNewWordsEnglish"
                         app:layout_constraintHorizontal_bias="0.528"
-                        app:layout_constraintStart_toStartOf="@+id/imageView9"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnNewWordsEnglish"
+                        app:layout_constraintTop_toBottomOf="@+id/ivLearnNewWordsEnglish" />
 
                     <ImageView
-                        android:id="@+id/imageView9"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:id="@+id/ivLearnNewWordsEnglish"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -374,18 +418,18 @@
 
                     <View
                         android:id="@+id/view7"
-                        android:layout_width="150dp"
+                        android:layout_width="120dp"
                         android:layout_height="2dp"
                         android:layout_marginTop="8dp"
                         android:background="@color/white"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView9"
-                        app:layout_constraintStart_toStartOf="@+id/imageView9"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnNewWordsEnglish"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnNewWordsEnglish"
                         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
                     <ImageView
-                        android:id="@+id/imageView10"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:id="@+id/ivLearnedWordsEnglish"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_marginTop="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -402,26 +446,26 @@
                         android:shadowRadius="5"
                         android:text="Learned words"
                         android:textColor="@color/green"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold|italic"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView10"
-                        app:layout_constraintStart_toStartOf="@+id/imageView10"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnedWordsEnglish"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnedWordsEnglish"
+                        app:layout_constraintTop_toBottomOf="@+id/ivLearnedWordsEnglish" />
 
                     <View
                         android:id="@+id/view8"
-                        android:layout_width="150dp"
+                        android:layout_width="120dp"
                         android:layout_height="2dp"
                         android:layout_marginTop="8dp"
                         android:background="@color/white"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView10"
-                        app:layout_constraintStart_toStartOf="@+id/imageView10"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnedWordsEnglish"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnedWordsEnglish"
                         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
                     <ImageView
-                        android:id="@+id/imageView11"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:id="@+id/ivWriteWordsEnglish"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_marginTop="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -438,26 +482,26 @@
                         android:shadowRadius="5"
                         android:text="Write words"
                         android:textColor="@color/green"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold|italic"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView11"
-                        app:layout_constraintStart_toStartOf="@+id/imageView11"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+                        app:layout_constraintEnd_toEndOf="@+id/ivWriteWordsEnglish"
+                        app:layout_constraintStart_toStartOf="@+id/ivWriteWordsEnglish"
+                        app:layout_constraintTop_toBottomOf="@+id/ivWriteWordsEnglish" />
 
                     <View
                         android:id="@+id/view9"
-                        android:layout_width="150dp"
+                        android:layout_width="120dp"
                         android:layout_height="2dp"
                         android:layout_marginTop="8dp"
                         android:background="@color/white"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView11"
-                        app:layout_constraintStart_toStartOf="@+id/imageView11"
+                        app:layout_constraintEnd_toEndOf="@+id/ivWriteWordsEnglish"
+                        app:layout_constraintStart_toStartOf="@+id/ivWriteWordsEnglish"
                         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
                     <ImageView
-                        android:id="@+id/imageView12"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:id="@+id/ivTranslateWordsEnglish"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_marginTop="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -474,26 +518,26 @@
                         android:shadowRadius="5"
                         android:text="Translate words"
                         android:textColor="@color/green"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold|italic"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView12"
-                        app:layout_constraintStart_toStartOf="@+id/imageView12"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+                        app:layout_constraintEnd_toEndOf="@+id/ivTranslateWordsEnglish"
+                        app:layout_constraintStart_toStartOf="@+id/ivTranslateWordsEnglish"
+                        app:layout_constraintTop_toBottomOf="@+id/ivTranslateWordsEnglish" />
 
                     <View
                         android:id="@+id/view10"
-                        android:layout_width="150dp"
+                        android:layout_width="120dp"
                         android:layout_height="2dp"
                         android:layout_marginTop="8dp"
                         android:background="@color/white"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView12"
-                        app:layout_constraintStart_toStartOf="@+id/imageView12"
+                        app:layout_constraintEnd_toEndOf="@+id/ivTranslateWordsEnglish"
+                        app:layout_constraintStart_toStartOf="@+id/ivTranslateWordsEnglish"
                         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
                     <ImageView
-                        android:id="@+id/imageView13"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:id="@+id/ivChatEnglish"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_marginTop="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -510,26 +554,26 @@
                         android:shadowRadius="5"
                         android:text="Chat"
                         android:textColor="@color/green"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold|italic"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView13"
-                        app:layout_constraintStart_toStartOf="@+id/imageView13"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+                        app:layout_constraintEnd_toEndOf="@+id/ivChatEnglish"
+                        app:layout_constraintStart_toStartOf="@+id/ivChatEnglish"
+                        app:layout_constraintTop_toBottomOf="@+id/ivChatEnglish" />
 
                     <View
                         android:id="@+id/view11"
-                        android:layout_width="150dp"
+                        android:layout_width="120dp"
                         android:layout_height="2dp"
                         android:layout_marginTop="8dp"
                         android:background="@color/white"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView13"
-                        app:layout_constraintStart_toStartOf="@+id/imageView13"
+                        app:layout_constraintEnd_toEndOf="@+id/ivChatEnglish"
+                        app:layout_constraintStart_toStartOf="@+id/ivChatEnglish"
                         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
                     <ImageView
-                        android:id="@+id/imageView14"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:id="@+id/ivReadNewsEnglish"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_marginTop="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -546,26 +590,26 @@
                         android:shadowRadius="5"
                         android:text="Read news"
                         android:textColor="@color/green"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold|italic"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView14"
-                        app:layout_constraintStart_toStartOf="@+id/imageView14"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+                        app:layout_constraintEnd_toEndOf="@+id/ivReadNewsEnglish"
+                        app:layout_constraintStart_toStartOf="@+id/ivReadNewsEnglish"
+                        app:layout_constraintTop_toBottomOf="@+id/ivReadNewsEnglish" />
 
                     <View
                         android:id="@+id/view12"
-                        android:layout_width="150dp"
+                        android:layout_width="120dp"
                         android:layout_height="2dp"
                         android:layout_marginTop="8dp"
                         android:background="@color/white"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView14"
-                        app:layout_constraintStart_toStartOf="@+id/imageView14"
+                        app:layout_constraintEnd_toEndOf="@+id/ivReadNewsEnglish"
+                        app:layout_constraintStart_toStartOf="@+id/ivReadNewsEnglish"
                         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
                     <ImageView
-                        android:id="@+id/imageView15"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:id="@+id/ivNewWordsEnglish"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_marginTop="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -582,26 +626,26 @@
                         android:shadowRadius="5"
                         android:text="New words"
                         android:textColor="@color/green"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold|italic"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView15"
-                        app:layout_constraintStart_toStartOf="@+id/imageView15"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+                        app:layout_constraintEnd_toEndOf="@+id/ivNewWordsEnglish"
+                        app:layout_constraintStart_toStartOf="@+id/ivNewWordsEnglish"
+                        app:layout_constraintTop_toBottomOf="@+id/ivNewWordsEnglish" />
 
                     <View
                         android:id="@+id/view13"
-                        android:layout_width="150dp"
+                        android:layout_width="120dp"
                         android:layout_height="2dp"
                         android:layout_marginTop="8dp"
                         android:background="@color/white"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView15"
-                        app:layout_constraintStart_toStartOf="@+id/imageView15"
+                        app:layout_constraintEnd_toEndOf="@+id/ivNewWordsEnglish"
+                        app:layout_constraintStart_toStartOf="@+id/ivNewWordsEnglish"
                         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
                     <ImageView
-                        android:id="@+id/imageView16"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:id="@+id/ivFrasalsEnglish"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_marginTop="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -618,11 +662,1283 @@
                         android:shadowRadius="5"
                         android:text="Frasals"
                         android:textColor="@color/green"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold|italic"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView16"
-                        app:layout_constraintStart_toStartOf="@+id/imageView16"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+                        app:layout_constraintEnd_toEndOf="@+id/ivFrasalsEnglish"
+                        app:layout_constraintStart_toStartOf="@+id/ivFrasalsEnglish"
+                        app:layout_constraintTop_toBottomOf="@+id/ivFrasalsEnglish" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/svFrench"
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivMainFrenchMenu">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvFrench"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/broun"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivMainFrenchMenu"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="6dp">
+
+                    <TextView
+                        android:id="@+id/textView27"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Learn new words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnNewWordsFrench"
+                        app:layout_constraintHorizontal_bias="0.528"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnNewWordsFrench"
+                        app:layout_constraintTop_toBottomOf="@+id/ivLearnNewWordsFrench" />
+
+                    <ImageView
+                        android:id="@+id/ivLearnNewWordsFrench"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_baseline_local_library_24" />
+
+                    <View
+                        android:id="@+id/view17"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnNewWordsFrench"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnNewWordsFrench"
+                        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+                    <ImageView
+                        android:id="@+id/ivLearnedWordsFrench"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view17"
+                        app:srcCompat="@drawable/ic_baseline_done_outline_24" />
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Learned words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnedWordsFrench"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnedWordsFrench"
+                        app:layout_constraintTop_toBottomOf="@+id/ivLearnedWordsFrench" />
+
+                    <View
+                        android:id="@+id/view18"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnedWordsFrench"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnedWordsFrench"
+                        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+                    <ImageView
+                        android:id="@+id/ivWriteWordsFrench"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view18"
+                        app:srcCompat="@drawable/ic_baseline_learn_24" />
+
+                    <TextView
+                        android:id="@+id/textView29"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Write words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivWriteWordsFrench"
+                        app:layout_constraintStart_toStartOf="@+id/ivWriteWordsFrench"
+                        app:layout_constraintTop_toBottomOf="@+id/ivWriteWordsFrench" />
+
+                    <View
+                        android:id="@+id/view19"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivWriteWordsFrench"
+                        app:layout_constraintStart_toStartOf="@+id/ivWriteWordsFrench"
+                        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+                    <ImageView
+                        android:id="@+id/ivTranslateWordsFrench"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view19"
+                        app:srcCompat="@drawable/ic_baseline_g_translate_24" />
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Translate words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivTranslateWordsFrench"
+                        app:layout_constraintStart_toStartOf="@+id/ivTranslateWordsFrench"
+                        app:layout_constraintTop_toBottomOf="@+id/ivTranslateWordsFrench" />
+
+                    <View
+                        android:id="@+id/view21"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivTranslateWordsFrench"
+                        app:layout_constraintStart_toStartOf="@+id/ivTranslateWordsFrench"
+                        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+                    <ImageView
+                        android:id="@+id/ivChatFrench"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view21"
+                        app:srcCompat="@drawable/ic_baseline_chat_24" />
+
+                    <TextView
+                        android:id="@+id/textView22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Chat"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivChatFrench"
+                        app:layout_constraintStart_toStartOf="@+id/ivChatFrench"
+                        app:layout_constraintTop_toBottomOf="@+id/ivChatFrench" />
+
+                    <View
+                        android:id="@+id/view22"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivChatFrench"
+                        app:layout_constraintStart_toStartOf="@+id/ivChatFrench"
+                        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+                    <ImageView
+                        android:id="@+id/ivReadNewsFrench"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view22"
+                        app:srcCompat="@drawable/ic_baseline_news_24" />
+
+                    <TextView
+                        android:id="@+id/textView23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Read news"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivReadNewsFrench"
+                        app:layout_constraintStart_toStartOf="@+id/ivReadNewsFrench"
+                        app:layout_constraintTop_toBottomOf="@+id/ivReadNewsFrench" />
+
+                    <View
+                        android:id="@+id/view23"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivReadNewsFrench"
+                        app:layout_constraintStart_toStartOf="@+id/ivReadNewsFrench"
+                        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+                    <ImageView
+                        android:id="@+id/ivNewWordsFrench"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view23"
+                        app:srcCompat="@drawable/ic_baseline_newwords_24" />
+
+                    <TextView
+                        android:id="@+id/textView24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="New words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivNewWordsFrench"
+                        app:layout_constraintStart_toStartOf="@+id/ivNewWordsFrench"
+                        app:layout_constraintTop_toBottomOf="@+id/ivNewWordsFrench" />
+
+                    <View
+                        android:id="@+id/view24"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivNewWordsFrench"
+                        app:layout_constraintStart_toStartOf="@+id/ivNewWordsFrench"
+                        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+                    <ImageView
+                        android:id="@+id/ivFrasalsFrench"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view24"
+                        app:srcCompat="@drawable/ic_baseline_frasals_24" />
+
+                    <TextView
+                        android:id="@+id/textView25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Frasals"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivFrasalsFrench"
+                        app:layout_constraintStart_toStartOf="@+id/ivFrasalsFrench"
+                        app:layout_constraintTop_toBottomOf="@+id/ivFrasalsFrench" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/svSpanish"
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivMainSpanishMenu">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvSpanish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/broun"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivMainSpanishMenu"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="6dp">
+
+                    <TextView
+                        android:id="@+id/textView26"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Learn new words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnNewWordsSpanish"
+                        app:layout_constraintHorizontal_bias="0.528"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnNewWordsSpanish"
+                        app:layout_constraintTop_toBottomOf="@+id/ivLearnNewWordsSpanish" />
+
+                    <ImageView
+                        android:id="@+id/ivLearnNewWordsSpanish"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_baseline_local_library_24" />
+
+                    <View
+                        android:id="@+id/view26"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnNewWordsSpanish"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnNewWordsSpanish"
+                        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+                    <ImageView
+                        android:id="@+id/ivLearnedWordsSpanish"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view26"
+                        app:srcCompat="@drawable/ic_baseline_done_outline_24" />
+
+                    <TextView
+                        android:id="@+id/textView30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Learned words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnedWordsSpanish"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnedWordsSpanish"
+                        app:layout_constraintTop_toBottomOf="@+id/ivLearnedWordsSpanish" />
+
+                    <View
+                        android:id="@+id/view27"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnedWordsSpanish"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnedWordsSpanish"
+                        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+                    <ImageView
+                        android:id="@+id/ivWriteWordsSpanish"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view27"
+                        app:srcCompat="@drawable/ic_baseline_learn_24" />
+
+                    <TextView
+                        android:id="@+id/textView31"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Write words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivWriteWordsSpanish"
+                        app:layout_constraintStart_toStartOf="@+id/ivWriteWordsSpanish"
+                        app:layout_constraintTop_toBottomOf="@+id/ivWriteWordsSpanish" />
+
+                    <View
+                        android:id="@+id/view28"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivWriteWordsSpanish"
+                        app:layout_constraintStart_toStartOf="@+id/ivWriteWordsSpanish"
+                        app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+                    <ImageView
+                        android:id="@+id/ivTranslateWordsSpanish"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view28"
+                        app:srcCompat="@drawable/ic_baseline_g_translate_24" />
+
+                    <TextView
+                        android:id="@+id/textView32"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Translate words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivTranslateWordsSpanish"
+                        app:layout_constraintStart_toStartOf="@+id/ivTranslateWordsSpanish"
+                        app:layout_constraintTop_toBottomOf="@+id/ivTranslateWordsSpanish" />
+
+                    <View
+                        android:id="@+id/view29"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivTranslateWordsSpanish"
+                        app:layout_constraintStart_toStartOf="@+id/ivTranslateWordsSpanish"
+                        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+                    <ImageView
+                        android:id="@+id/ivChatSpanish"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view29"
+                        app:srcCompat="@drawable/ic_baseline_chat_24" />
+
+                    <TextView
+                        android:id="@+id/textView33"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Chat"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivChatSpanish"
+                        app:layout_constraintStart_toStartOf="@+id/ivChatSpanish"
+                        app:layout_constraintTop_toBottomOf="@+id/ivChatSpanish" />
+
+                    <View
+                        android:id="@+id/view33"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivChatSpanish"
+                        app:layout_constraintStart_toStartOf="@+id/ivChatSpanish"
+                        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+                    <ImageView
+                        android:id="@+id/ivReadNewsSpanish"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view33"
+                        app:srcCompat="@drawable/ic_baseline_news_24" />
+
+                    <TextView
+                        android:id="@+id/textView34"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Read news"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivReadNewsSpanish"
+                        app:layout_constraintStart_toStartOf="@+id/ivReadNewsSpanish"
+                        app:layout_constraintTop_toBottomOf="@+id/ivReadNewsSpanish" />
+
+                    <View
+                        android:id="@+id/view34"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivReadNewsSpanish"
+                        app:layout_constraintStart_toStartOf="@+id/ivReadNewsSpanish"
+                        app:layout_constraintTop_toBottomOf="@+id/textView34" />
+
+                    <ImageView
+                        android:id="@+id/ivNewWordsSpanish"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view34"
+                        app:srcCompat="@drawable/ic_baseline_newwords_24" />
+
+                    <TextView
+                        android:id="@+id/textView35"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="New words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivNewWordsSpanish"
+                        app:layout_constraintStart_toStartOf="@+id/ivNewWordsSpanish"
+                        app:layout_constraintTop_toBottomOf="@+id/ivNewWordsSpanish" />
+
+                    <View
+                        android:id="@+id/view35"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivNewWordsSpanish"
+                        app:layout_constraintStart_toStartOf="@+id/ivNewWordsSpanish"
+                        app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+                    <ImageView
+                        android:id="@+id/ivFrasalsSpanish"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view35"
+                        app:srcCompat="@drawable/ic_baseline_frasals_24" />
+
+                    <TextView
+                        android:id="@+id/textView36"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Frasals"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivFrasalsSpanish"
+                        app:layout_constraintStart_toStartOf="@+id/ivFrasalsSpanish"
+                        app:layout_constraintTop_toBottomOf="@+id/ivFrasalsSpanish" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/svGerman"
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivMainGermanMenu">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvGerman"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/broun"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivMainGermanMenu"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="6dp">
+
+                    <TextView
+                        android:id="@+id/textView37"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Learn new words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnNewWordsGerman"
+                        app:layout_constraintHorizontal_bias="0.528"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnNewWordsGerman"
+                        app:layout_constraintTop_toBottomOf="@+id/ivLearnNewWordsGerman" />
+
+                    <ImageView
+                        android:id="@+id/ivLearnNewWordsGerman"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_baseline_local_library_24" />
+
+                    <View
+                        android:id="@+id/view37"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnNewWordsGerman"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnNewWordsGerman"
+                        app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+                    <ImageView
+                        android:id="@+id/ivLearnedWordsGerman"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view37"
+                        app:srcCompat="@drawable/ic_baseline_done_outline_24" />
+
+                    <TextView
+                        android:id="@+id/textView38"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Learned words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnedWordsGerman"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnedWordsGerman"
+                        app:layout_constraintTop_toBottomOf="@+id/ivLearnedWordsGerman" />
+
+                    <View
+                        android:id="@+id/view38"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnedWordsGerman"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnedWordsGerman"
+                        app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+                    <ImageView
+                        android:id="@+id/ivWriteWordsGerman"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view38"
+                        app:srcCompat="@drawable/ic_baseline_learn_24" />
+
+                    <TextView
+                        android:id="@+id/textView39"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Write words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivWriteWordsGerman"
+                        app:layout_constraintStart_toStartOf="@+id/ivWriteWordsGerman"
+                        app:layout_constraintTop_toBottomOf="@+id/ivWriteWordsGerman" />
+
+                    <View
+                        android:id="@+id/view39"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivWriteWordsGerman"
+                        app:layout_constraintStart_toStartOf="@+id/ivWriteWordsGerman"
+                        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+                    <ImageView
+                        android:id="@+id/ivTranslateWordsGerman"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view39"
+                        app:srcCompat="@drawable/ic_baseline_g_translate_24" />
+
+                    <TextView
+                        android:id="@+id/textView40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Translate words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivTranslateWordsGerman"
+                        app:layout_constraintStart_toStartOf="@+id/ivTranslateWordsGerman"
+                        app:layout_constraintTop_toBottomOf="@+id/ivTranslateWordsGerman" />
+
+                    <View
+                        android:id="@+id/view40"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivTranslateWordsGerman"
+                        app:layout_constraintStart_toStartOf="@+id/ivTranslateWordsGerman"
+                        app:layout_constraintTop_toBottomOf="@+id/textView40" />
+
+                    <ImageView
+                        android:id="@+id/ivChatGerman"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view40"
+                        app:srcCompat="@drawable/ic_baseline_chat_24" />
+
+                    <TextView
+                        android:id="@+id/textView41"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Chat"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivChatGerman"
+                        app:layout_constraintStart_toStartOf="@+id/ivChatGerman"
+                        app:layout_constraintTop_toBottomOf="@+id/ivChatGerman" />
+
+                    <View
+                        android:id="@+id/view41"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivChatGerman"
+                        app:layout_constraintStart_toStartOf="@+id/ivChatGerman"
+                        app:layout_constraintTop_toBottomOf="@+id/textView41" />
+
+                    <ImageView
+                        android:id="@+id/ivReadNewsGerman"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view41"
+                        app:srcCompat="@drawable/ic_baseline_news_24" />
+
+                    <TextView
+                        android:id="@+id/textView42"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Read news"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivReadNewsGerman"
+                        app:layout_constraintStart_toStartOf="@+id/ivReadNewsGerman"
+                        app:layout_constraintTop_toBottomOf="@+id/ivReadNewsGerman" />
+
+                    <View
+                        android:id="@+id/view42"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivReadNewsGerman"
+                        app:layout_constraintStart_toStartOf="@+id/ivReadNewsGerman"
+                        app:layout_constraintTop_toBottomOf="@+id/textView42" />
+
+                    <ImageView
+                        android:id="@+id/ivNewWordsGerman"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view42"
+                        app:srcCompat="@drawable/ic_baseline_newwords_24" />
+
+                    <TextView
+                        android:id="@+id/textView43"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="New words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivNewWordsGerman"
+                        app:layout_constraintStart_toStartOf="@+id/ivNewWordsGerman"
+                        app:layout_constraintTop_toBottomOf="@+id/ivNewWordsGerman" />
+
+                    <View
+                        android:id="@+id/view43"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivNewWordsGerman"
+                        app:layout_constraintStart_toStartOf="@+id/ivNewWordsGerman"
+                        app:layout_constraintTop_toBottomOf="@+id/textView43" />
+
+                    <ImageView
+                        android:id="@+id/ivFrasalsGerman"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view43"
+                        app:srcCompat="@drawable/ic_baseline_frasals_24" />
+
+                    <TextView
+                        android:id="@+id/textView44"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Frasals"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivFrasalsGerman"
+                        app:layout_constraintStart_toStartOf="@+id/ivFrasalsGerman"
+                        app:layout_constraintTop_toBottomOf="@+id/ivFrasalsGerman" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/svItalian"
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivMainItalianMenu">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvItalian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/broun"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivMainItalianMenu"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="6dp">
+
+                    <TextView
+                        android:id="@+id/textView45"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Learn new words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnNewWordsItalian"
+                        app:layout_constraintHorizontal_bias="0.528"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnNewWordsItalian"
+                        app:layout_constraintTop_toBottomOf="@+id/ivLearnNewWordsItalian" />
+
+                    <ImageView
+                        android:id="@+id/ivLearnNewWordsItalian"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_baseline_local_library_24" />
+
+                    <View
+                        android:id="@+id/view45"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnNewWordsItalian"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnNewWordsItalian"
+                        app:layout_constraintTop_toBottomOf="@+id/textView45" />
+
+                    <ImageView
+                        android:id="@+id/ivLearnedWordsItalian"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view45"
+                        app:srcCompat="@drawable/ic_baseline_done_outline_24" />
+
+                    <TextView
+                        android:id="@+id/textView46"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Learned words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnedWordsItalian"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnedWordsItalian"
+                        app:layout_constraintTop_toBottomOf="@+id/ivLearnedWordsItalian" />
+
+                    <View
+                        android:id="@+id/view46"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivLearnedWordsItalian"
+                        app:layout_constraintStart_toStartOf="@+id/ivLearnedWordsItalian"
+                        app:layout_constraintTop_toBottomOf="@+id/textView46" />
+
+                    <ImageView
+                        android:id="@+id/ivWriteWordsItalian"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view46"
+                        app:srcCompat="@drawable/ic_baseline_learn_24" />
+
+                    <TextView
+                        android:id="@+id/textView47"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Write words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivWriteWordsItalian"
+                        app:layout_constraintStart_toStartOf="@+id/ivWriteWordsItalian"
+                        app:layout_constraintTop_toBottomOf="@+id/ivWriteWordsItalian" />
+
+                    <View
+                        android:id="@+id/view47"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivWriteWordsItalian"
+                        app:layout_constraintStart_toStartOf="@+id/ivWriteWordsItalian"
+                        app:layout_constraintTop_toBottomOf="@+id/textView47" />
+
+                    <ImageView
+                        android:id="@+id/ivTranslateWordsItalian"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view47"
+                        app:srcCompat="@drawable/ic_baseline_g_translate_24" />
+
+                    <TextView
+                        android:id="@+id/textView48"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Translate words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivTranslateWordsItalian"
+                        app:layout_constraintStart_toStartOf="@+id/ivTranslateWordsItalian"
+                        app:layout_constraintTop_toBottomOf="@+id/ivTranslateWordsItalian" />
+
+                    <View
+                        android:id="@+id/view48"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivTranslateWordsItalian"
+                        app:layout_constraintStart_toStartOf="@+id/ivTranslateWordsItalian"
+                        app:layout_constraintTop_toBottomOf="@+id/textView48" />
+
+                    <ImageView
+                        android:id="@+id/ivChatItalian"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view48"
+                        app:srcCompat="@drawable/ic_baseline_chat_24" />
+
+                    <TextView
+                        android:id="@+id/textView49"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Chat"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivChatItalian"
+                        app:layout_constraintStart_toStartOf="@+id/ivChatItalian"
+                        app:layout_constraintTop_toBottomOf="@+id/ivChatItalian" />
+
+                    <View
+                        android:id="@+id/view49"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivChatItalian"
+                        app:layout_constraintStart_toStartOf="@+id/ivChatItalian"
+                        app:layout_constraintTop_toBottomOf="@+id/textView49" />
+
+                    <ImageView
+                        android:id="@+id/ivReadNewsItalian"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view49"
+                        app:srcCompat="@drawable/ic_baseline_news_24" />
+
+                    <TextView
+                        android:id="@+id/textView50"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Read news"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivReadNewsItalian"
+                        app:layout_constraintStart_toStartOf="@+id/ivReadNewsItalian"
+                        app:layout_constraintTop_toBottomOf="@+id/ivReadNewsItalian" />
+
+                    <View
+                        android:id="@+id/view50"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivReadNewsItalian"
+                        app:layout_constraintStart_toStartOf="@+id/ivReadNewsItalian"
+                        app:layout_constraintTop_toBottomOf="@+id/textView50" />
+
+                    <ImageView
+                        android:id="@+id/ivNewWordsItalian"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view50"
+                        app:srcCompat="@drawable/ic_baseline_newwords_24" />
+
+                    <TextView
+                        android:id="@+id/textView51"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="New words"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivNewWordsItalian"
+                        app:layout_constraintStart_toStartOf="@+id/ivNewWordsItalian"
+                        app:layout_constraintTop_toBottomOf="@+id/ivNewWordsItalian" />
+
+                    <View
+                        android:id="@+id/view51"
+                        android:layout_width="120dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/ivNewWordsItalian"
+                        app:layout_constraintStart_toStartOf="@+id/ivNewWordsItalian"
+                        app:layout_constraintTop_toBottomOf="@+id/textView51" />
+
+                    <ImageView
+                        android:id="@+id/ivFrasalsItalian"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view51"
+                        app:srcCompat="@drawable/ic_baseline_frasals_24" />
+
+                    <TextView
+                        android:id="@+id/textView52"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowRadius="5"
+                        android:text="Frasals"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ivFrasalsItalian"
+                        app:layout_constraintStart_toStartOf="@+id/ivFrasalsItalian"
+                        app:layout_constraintTop_toBottomOf="@+id/ivFrasalsItalian" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 

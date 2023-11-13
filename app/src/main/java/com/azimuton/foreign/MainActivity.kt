@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.util.TypedValue
 import android.view.View
 import com.azimuton.foreign.databinding.ActivityMainBinding
+import com.azimuton.foreign.fragments.english.LearnFragment
 import com.bumptech.glide.Glide
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -15,6 +17,7 @@ import kotlinx.coroutines.launch
 import java.util.Locale
 import java.util.logging.Handler
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
     private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
@@ -231,6 +234,13 @@ class MainActivity : AppCompatActivity() {
             binding.ivMainSpanishMenu.visibility = View.GONE
             binding.ivMainGermanMenu.visibility = View.GONE
             binding.ivMainItalianMenu.visibility = View.VISIBLE
+        }
+
+        binding.ivLearnNewWordsEnglish.setOnClickListener {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.flMain, LearnFragment())
+                .commit()
         }
     }
     private fun runTimer() {

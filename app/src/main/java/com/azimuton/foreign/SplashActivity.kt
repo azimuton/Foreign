@@ -97,8 +97,9 @@ class SplashActivity : AppCompatActivity() {
             delay(800)
             runOnUiThread {
                 binding.tvLanguage.startAnimation(AnimationUtils.loadAnimation(this@SplashActivity, R.anim.alfa_up))
-                startActivity(Intent(this@SplashActivity, MainActivity::class.java),
-                    ActivityOptions.makeSceneTransitionAnimation(this@SplashActivity).toBundle())
+                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                    overridePendingTransition(0, R.anim.open_activity)
+                   // ActivityOptions.makeSceneTransitionAnimation(this@SplashActivity).toBundle())
                 finish()
             }
             coroutine?.cancel()

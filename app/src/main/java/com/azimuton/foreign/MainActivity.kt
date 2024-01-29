@@ -1,6 +1,7 @@
 package com.azimuton.foreign
 
 import android.animation.ObjectAnimator
+import android.content.SharedPreferences
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -50,12 +51,128 @@ class MainActivity : AppCompatActivity() {
     private var openmainspanishmenu = false
     private var openmaingermanmenu = false
     private var openmainitalianmenu = false
+    private lateinit var sharedPrefs : SharedPreferences
+    private var pressEnglish = false
+    private var pressFrench = false
+    private var pressSpanish = false
+    private var pressGermany = false
+    private var pressItaly = false
+
+    private var pressEngl = false
+    private var pressFren = false
+    private var pressSpan = false
+    private var pressGerm = false
+    private var pressItal = false
+
+    private var enLearn = false
+    private var enLearned = false
+    private var enWrite = false
+    private var enTranslate = false
+    private var enChat = false
+    private var enNews = false
+    private var enNewWords = false
+    private var enFrasals = false
+
+    private var engLearn = false
+    private var engLearned = false
+    private var engWrite = false
+    private var engTranslate = false
+    private var engChat = false
+    private var engNews = false
+    private var engNewWords = false
+    private var engFrasals = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         running = true
         runTimer()
+
+        sharedPrefs = getSharedPreferences("OpenLanguage", MODE_PRIVATE)
+        pressEngl = sharedPrefs.getBoolean("pressEnglish", false)
+        pressFren = sharedPrefs.getBoolean("pressFrench", false)
+        pressSpan = sharedPrefs.getBoolean("pressSpanish", false)
+        pressGerm = sharedPrefs.getBoolean("pressGermany", false)
+        pressItal = sharedPrefs.getBoolean("pressItaly", false)
+        if(pressEngl){
+            binding.ivMainEnglishMenu.visibility = View.VISIBLE
+            binding.svEnglish.visibility = View.VISIBLE
+            sharedPrefs = getSharedPreferences("EngMenu", MODE_PRIVATE)
+            enLearn = sharedPrefs.getBoolean("engLearn", false)
+            enLearned = sharedPrefs.getBoolean("engLearned", false)
+            enWrite = sharedPrefs.getBoolean("engWrite", false)
+            enTranslate = sharedPrefs.getBoolean("engTranslate", false)
+            enNews = sharedPrefs.getBoolean("engNews", false)
+            enNewWords = sharedPrefs.getBoolean("engNewWords", false)
+            enFrasals = sharedPrefs.getBoolean("engFrasals", false)
+            if(enLearn){
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, LearnFragment())
+                    .commit()
+            }
+            if(enLearned){
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, LearnedFragment())
+                    .commit()
+            }
+            if(enWrite){
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, WriteFragment())
+                    .commit()
+            }
+            if(enTranslate){
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, TranslaterFragment())
+                    .commit()
+            }
+            if(enNews){
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, NewsFragment())
+                    .commit()
+            }
+            if(enNewWords){
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, NewWordsFragment())
+                    .commit()
+            }
+            if(enFrasals){
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, FrasalsFragment())
+                    .commit()
+            }
+        }
+        if(pressFren){
+            binding.ivMainFrenchMenu.visibility = View.VISIBLE
+            binding.svFrench.visibility = View.VISIBLE
+        }
+        if(pressSpan){
+            binding.ivMainSpanishMenu.visibility = View.VISIBLE
+            binding.svSpanish.visibility = View.VISIBLE
+        }
+        if(pressGerm){
+            binding.ivMainGermanMenu.visibility = View.VISIBLE
+            binding.svGerman.visibility = View.VISIBLE
+        }
+        if(pressItal){
+            binding.ivMainItalianMenu.visibility = View.VISIBLE
+            binding.svItalian.visibility = View.VISIBLE
+        }
+
+
         Glide.with(this).asGif().load(R.drawable.stopwatchs).into(binding.ivTimer)
         Glide.with(this).asGif().load(R.drawable.flagengland).into(binding.ivFlagEngland)
         Glide.with(this).asGif().load(R.drawable.flagfrance).into(binding.ivFlagFrance)
@@ -89,6 +206,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.tvMainClose.setOnClickListener { finishAffinity() }
+
         binding.ivMainEnglishMenu.setOnClickListener {
             if (openmainenglishmenu) {
                 val dpValue = 145
@@ -215,6 +333,18 @@ class MainActivity : AppCompatActivity() {
             binding.ivMainSpanishMenu.visibility = View.GONE
             binding.ivMainGermanMenu.visibility = View.GONE
             binding.ivMainItalianMenu.visibility = View.GONE
+
+            pressEnglish = true
+            pressFrench = false
+            pressSpanish = false
+            pressGermany = false
+            pressItaly = false
+            sharedPrefs = getSharedPreferences("OpenLanguage", AppCompatActivity.MODE_PRIVATE)
+            sharedPrefs.edit().putBoolean("pressEnglish", pressEnglish).apply()
+            sharedPrefs.edit().putBoolean("pressFrench", pressFrench).apply()
+            sharedPrefs.edit().putBoolean("pressSpanish", pressSpanish).apply()
+            sharedPrefs.edit().putBoolean("pressGermany", pressGermany).apply()
+            sharedPrefs.edit().putBoolean("pressItaly", pressItaly).apply()
         }
         binding.ivFlagFrance.setOnClickListener {
             val dpValue = 150
@@ -235,6 +365,18 @@ class MainActivity : AppCompatActivity() {
             binding.ivMainSpanishMenu.visibility = View.GONE
             binding.ivMainGermanMenu.visibility = View.GONE
             binding.ivMainItalianMenu.visibility = View.GONE
+
+            pressEnglish = false
+            pressFrench = true
+            pressSpanish = false
+            pressGermany = false
+            pressItaly = false
+            sharedPrefs = getSharedPreferences("OpenLanguage", AppCompatActivity.MODE_PRIVATE)
+            sharedPrefs.edit().putBoolean("pressEnglish", pressEnglish).apply()
+            sharedPrefs.edit().putBoolean("pressFrench", pressFrench).apply()
+            sharedPrefs.edit().putBoolean("pressSpanish", pressSpanish).apply()
+            sharedPrefs.edit().putBoolean("pressGermany", pressGermany).apply()
+            sharedPrefs.edit().putBoolean("pressItaly", pressItaly).apply()
         }
         binding.ivFlagSpain.setOnClickListener {
             val dpValue = 150
@@ -255,6 +397,18 @@ class MainActivity : AppCompatActivity() {
             binding.ivMainSpanishMenu.visibility = View.VISIBLE
             binding.ivMainGermanMenu.visibility = View.GONE
             binding.ivMainItalianMenu.visibility = View.GONE
+
+            pressEnglish = false
+            pressFrench = false
+            pressSpanish = true
+            pressGermany = false
+            pressItaly = false
+            sharedPrefs = getSharedPreferences("OpenLanguage", AppCompatActivity.MODE_PRIVATE)
+            sharedPrefs.edit().putBoolean("pressEnglish", pressEnglish).apply()
+            sharedPrefs.edit().putBoolean("pressFrench", pressFrench).apply()
+            sharedPrefs.edit().putBoolean("pressSpanish", pressSpanish).apply()
+            sharedPrefs.edit().putBoolean("pressGermany", pressGermany).apply()
+            sharedPrefs.edit().putBoolean("pressItaly", pressItaly).apply()
         }
         binding.ivFlagGermany.setOnClickListener {
             val dpValue = 150
@@ -275,6 +429,18 @@ class MainActivity : AppCompatActivity() {
             binding.ivMainSpanishMenu.visibility = View.GONE
             binding.ivMainGermanMenu.visibility = View.VISIBLE
             binding.ivMainItalianMenu.visibility = View.GONE
+
+            pressEnglish = false
+            pressFrench = false
+            pressSpanish = false
+            pressGermany = true
+            pressItaly = false
+            sharedPrefs = getSharedPreferences("OpenLanguage", AppCompatActivity.MODE_PRIVATE)
+            sharedPrefs.edit().putBoolean("pressEnglish", pressEnglish).apply()
+            sharedPrefs.edit().putBoolean("pressFrench", pressFrench).apply()
+            sharedPrefs.edit().putBoolean("pressSpanish", pressSpanish).apply()
+            sharedPrefs.edit().putBoolean("pressGermany", pressGermany).apply()
+            sharedPrefs.edit().putBoolean("pressItaly", pressItaly).apply()
         }
         binding.ivFlagItaly.setOnClickListener {
             val dpValue = 150
@@ -295,6 +461,18 @@ class MainActivity : AppCompatActivity() {
             binding.ivMainSpanishMenu.visibility = View.GONE
             binding.ivMainGermanMenu.visibility = View.GONE
             binding.ivMainItalianMenu.visibility = View.VISIBLE
+
+            pressEnglish = false
+            pressFrench = false
+            pressSpanish = false
+            pressGermany = false
+            pressItaly = true
+            sharedPrefs = getSharedPreferences("OpenLanguage", AppCompatActivity.MODE_PRIVATE)
+            sharedPrefs.edit().putBoolean("pressEnglish", pressEnglish).apply()
+            sharedPrefs.edit().putBoolean("pressFrench", pressFrench).apply()
+            sharedPrefs.edit().putBoolean("pressSpanish", pressSpanish).apply()
+            sharedPrefs.edit().putBoolean("pressGermany", pressGermany).apply()
+            sharedPrefs.edit().putBoolean("pressItaly", pressItaly).apply()
         }
 
         binding.ivLearnNewWordsEnglish.setOnClickListener {
@@ -312,6 +490,21 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainenglishmenu = false
+               engLearn = true
+               engLearned = false
+               engWrite = false
+               engTranslate = false
+               engNews = false
+               engNewWords = false
+               engFrasals = false
+               sharedPrefs = getSharedPreferences("EngMenu", AppCompatActivity.MODE_PRIVATE)
+               sharedPrefs.edit().putBoolean("engLearn", engLearn).apply()
+               sharedPrefs.edit().putBoolean("engLearned", engLearned).apply()
+               sharedPrefs.edit().putBoolean("engWrite", engWrite).apply()
+               sharedPrefs.edit().putBoolean("engTranslate", engTranslate).apply()
+               sharedPrefs.edit().putBoolean("engNews", engNews).apply()
+               sharedPrefs.edit().putBoolean("engNewWords", engNewWords).apply()
+               sharedPrefs.edit().putBoolean("engFrasals", engFrasals).apply()
                learncor?.cancel()
             }
         }
@@ -330,6 +523,21 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainenglishmenu = false
+               engLearn = false
+               engLearned = true
+               engWrite = false
+               engTranslate = false
+               engNews = false
+               engNewWords = false
+               engFrasals = false
+               sharedPrefs = getSharedPreferences("EngMenu", AppCompatActivity.MODE_PRIVATE)
+               sharedPrefs.edit().putBoolean("engLearn", engLearn).apply()
+               sharedPrefs.edit().putBoolean("engLearned", engLearned).apply()
+               sharedPrefs.edit().putBoolean("engWrite", engWrite).apply()
+               sharedPrefs.edit().putBoolean("engTranslate", engTranslate).apply()
+               sharedPrefs.edit().putBoolean("engNews", engNews).apply()
+               sharedPrefs.edit().putBoolean("engNewWords", engNewWords).apply()
+               sharedPrefs.edit().putBoolean("engFrasals", engFrasals).apply()
                learnedcor?.cancel()
             }
         }
@@ -348,6 +556,21 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainenglishmenu = false
+               engLearn = false
+               engLearned = false
+               engWrite = true
+               engTranslate = false
+               engNews = false
+               engNewWords = false
+               engFrasals = false
+               sharedPrefs = getSharedPreferences("EngMenu", AppCompatActivity.MODE_PRIVATE)
+               sharedPrefs.edit().putBoolean("engLearn", engLearn).apply()
+               sharedPrefs.edit().putBoolean("engLearned", engLearned).apply()
+               sharedPrefs.edit().putBoolean("engWrite", engWrite).apply()
+               sharedPrefs.edit().putBoolean("engTranslate", engTranslate).apply()
+               sharedPrefs.edit().putBoolean("engNews", engNews).apply()
+               sharedPrefs.edit().putBoolean("engNewWords", engNewWords).apply()
+               sharedPrefs.edit().putBoolean("engFrasals", engFrasals).apply()
                writecor?.cancel()
             }
         }
@@ -366,6 +589,21 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainenglishmenu = false
+                engLearn = false
+                engLearned = false
+                engWrite = false
+                engTranslate = true
+                engNews = false
+                engNewWords = false
+                engFrasals = false
+                sharedPrefs = getSharedPreferences("EngMenu", AppCompatActivity.MODE_PRIVATE)
+                sharedPrefs.edit().putBoolean("engLearn", engLearn).apply()
+                sharedPrefs.edit().putBoolean("engLearned", engLearned).apply()
+                sharedPrefs.edit().putBoolean("engWrite", engWrite).apply()
+                sharedPrefs.edit().putBoolean("engTranslate", engTranslate).apply()
+                sharedPrefs.edit().putBoolean("engNews", engNews).apply()
+                sharedPrefs.edit().putBoolean("engNewWords", engNewWords).apply()
+                sharedPrefs.edit().putBoolean("engFrasals", engFrasals).apply()
                 translatecor?.cancel()
             }
         }
@@ -384,6 +622,21 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainenglishmenu = false
+                engLearn = false
+                engLearned = false
+                engWrite = false
+                engTranslate = false
+                engNews = true
+                engNewWords = false
+                engFrasals = false
+                sharedPrefs = getSharedPreferences("EngMenu", AppCompatActivity.MODE_PRIVATE)
+                sharedPrefs.edit().putBoolean("engLearn", engLearn).apply()
+                sharedPrefs.edit().putBoolean("engLearned", engLearned).apply()
+                sharedPrefs.edit().putBoolean("engWrite", engWrite).apply()
+                sharedPrefs.edit().putBoolean("engTranslate", engTranslate).apply()
+                sharedPrefs.edit().putBoolean("engNews", engNews).apply()
+                sharedPrefs.edit().putBoolean("engNewWords", engNewWords).apply()
+                sharedPrefs.edit().putBoolean("engFrasals", engFrasals).apply()
                 newscor?.cancel()
             }
         }
@@ -402,6 +655,21 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainenglishmenu = false
+                engLearn = false
+                engLearned = false
+                engWrite = false
+                engTranslate = false
+                engNews = false
+                engNewWords = true
+                engFrasals = false
+                sharedPrefs = getSharedPreferences("EngMenu", AppCompatActivity.MODE_PRIVATE)
+                sharedPrefs.edit().putBoolean("engLearn", engLearn).apply()
+                sharedPrefs.edit().putBoolean("engLearned", engLearned).apply()
+                sharedPrefs.edit().putBoolean("engWrite", engWrite).apply()
+                sharedPrefs.edit().putBoolean("engTranslate", engTranslate).apply()
+                sharedPrefs.edit().putBoolean("engNews", engNews).apply()
+                sharedPrefs.edit().putBoolean("engNewWords", engNewWords).apply()
+                sharedPrefs.edit().putBoolean("engFrasals", engFrasals).apply()
                 newwordscor?.cancel()
             }
         }
@@ -420,6 +688,21 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainenglishmenu = false
+                engLearn = false
+                engLearned = false
+                engWrite = false
+                engTranslate = false
+                engNews = false
+                engNewWords = false
+                engFrasals = true
+                sharedPrefs = getSharedPreferences("EngMenu", AppCompatActivity.MODE_PRIVATE)
+                sharedPrefs.edit().putBoolean("engLearn", engLearn).apply()
+                sharedPrefs.edit().putBoolean("engLearned", engLearned).apply()
+                sharedPrefs.edit().putBoolean("engWrite", engWrite).apply()
+                sharedPrefs.edit().putBoolean("engTranslate", engTranslate).apply()
+                sharedPrefs.edit().putBoolean("engNews", engNews).apply()
+                sharedPrefs.edit().putBoolean("engNewWords", engNewWords).apply()
+                sharedPrefs.edit().putBoolean("engFrasals", engFrasals).apply()
                 frasalscor?.cancel()
             }
         }

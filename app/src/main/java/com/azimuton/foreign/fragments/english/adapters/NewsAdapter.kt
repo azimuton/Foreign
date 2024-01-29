@@ -1,4 +1,4 @@
-package com.azimuton.foreign.adapters
+package com.azimuton.foreign.fragments.english.adapters
 
 import android.content.Context
 import android.view.LayoutInflater

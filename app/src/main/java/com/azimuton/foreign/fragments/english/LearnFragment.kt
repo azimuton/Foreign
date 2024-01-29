@@ -32,7 +32,7 @@ import com.azimuton.domain.usecase.WordInsertUseCase
 import com.azimuton.foreign.viewmodels.LearnViewModel
 import com.azimuton.foreign.MainActivity
 import com.azimuton.foreign.R
-import com.azimuton.foreign.adapters.NewWordsAdapter
+import com.azimuton.foreign.fragments.english.adapters.NewWordsAdapter
 import com.azimuton.foreign.databinding.FragmentLearnBinding
 import dagger.hilt.android.AndroidEntryPoint
 import org.jetbrains.annotations.NotNull
@@ -189,5 +189,4 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
                 }
         }
     }
-
 }

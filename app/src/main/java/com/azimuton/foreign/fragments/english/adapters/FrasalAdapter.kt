@@ -1,4 +1,4 @@
-package com.azimuton.foreign.adapters
+package com.azimuton.foreign.fragments.english.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

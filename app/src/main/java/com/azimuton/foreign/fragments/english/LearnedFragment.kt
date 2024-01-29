@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.azimuton.data.roomstorage.room.AppRoomDatabase
 import com.azimuton.domain.models.LearnedWord
 import com.azimuton.domain.usecase.LearnedWordGetAllUseCase
-import com.azimuton.foreign.adapters.LearnedWordsAdapter
+import com.azimuton.foreign.fragments.english.adapters.LearnedWordsAdapter
 import com.azimuton.foreign.databinding.FragmentLearnedBinding
 import com.azimuton.foreign.viewmodels.LearnedViewModel
 import dagger.hilt.android.AndroidEntryPoint

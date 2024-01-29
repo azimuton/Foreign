@@ -8,7 +8,7 @@ import android.view.Window
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.azimuton.foreign.R
-import com.azimuton.foreign.adapters.FrasalAdapter
+import com.azimuton.foreign.fragments.english.adapters.FrasalAdapter
 import com.azimuton.foreign.databinding.FragmentFrasalsBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint

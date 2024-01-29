@@ -14,7 +14,7 @@ import com.azimuton.domain.apimodels.News
 import com.azimuton.domain.apimodels.Result
 import com.azimuton.domain.usecase.GetNewsUseCase
 import com.azimuton.foreign.R
-import com.azimuton.foreign.adapters.NewsAdapter
+import com.azimuton.foreign.fragments.english.adapters.NewsAdapter
 import com.azimuton.foreign.databinding.FragmentNewsBinding
 import com.azimuton.foreign.viewmodels.NewsDataViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -52,6 +52,7 @@ class NewsFragment : Fragment() {
             binding.rvNews.visibility = View.VISIBLE
             val retrofit = RetrofitClient()
                 .getClient("https://newsdata.io/api/1/")
+                //.getClient("https://newsapi.org/v2/")
                 .create(API::class.java)
             coroutineScope.launch(Dispatchers.Main) {
                 retrofit.getNews().enqueue(object : Callback<News>, NewsAdapter.ItemClickListener {

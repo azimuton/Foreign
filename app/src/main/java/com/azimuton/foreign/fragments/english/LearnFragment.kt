@@ -10,8 +10,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
+import androidx.core.view.isNotEmpty
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.azimuton.data.roomstorage.room.AppRoomDatabase
@@ -28,6 +35,7 @@ import com.azimuton.foreign.R
 import com.azimuton.foreign.adapters.NewWordsAdapter
 import com.azimuton.foreign.databinding.FragmentLearnBinding
 import dagger.hilt.android.AndroidEntryPoint
+import org.jetbrains.annotations.NotNull
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -68,31 +76,40 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
         binding.rvNewWords.adapter = adapter
         adapter.submitList(wordList)
 
-        binding.ivClearNewWord.setOnClickListener { binding.etNewWord.text.clear() }
-        binding.ivClearTranslate.setOnClickListener { binding.etTranslate.text.clear() }
+        binding.ivClearNewWord.setOnClickListener {
+            binding.etNewWord.text.clear()
+            hideSystemUI()
+        }
+        binding.ivClearTranslate.setOnClickListener {
+            binding.etTranslate.text.clear()
+            hideSystemUI()
+        }
 
         binding.tvTransfer.setOnClickListener {
-            val addDialog = AlertDialog.Builder(requireActivity())
-            addDialog
-                .setMessage("Вы действительно хотите перенести записи?")
-                .setPositiveButton("Ok") { dialog, _ ->
-                    getData()
-                    viewModel.copy()
-                    deleteAll.execute()
-                    adapter.notifyDataSetChanged()
-                    activity?.overridePendingTransition(0, 0)
-                    val intent = Intent(requireActivity(), MainActivity :: class.java)
-                    startActivity(intent)
-                    activity?.overridePendingTransition(0, R.anim.open_activity)
-                    activity?.finish()
-                    Toast.makeText(requireActivity(), "Записи пересены!", Toast.LENGTH_SHORT).show()
-                    dialog.dismiss()
-                }
-                .setNegativeButton("Отмена") { dialog, _ ->
-                    dialog.dismiss()
-                }
-                .create()
-                .show()
+            if(binding.rvNewWords.isNotEmpty()){
+                binding.cvDialogList.visibility = View.VISIBLE
+                binding.rvNewWords.visibility = View.GONE
+            } else {
+                Toast.makeText(requireActivity(), "The list is empty!", Toast.LENGTH_SHORT).show()
+            }
+        }
+        binding.btDialogOkList.setOnClickListener {
+            getData()
+            viewModel.copy()
+            deleteAll.execute()
+            adapter.notifyDataSetChanged()
+            hideSystemUI()
+            Toast.makeText(requireActivity(), "The list is transfered!", Toast.LENGTH_SHORT).show()
+            binding.cvDialogList.visibility = View.GONE
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+                ?.replace(R.id.flMain, LearnedFragment())
+                ?.commit()
+            binding.rvNewWords.visibility = View.VISIBLE
+        }
+        binding.btDialogCancelList.setOnClickListener {
+            binding.cvDialogList.visibility = View.GONE
+            binding.rvNewWords.visibility = View.VISIBLE
         }
 
         binding.tvSaveNewWord.setOnClickListener {
@@ -100,17 +117,21 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
                 val englishWord: String = binding.etNewWord.text.toString()
                 val translateWord: String = binding.etTranslate.text.toString()
                 val word = Word(englishWord = englishWord, translateWord = translateWord, id = 0)
-                Toast.makeText(requireActivity(), "Поля заполнены!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireActivity(), "Saved!", Toast.LENGTH_SHORT).show()
                 insertInject.execute(word)
                 //viewModel.insert(word)
                 adapter.notifyDataSetChanged()
                 val ims = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 ims.hideSoftInputFromWindow(binding.etNewWord.windowToken, 0)
                 ims.hideSoftInputFromWindow(binding.etTranslate.windowToken, 0)
-                val intent = Intent(requireActivity(), MainActivity :: class.java)
-                startActivity(intent)
-                activity?.overridePendingTransition(0, R.anim.open_activity)
-                activity?.finish()
+//                val intent = Intent(requireActivity(), MainActivity :: class.java)
+//                startActivity(intent)
+//                activity?.overridePendingTransition(0, R.anim.open_activity)
+                activity?.supportFragmentManager
+                    ?.beginTransaction()
+                    ?.replace(R.id.flMain, LearnFragment())
+                    ?.commit()
+                //activity?.finish()
             } else {
                 Toast.makeText(
                     requireActivity(), "Заполните пустые поля!",
@@ -133,34 +154,40 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
 //        adapter.submitList(wordList)
     }
 
-    @SuppressLint("NotifyDataSetChanged")
+    @SuppressLint("NotifyDataSetChanged", "InflateParams", "SetTextI18n")
     override fun deleteWords(index: Int) {
-        val addDialog = AlertDialog.Builder(requireActivity())
-        addDialog
-            .setMessage("Вы действительно хотите удалить запись?")
-            .setPositiveButton("Ok") { dialog, _ ->
-                val words = wordList[index]
-                deleteInject.execute(words)
-                //viewModel.delete(words)
-                getData()
-                adapter.notifyDataSetChanged()
-                val  w : Window? = activity?.window
-                w?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
-                        or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
-                Toast.makeText(requireActivity(), "Запись удалена!", Toast.LENGTH_SHORT).show()
-                dialog.dismiss()
-            }
-            .setNegativeButton("Отмена") { dialog, _ ->
-                dialog.dismiss()
-            }
-            .create()
-            .show()
+        binding.cvDialog.visibility = View.VISIBLE
+        binding.rvNewWords.visibility = View.GONE
+        binding.btDialogOk.setOnClickListener {
+            val words = wordList[index]
+            deleteInject.execute(words)
+            getData()
+            adapter.notifyDataSetChanged()
+            hideSystemUI()
+            Toast.makeText(requireActivity(), "The entry is deleted!", Toast.LENGTH_SHORT).show()
+            binding.cvDialog.visibility = View.GONE
+              binding.rvNewWords.visibility = View.VISIBLE
+        }
+        binding.btDialogCancel.setOnClickListener {
+            binding.cvDialog.visibility = View.GONE
+              binding.rvNewWords.visibility = View.VISIBLE
+        }
     }
     override fun onResume() {
         super.onResume()
-        val w: Window? = activity?.window
-        w?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
-                or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
+        hideSystemUI()
+    }
+    private fun hideSystemUI () {
+        val window : Window? = activity?.window
+        if (window != null) {
+            WindowCompat.setDecorFitsSystemWindows(window, false)
+        }
+        if (window != null) {
+                WindowInsetsControllerCompat (window, window.decorView).let { controller ->
+                    controller.hide (WindowInsetsCompat.Type.systemBars ())
+                    controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+                }
+        }
     }
 
 }

@@ -27,24 +27,24 @@
 
             <ImageView
                 android:id="@+id/ivItemDeleteLearnedWord"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/baseline_delete_forever_24" />
 
             <ImageView
                 android:id="@+id/ivItemEyeLearnedOpen"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivItemDeleteLearnedWord"
                 app:layout_constraintEnd_toStartOf="@+id/ivItemDeleteLearnedWord"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivItemDeleteLearnedWord"
                 app:srcCompat="@drawable/eyeopen"
-                app:tint="@color/darkgreen" />
+                app:tint="@color/translatecolor" />
 
             <TextView
                 android:id="@+id/tvItemLearnedWord"
@@ -52,6 +52,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:shadowColor="@color/black"
+                android:shadowDy="3"
+                android:shadowRadius="3"
+                android:text="erryeuj"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -65,7 +69,11 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:textColor="@color/red"
+                android:padding="2dp"
+                android:shadowColor="@color/black"
+                android:shadowDy="3"
+                android:shadowRadius="3"
+                android:textColor="@color/translatecolor"
                 android:textSize="20sp"
                 android:textStyle="bold|italic"
                 android:visibility="gone"
@@ -76,15 +84,15 @@
 
             <ImageView
                 android:id="@+id/ivItemEyeLearnedClose"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:visibility="gone"
                 app:layout_constraintEnd_toStartOf="@+id/ivItemDeleteLearnedWord"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/eyeclose"
-                app:tint="@color/darkgreen" />
+                app:tint="@color/translatecolor" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

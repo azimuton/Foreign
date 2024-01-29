@@ -57,6 +57,8 @@ class LearnedFragment : Fragment(), LearnedWordsAdapter.ViewHolder.ItemCallback 
             binding.tvCheckingWord.text = ""
             binding.tvCheckingTranslate.text = ""
             binding.tvCheckingTranslate.visibility = View.GONE
+            binding.ivEyeClosed.visibility = View.GONE
+            binding.ivEyeOpen.visibility = View.VISIBLE
         }
 
         binding.ivEyeOpen.setOnClickListener {
@@ -81,23 +83,36 @@ class LearnedFragment : Fragment(), LearnedWordsAdapter.ViewHolder.ItemCallback 
 
     @SuppressLint("NotifyDataSetChanged")
     override fun deleteLearnedWords(index: Int) {
-        val addDialog = AlertDialog.Builder(requireActivity())
-        addDialog
-            .setMessage("Вы действительно хотите удалить запись?")
-            .setPositiveButton("Ok") { dialog, _ ->
-                val learnedWords = learnedWordsList[index]
-                viewModel.delete(learnedWords)
-                binding.tvQuantityOfLearnedWords.text = learnedWordDatabase.learnedWordDao().count().toString()
-                getData()
-                adapter.notifyDataSetChanged()
-                Toast.makeText(requireActivity(), "Запись удалена!", Toast.LENGTH_SHORT).show()
-                dialog.dismiss()
-            }
-            .setNegativeButton("Отмена") { dialog, _ ->
-                dialog.dismiss()
-            }
-            .create()
-            .show()
+//        val addDialog = AlertDialog.Builder(requireActivity())
+//        addDialog
+//            .setMessage("Вы действительно хотите удалить запись?")
+//            .setPositiveButton("Ok") { dialog, _ ->
+//                val learnedWords = learnedWordsList[index]
+//                viewModel.delete(learnedWords)
+//                binding.tvQuantityOfLearnedWords.text = learnedWordDatabase.learnedWordDao().count().toString()
+//                getData()
+//                adapter.notifyDataSetChanged()
+//                Toast.makeText(requireActivity(), "Запись удалена!", Toast.LENGTH_SHORT).show()
+//                dialog.dismiss()
+//            }
+//            .setNegativeButton("Отмена") { dialog, _ ->
+//                dialog.dismiss()
+//            }
+//            .create()
+//            .show()
+        binding.cvDialog.visibility = View.VISIBLE
+        binding.btDialogOk.setOnClickListener {
+            val learnedWords = learnedWordsList[index]
+            viewModel.delete(learnedWords)
+            binding.tvQuantityOfLearnedWords.text = learnedWordDatabase.learnedWordDao().count().toString()
+            getData()
+            adapter.notifyDataSetChanged()
+            Toast.makeText(requireActivity(), "The entry is deleted!", Toast.LENGTH_SHORT).show()
+            binding.cvDialog.visibility = View.GONE
+        }
+        binding.btDialogCancel.setOnClickListener {
+            binding.cvDialog.visibility = View.GONE
+        }
     }
     private fun randomLearned(){
         val resultRandom = learnedWordDatabase.learnedWordDao().randoms()

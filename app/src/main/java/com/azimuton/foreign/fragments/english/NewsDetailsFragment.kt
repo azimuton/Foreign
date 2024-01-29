@@ -31,7 +31,7 @@ class NewsDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Glide.with(this)
             .asGif()
-            .load(R.drawable.backnote)
+            .load(R.drawable.leftarrow)
             .into(binding.ivBackToNews)
         binding.ivBackToNews.setOnClickListener {
             activity?.supportFragmentManager

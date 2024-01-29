@@ -6,13 +6,85 @@
     android:layout_height="match_parent"
     android:background="@drawable/circle_new">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvDialog"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rvLearnedWords">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/broun">
+
+            <TextView
+                android:id="@+id/tvTitleDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingStart="8dp"
+                android:text="Do you really want to delete the entry?"
+                android:textColor="@color/yellow"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btDialogOk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@color/yellow"
+                android:text="Ok"
+                android:textColor="@color/broun"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/btDialogCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/yellow"
+                android:text="Cancel"
+                android:textColor="@color/broun"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/btDialogOk"
+                app:layout_constraintEnd_toStartOf="@+id/btDialogOk"
+                app:layout_constraintTop_toTopOf="@+id/btDialogOk" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleDialog"
+                app:srcCompat="@drawable/baseline_delete_forever_24" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
     <TextView
         android:id="@+id/tvQuantityOfLearnedWords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:textColor="@color/black"
+        android:textColor="@color/broun"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,10 +96,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:shadowColor="@color/shadowcolor"
-        android:shadowRadius="10"
-        android:text="Quantity of learned words : "
-        android:textColor="@color/darkgreen"
+        android:shadowColor="@color/black"
+        android:shadowDy="3"
+        android:shadowRadius="3"
+        android:text="Learned words : "
+        android:textColor="@color/translatecolor"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/tvQuantityOfLearnedWords"
@@ -50,7 +123,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="220dp"
-        android:background="@color/darkgreen"
+        android:background="@color/three"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -65,7 +138,9 @@
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_learned_words"/>
 
     <TextView
         android:id="@+id/tvChooseWord"
@@ -77,10 +152,11 @@
         android:background="@drawable/circle_new"
         android:fontFamily="sans-serif"
         android:gravity="center"
-        android:shadowColor="@color/yellow"
-        android:shadowRadius="20"
+        android:shadowColor="@color/black"
+        android:shadowDy="3"
+        android:shadowRadius="3"
         android:text="Choose word for checking"
-        android:textColor="@color/darkgreen"
+        android:textColor="@color/translatecolor"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,8 +178,7 @@
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_close_24"
-            app:tint="@color/darkgreen" />
+            app:srcCompat="@drawable/ic_baseline_close_24" />
 
         <ImageView
             android:id="@+id/ivEyeOpen"
@@ -114,7 +189,7 @@
             android:src="@drawable/eyeopen"
             app:layout_constraintEnd_toStartOf="@+id/ivCloseCheckingWord"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/darkgreen" />
+            app:tint="@color/translatecolor" />
 
         <ImageView
             android:id="@+id/ivChangeWords"
@@ -124,8 +199,7 @@
             android:layout_marginEnd="51dp"
             android:src="@drawable/ic_baseline_cached_24"
             app:layout_constraintEnd_toStartOf="@+id/ivCloseCheckingWord"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/darkgreen" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvCheckingWord"
@@ -148,7 +222,12 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:textColor="@color/red"
+            android:padding="2dp"
+            android:shadowColor="@color/black"
+            android:shadowDy="3"
+            android:shadowRadius="3"
+            android:text="dhrt"
+            android:textColor="@color/translatecolor"
             android:textSize="20sp"
             android:textStyle="bold|italic"
             android:visibility="gone"
@@ -166,7 +245,7 @@
             android:visibility="gone"
             app:layout_constraintEnd_toStartOf="@+id/ivCloseCheckingWord"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/darkgreen" />
+            app:tint="@color/translatecolor" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

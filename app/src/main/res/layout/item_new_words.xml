@@ -47,6 +47,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/baseline_delete_forever_24" />
@@ -55,10 +56,10 @@
                 android:id="@+id/ivItemCopyWordToLearned"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivItemDelete"
                 app:layout_constraintEnd_toStartOf="@+id/ivItemDelete"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivItemDelete"
                 app:srcCompat="@drawable/ic_baseline_copy_all_24" />
 
             <ImageView
@@ -67,6 +68,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:tint="@color/translatecolor"
                 android:visibility="gone"
                 app:layout_constraintEnd_toStartOf="@+id/ivItemCopyWordToLearned"
                 app:layout_constraintTop_toTopOf="parent"
@@ -79,10 +81,12 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:padding="2dp"
                 android:shadowColor="@color/black"
                 android:shadowDx="3"
                 android:shadowRadius="3"
-                android:textColor="#CC0E0E"
+                android:text="etr90r"
+                android:textColor="@color/translatecolor"
                 android:textSize="20sp"
                 android:textStyle="bold|italic"
                 android:visibility="gone"
@@ -94,10 +98,11 @@
                 android:id="@+id/ivItemEyeOpen"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="4dp"
+                android:tint="@color/translatecolor"
+                app:layout_constraintBottom_toBottomOf="@+id/ivItemCopyWordToLearned"
                 app:layout_constraintEnd_toStartOf="@+id/ivItemCopyWordToLearned"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivItemCopyWordToLearned"
                 app:srcCompat="@drawable/eyeopen" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

@@ -7,7 +7,10 @@
     android:gravity="center_vertical"
     android:minHeight="?android:attr/listPreferredItemHeight"
     android:paddingLeft="16dip"
+    android:shadowColor="@color/black"
+    android:shadowDy="3"
+    android:shadowRadius="3"
     android:textAppearance="?android:attr/textAppearanceLarge"
-    android:textColor="@color/darkgreen"
+    android:textColor="@color/translatecolor"
     android:textSize="30sp"
     android:textStyle="bold"></TextView>

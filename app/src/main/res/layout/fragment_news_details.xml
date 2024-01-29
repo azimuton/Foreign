@@ -44,7 +44,10 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:textColor="@color/darkgreen"
+                android:shadowColor="@color/black"
+                android:shadowDy="3"
+                android:shadowRadius="3"
+                android:textColor="@color/translatecolor"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
@@ -55,7 +58,10 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:textColor="@color/darkgreen"
+                android:shadowColor="@color/black"
+                android:shadowDy="3"
+                android:shadowRadius="3"
+                android:textColor="@color/translatecolor"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -65,7 +71,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:padding="8dp"
-                android:textColor="@color/darkgreen"
+                android:shadowColor="@color/black"
+                android:shadowDy="3"
+                android:shadowRadius="3"
+                android:textColor="@color/translatecolor"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>

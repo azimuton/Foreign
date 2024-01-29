@@ -9,12 +9,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewTreeObserver
+import android.view.Window
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.LinearInterpolator
 import android.view.animation.RotateAnimation
 import androidx.core.graphics.drawable.toDrawable
 import androidx.core.graphics.toColorInt
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import com.azimuton.foreign.databinding.ActivitySplashBinding
 import com.bumptech.glide.Glide
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
@@ -34,6 +38,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        hideSystemUI()
 
         Glide.with(this).asGif().load(R.drawable.worldflagsglobe).into(binding.ivForeign)
 //        val remoteConfig = FirebaseRemoteConfig.getInstance()
@@ -103,6 +108,18 @@ class SplashActivity : AppCompatActivity() {
                 finish()
             }
             coroutine?.cancel()
+        }
+    }
+    private fun hideSystemUI () {
+        val window : Window? = window
+        if (window != null) {
+            WindowCompat.setDecorFitsSystemWindows(window, false)
+        }
+        if (window != null) {
+            WindowInsetsControllerCompat (window, window.decorView).let { controller ->
+                controller.hide (WindowInsetsCompat.Type.systemBars ())
+                controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            }
         }
     }
 }

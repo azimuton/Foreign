@@ -71,235 +71,280 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivMainMenu" />
+        app:layout_constraintTop_toBottomOf="@+id/ivMainMenu"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <LinearLayout
-        android:id="@+id/llMainMenu"
+    <ScrollView
+        android:id="@+id/svMain"
         android:layout_width="170dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivMainMenu">
+        android:layout_marginBottom="16dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/flMain"
+        app:layout_constraintTop_toTopOf="@+id/flMain">
 
-        <androidx.cardview.widget.CardView
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/broun"
-            app:cardCornerRadius="15dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:id="@+id/llMainMenu"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
-                android:paddingTop="32dp"
-                android:paddingBottom="32dp">
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="-150dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivMainMenu">
 
-                <ImageView
-                    android:id="@+id/ivFlagEngland"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_marginEnd="24dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/flagengland" />
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:padding="4dp"
-                    android:shadowColor="@color/black"
-                    android:shadowDx="5"
-                    android:shadowRadius="5"
-                    android:text="English"
-                    android:textColor="@color/yellow"
-                    android:textSize="24sp"
-                    android:textStyle="bold|italic"
-                    app:layout_constraintEnd_toEndOf="@+id/ivFlagEngland"
-                    app:layout_constraintStart_toStartOf="@+id/ivFlagEngland"
-                    app:layout_constraintTop_toBottomOf="@+id/ivFlagEngland" />
+                    app:cardBackgroundColor="@color/broun"
+                    app:cardCornerRadius="15dp">
 
-                <View
-                    android:id="@+id/view"
-                    android:layout_width="120dp"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/white"
-                    app:layout_constraintEnd_toEndOf="@+id/ivFlagEngland"
-                    app:layout_constraintStart_toStartOf="@+id/ivFlagEngland"
-                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="32dp"
+                        android:paddingBottom="32dp">
 
-                <ImageView
-                    android:id="@+id/ivFlagFrance"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="24dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view"
-                    app:srcCompat="@drawable/flagfrance" />
+                        <ImageView
+                            android:id="@+id/ivFlagEngland"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="24dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/flagengland" />
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:padding="4dp"
-                    android:shadowColor="@color/black"
-                    android:shadowDx="5"
-                    android:shadowRadius="5"
-                    android:text="French"
-                    android:textColor="@color/yellow"
-                    android:textSize="24sp"
-                    android:textStyle="bold|italic"
-                    app:layout_constraintEnd_toEndOf="@+id/ivFlagFrance"
-                    app:layout_constraintStart_toStartOf="@+id/ivFlagFrance"
-                    app:layout_constraintTop_toBottomOf="@+id/ivFlagFrance" />
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:padding="4dp"
+                            android:shadowColor="@color/black"
+                            android:shadowDx="5"
+                            android:shadowRadius="5"
+                            android:text="English"
+                            android:textColor="@color/yellow"
+                            android:textSize="24sp"
+                            android:textStyle="bold|italic"
+                            app:layout_constraintEnd_toEndOf="@+id/ivFlagEngland"
+                            app:layout_constraintStart_toStartOf="@+id/ivFlagEngland"
+                            app:layout_constraintTop_toBottomOf="@+id/ivFlagEngland" />
 
-                <View
-                    android:id="@+id/view2"
-                    android:layout_width="120dp"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/white"
-                    app:layout_constraintEnd_toEndOf="@+id/ivFlagFrance"
-                    app:layout_constraintStart_toStartOf="@+id/ivFlagFrance"
-                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="120dp"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@color/white"
+                            app:layout_constraintEnd_toEndOf="@+id/ivFlagEngland"
+                            app:layout_constraintStart_toStartOf="@+id/ivFlagEngland"
+                            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-                <ImageView
-                    android:id="@+id/ivFlagSpain"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="24dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view2"
-                    app:srcCompat="@drawable/flagspain" />
+                        <ImageView
+                            android:id="@+id/ivFlagFrance"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="24dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view"
+                            app:srcCompat="@drawable/flagfrance" />
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:padding="4dp"
-                    android:shadowColor="@color/black"
-                    android:shadowDx="5"
-                    android:shadowRadius="5"
-                    android:text="Spanish"
-                    android:textColor="@color/yellow"
-                    android:textSize="24sp"
-                    android:textStyle="bold|italic"
-                    app:layout_constraintEnd_toEndOf="@+id/ivFlagSpain"
-                    app:layout_constraintStart_toStartOf="@+id/ivFlagSpain"
-                    app:layout_constraintTop_toBottomOf="@+id/ivFlagSpain" />
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:padding="4dp"
+                            android:shadowColor="@color/black"
+                            android:shadowDx="5"
+                            android:shadowRadius="5"
+                            android:text="French"
+                            android:textColor="@color/yellow"
+                            android:textSize="24sp"
+                            android:textStyle="bold|italic"
+                            app:layout_constraintEnd_toEndOf="@+id/ivFlagFrance"
+                            app:layout_constraintStart_toStartOf="@+id/ivFlagFrance"
+                            app:layout_constraintTop_toBottomOf="@+id/ivFlagFrance" />
 
-                <View
-                    android:id="@+id/view3"
-                    android:layout_width="120dp"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/white"
-                    app:layout_constraintEnd_toEndOf="@+id/ivFlagSpain"
-                    app:layout_constraintStart_toStartOf="@+id/ivFlagSpain"
-                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                        <View
+                            android:id="@+id/view2"
+                            android:layout_width="120dp"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@color/white"
+                            app:layout_constraintEnd_toEndOf="@+id/ivFlagFrance"
+                            app:layout_constraintStart_toStartOf="@+id/ivFlagFrance"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-                <ImageView
-                    android:id="@+id/ivFlagGermany"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="24dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view3"
-                    app:srcCompat="@drawable/flaggermany" />
+                        <ImageView
+                            android:id="@+id/ivFlagSpain"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="24dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view2"
+                            app:srcCompat="@drawable/flagspain" />
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:padding="4dp"
-                    android:shadowColor="@color/black"
-                    android:shadowDx="5"
-                    android:shadowRadius="5"
-                    android:text="German"
-                    android:textColor="@color/yellow"
-                    android:textSize="24sp"
-                    android:textStyle="bold|italic"
-                    app:layout_constraintEnd_toEndOf="@+id/ivFlagGermany"
-                    app:layout_constraintStart_toStartOf="@+id/ivFlagGermany"
-                    app:layout_constraintTop_toBottomOf="@+id/ivFlagGermany" />
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:padding="4dp"
+                            android:shadowColor="@color/black"
+                            android:shadowDx="5"
+                            android:shadowRadius="5"
+                            android:text="Spanish"
+                            android:textColor="@color/yellow"
+                            android:textSize="24sp"
+                            android:textStyle="bold|italic"
+                            app:layout_constraintEnd_toEndOf="@+id/ivFlagSpain"
+                            app:layout_constraintStart_toStartOf="@+id/ivFlagSpain"
+                            app:layout_constraintTop_toBottomOf="@+id/ivFlagSpain" />
 
-                <View
-                    android:id="@+id/view4"
-                    android:layout_width="120dp"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/white"
-                    app:layout_constraintEnd_toEndOf="@+id/ivFlagGermany"
-                    app:layout_constraintStart_toStartOf="@+id/ivFlagGermany"
-                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                        <View
+                            android:id="@+id/view3"
+                            android:layout_width="120dp"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@color/white"
+                            app:layout_constraintEnd_toEndOf="@+id/ivFlagSpain"
+                            app:layout_constraintStart_toStartOf="@+id/ivFlagSpain"
+                            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-                <ImageView
-                    android:id="@+id/ivFlagItaly"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="24dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view4"
-                    app:srcCompat="@drawable/flagitaly" />
+                        <ImageView
+                            android:id="@+id/ivFlagGermany"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="24dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view3"
+                            app:srcCompat="@drawable/flaggermany" />
 
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:padding="4dp"
-                    android:shadowColor="@color/black"
-                    android:shadowDx="5"
-                    android:shadowRadius="5"
-                    android:text="Italian"
-                    android:textColor="@color/yellow"
-                    android:textSize="24sp"
-                    android:textStyle="bold|italic"
-                    app:layout_constraintEnd_toEndOf="@+id/ivFlagItaly"
-                    app:layout_constraintStart_toStartOf="@+id/ivFlagItaly"
-                    app:layout_constraintTop_toBottomOf="@+id/ivFlagItaly" />
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:padding="4dp"
+                            android:shadowColor="@color/black"
+                            android:shadowDx="5"
+                            android:shadowRadius="5"
+                            android:text="German"
+                            android:textColor="@color/yellow"
+                            android:textSize="24sp"
+                            android:textStyle="bold|italic"
+                            app:layout_constraintEnd_toEndOf="@+id/ivFlagGermany"
+                            app:layout_constraintStart_toStartOf="@+id/ivFlagGermany"
+                            app:layout_constraintTop_toBottomOf="@+id/ivFlagGermany" />
 
-                <View
-                    android:id="@+id/view6"
-                    android:layout_width="120dp"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/white"
-                    app:layout_constraintEnd_toEndOf="@+id/ivFlagItaly"
-                    app:layout_constraintStart_toStartOf="@+id/ivFlagItaly"
-                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                        <View
+                            android:id="@+id/view4"
+                            android:layout_width="120dp"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@color/white"
+                            app:layout_constraintEnd_toEndOf="@+id/ivFlagGermany"
+                            app:layout_constraintStart_toStartOf="@+id/ivFlagGermany"
+                            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-                <TextView
-                    android:id="@+id/tvMainClose"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:padding="4dp"
-                    android:shadowColor="@color/black"
-                    android:shadowDx="5"
-                    android:shadowRadius="5"
-                    android:text="Close"
-                    android:textColor="@color/yellow"
-                    android:textSize="24sp"
-                    android:textStyle="bold|italic"
-                    app:layout_constraintEnd_toEndOf="@+id/view6"
-                    app:layout_constraintStart_toStartOf="@+id/view6"
-                    app:layout_constraintTop_toBottomOf="@+id/view6" />
+                        <ImageView
+                            android:id="@+id/ivFlagItaly"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="24dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view4"
+                            app:srcCompat="@drawable/flagitaly" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:padding="4dp"
+                            android:shadowColor="@color/black"
+                            android:shadowDx="5"
+                            android:shadowRadius="5"
+                            android:text="Italian"
+                            android:textColor="@color/yellow"
+                            android:textSize="24sp"
+                            android:textStyle="bold|italic"
+                            app:layout_constraintEnd_toEndOf="@+id/ivFlagItaly"
+                            app:layout_constraintStart_toStartOf="@+id/ivFlagItaly"
+                            app:layout_constraintTop_toBottomOf="@+id/ivFlagItaly" />
 
-    </LinearLayout>
+                        <View
+                            android:id="@+id/view6"
+                            android:layout_width="120dp"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@color/white"
+                            app:layout_constraintEnd_toEndOf="@+id/ivFlagItaly"
+                            app:layout_constraintStart_toStartOf="@+id/ivFlagItaly"
+                            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                        <ImageView
+                            android:id="@+id/ivChat"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="24dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view6"
+                            app:srcCompat="@drawable/ic_baseline_chat_24"
+                            app:tint="@color/yellow" />
+
+                        <View
+                            android:id="@+id/view15"
+                            android:layout_width="120dp"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@color/white"
+                            app:layout_constraintEnd_toEndOf="@+id/ivChat"
+                            app:layout_constraintStart_toStartOf="@+id/ivChat"
+                            app:layout_constraintTop_toBottomOf="@+id/ivChat"
+                            tools:ignore="DuplicateIds,MissingConstraints" />
+
+                        <TextView
+                            android:id="@+id/tvMainClose"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:padding="4dp"
+                            android:shadowColor="@color/black"
+                            android:shadowDx="5"
+                            android:shadowRadius="5"
+                            android:text="Close"
+                            android:textColor="@color/yellow"
+                            android:textSize="24sp"
+                            android:textStyle="bold|italic"
+                            app:layout_constraintEnd_toEndOf="@+id/view6"
+                            app:layout_constraintStart_toStartOf="@+id/view6"
+                            app:layout_constraintTop_toBottomOf="@+id/view15" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
 
     <ImageView
         android:id="@+id/ivMainEnglishMenu"
@@ -400,7 +445,7 @@
                         android:shadowDx="5"
                         android:shadowRadius="5"
                         android:text="Learn new words"
-                        android:textColor="@color/green"
+                        android:textColor="@color/translatecolor"
                         android:textSize="16sp"
                         android:textStyle="bold|italic"
                         app:layout_constraintEnd_toEndOf="@+id/ivLearnNewWordsEnglish"
@@ -446,7 +491,7 @@
                         android:shadowDx="5"
                         android:shadowRadius="5"
                         android:text="Learned words"
-                        android:textColor="@color/green"
+                        android:textColor="@color/translatecolor"
                         android:textSize="16sp"
                         android:textStyle="bold|italic"
                         app:layout_constraintEnd_toEndOf="@+id/ivLearnedWordsEnglish"
@@ -482,7 +527,7 @@
                         android:shadowDx="5"
                         android:shadowRadius="5"
                         android:text="Write words"
-                        android:textColor="@color/green"
+                        android:textColor="@color/translatecolor"
                         android:textSize="16sp"
                         android:textStyle="bold|italic"
                         app:layout_constraintEnd_toEndOf="@+id/ivWriteWordsEnglish"
@@ -518,7 +563,7 @@
                         android:shadowDx="5"
                         android:shadowRadius="5"
                         android:text="Translate words"
-                        android:textColor="@color/green"
+                        android:textColor="@color/translatecolor"
                         android:textSize="16sp"
                         android:textStyle="bold|italic"
                         app:layout_constraintEnd_toEndOf="@+id/ivTranslateWordsEnglish"
@@ -554,7 +599,7 @@
                         android:shadowDx="5"
                         android:shadowRadius="5"
                         android:text="Chat"
-                        android:textColor="@color/green"
+                        android:textColor="@color/translatecolor"
                         android:textSize="16sp"
                         android:textStyle="bold|italic"
                         app:layout_constraintEnd_toEndOf="@+id/ivChatEnglish"
@@ -590,7 +635,7 @@
                         android:shadowDx="5"
                         android:shadowRadius="5"
                         android:text="Read news"
-                        android:textColor="@color/green"
+                        android:textColor="@color/translatecolor"
                         android:textSize="16sp"
                         android:textStyle="bold|italic"
                         app:layout_constraintEnd_toEndOf="@+id/ivReadNewsEnglish"
@@ -626,7 +671,7 @@
                         android:shadowDx="5"
                         android:shadowRadius="5"
                         android:text="New words"
-                        android:textColor="@color/green"
+                        android:textColor="@color/translatecolor"
                         android:textSize="16sp"
                         android:textStyle="bold|italic"
                         app:layout_constraintEnd_toEndOf="@+id/ivNewWordsEnglish"
@@ -662,7 +707,7 @@
                         android:shadowDx="5"
                         android:shadowRadius="5"
                         android:text="Frasals"
-                        android:textColor="@color/green"
+                        android:textColor="@color/translatecolor"
                         android:textSize="16sp"
                         android:textStyle="bold|italic"
                         app:layout_constraintEnd_toEndOf="@+id/ivFrasalsEnglish"

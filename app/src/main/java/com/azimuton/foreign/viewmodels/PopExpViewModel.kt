@@ -2,8 +2,8 @@ package com.azimuton.foreign.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.azimuton.domain.models.Word
-import com.azimuton.domain.usecase.WordInsertUseCase
+import com.azimuton.domain.models.english.Word
+import com.azimuton.domain.usecase.english.WordInsertUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

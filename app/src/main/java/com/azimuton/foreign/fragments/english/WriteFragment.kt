@@ -10,7 +10,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.azimuton.data.roomstorage.models.LearnedWordEntity
+import com.azimuton.data.roomstorage.models.english.LearnedWordEntity
 import com.azimuton.data.roomstorage.room.AppRoomDatabase
 import com.azimuton.foreign.databinding.FragmentWriteBinding
 import com.azimuton.foreign.viewmodels.WriteViewModel

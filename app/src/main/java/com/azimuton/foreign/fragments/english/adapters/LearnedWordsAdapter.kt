@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.azimuton.domain.models.LearnedWord
+import com.azimuton.domain.models.english.LearnedWord
 import com.azimuton.foreign.R
 import com.azimuton.foreign.fragments.english.LearnedFragment
 

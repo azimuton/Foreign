@@ -1,6 +1,6 @@
 package com.azimuton.data.roomstorage
 
-import com.azimuton.data.roomstorage.models.WordEntity
+import com.azimuton.data.roomstorage.models.english.WordEntity
 
 interface WordStorage {
 

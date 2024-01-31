@@ -7,13 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.azimuton.data.roomstorage.room.AppRoomDatabase
-import com.azimuton.domain.models.LearnedWord
-import com.azimuton.domain.usecase.LearnedWordGetAllUseCase
+import com.azimuton.domain.models.english.LearnedWord
+import com.azimuton.domain.usecase.english.LearnedWordGetAllUseCase
 import com.azimuton.foreign.fragments.english.adapters.LearnedWordsAdapter
 import com.azimuton.foreign.databinding.FragmentLearnedBinding
 import com.azimuton.foreign.viewmodels.LearnedViewModel

@@ -2,7 +2,6 @@ package com.azimuton.foreign.fragments.english
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,11 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -22,20 +17,18 @@ import androidx.core.view.isNotEmpty
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.azimuton.data.roomstorage.room.AppRoomDatabase
-import com.azimuton.domain.models.Word
-import com.azimuton.domain.usecase.WordCopyUseCase
-import com.azimuton.domain.usecase.WordDeleteAllUseCase
-import com.azimuton.domain.usecase.WordDeleteUseCase
-import com.azimuton.domain.usecase.WordGetAllUseCase
-import com.azimuton.domain.usecase.WordGetWordByIdUseCase
-import com.azimuton.domain.usecase.WordInsertUseCase
+import com.azimuton.domain.models.english.Word
+import com.azimuton.domain.usecase.english.WordCopyUseCase
+import com.azimuton.domain.usecase.english.WordDeleteAllUseCase
+import com.azimuton.domain.usecase.english.WordDeleteUseCase
+import com.azimuton.domain.usecase.english.WordGetAllUseCase
+import com.azimuton.domain.usecase.english.WordGetWordByIdUseCase
+import com.azimuton.domain.usecase.english.WordInsertUseCase
 import com.azimuton.foreign.viewmodels.LearnViewModel
-import com.azimuton.foreign.MainActivity
 import com.azimuton.foreign.R
 import com.azimuton.foreign.fragments.english.adapters.NewWordsAdapter
 import com.azimuton.foreign.databinding.FragmentLearnBinding
 import dagger.hilt.android.AndroidEntryPoint
-import org.jetbrains.annotations.NotNull
 import javax.inject.Inject
 
 @AndroidEntryPoint

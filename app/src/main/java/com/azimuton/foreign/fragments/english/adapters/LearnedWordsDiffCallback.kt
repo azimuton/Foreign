@@ -2,7 +2,7 @@ package com.azimuton.foreign.fragments.english.adapters
 
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.DiffUtil
-import com.azimuton.domain.models.LearnedWord
+import com.azimuton.domain.models.english.LearnedWord
 
 class LearnedWordsDiffCallback : DiffUtil.ItemCallback<LearnedWord>() {
     override fun areItemsTheSame(oldItem: LearnedWord, newItem: LearnedWord): Boolean {

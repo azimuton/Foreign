@@ -2,14 +2,12 @@ package com.azimuton.foreign.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.azimuton.domain.models.Word
-import com.azimuton.domain.usecase.WordCopyUseCase
-import com.azimuton.domain.usecase.WordDeleteUseCase
-import com.azimuton.domain.usecase.WordGetAllUseCase
-import com.azimuton.domain.usecase.WordInsertUseCase
+import com.azimuton.domain.models.english.Word
+import com.azimuton.domain.usecase.english.WordCopyUseCase
+import com.azimuton.domain.usecase.english.WordDeleteUseCase
+import com.azimuton.domain.usecase.english.WordGetAllUseCase
+import com.azimuton.domain.usecase.english.WordInsertUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

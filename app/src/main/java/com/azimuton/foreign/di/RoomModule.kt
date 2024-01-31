@@ -2,8 +2,10 @@ package com.azimuton.foreign.di
 
 import android.content.Context
 import com.azimuton.data.roomstorage.room.AppRoomDatabase
-import com.azimuton.data.roomstorage.room.dao.LearnedWordsDao
-import com.azimuton.data.roomstorage.room.dao.WordDao
+import com.azimuton.data.roomstorage.room.dao.english.LearnedWordsDao
+import com.azimuton.data.roomstorage.room.dao.english.WordDao
+import com.azimuton.data.roomstorage.room.dao.spain.LearnedSpainWordsDao
+import com.azimuton.data.roomstorage.room.dao.spain.SpainWordDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -31,7 +33,19 @@ class RoomModule {
 
     @Singleton
     @Provides
+    fun provideSpainWordDao(appRoomDatabase : AppRoomDatabase): SpainWordDao {
+        return appRoomDatabase.spainWordDao()
+    }
+
+    @Singleton
+    @Provides
     fun provideLearnedWordsDao(appRoomDatabase : AppRoomDatabase): LearnedWordsDao {
         return appRoomDatabase.learnedWordDao()
+    }
+
+    @Singleton
+    @Provides
+    fun provideLearnedSpainWordsDao(appRoomDatabase : AppRoomDatabase): LearnedSpainWordsDao {
+        return appRoomDatabase.learnedSpainWordDao()
     }
 }

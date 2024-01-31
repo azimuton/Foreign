@@ -8,11 +8,11 @@ import android.view.Window
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.azimuton.data.networkstorage.API
+import com.azimuton.data.networkstorage.apimodelsentity.english.API
 import com.azimuton.data.networkstorage.RetrofitClient
-import com.azimuton.domain.apimodels.News
-import com.azimuton.domain.apimodels.Result
-import com.azimuton.domain.usecase.GetNewsUseCase
+import com.azimuton.domain.apimodels.english.News
+import com.azimuton.domain.apimodels.english.Result
+import com.azimuton.domain.usecase.english.GetNewsUseCase
 import com.azimuton.foreign.R
 import com.azimuton.foreign.fragments.english.adapters.NewsAdapter
 import com.azimuton.foreign.databinding.FragmentNewsBinding

@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import android.view.Window
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.azimuton.data.roomstorage.models.english.LearnedWordEntity
@@ -49,10 +52,11 @@ class WriteFragment : Fragment() {
         }
         binding.tvWriteCheck.setOnClickListener {
             if(database.learnedWordDao().count() != 0){
-                val  w : Window? = activity?.window
-                w?.decorView?.setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
-                            or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
+//                val  w : Window? = activity?.window
+//                w?.decorView?.setSystemUiVisibility(
+//                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
+//                            or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
+                hideSystemUI()
                 if(binding.tvWriteWord.text != ""){
                     if(binding.etWriteWordForChecking.text.isNotEmpty()){
                         if(randomWord.learnedEnglishWord.equals(binding.etWriteWordForChecking.text.toString(), true) ){
@@ -94,8 +98,21 @@ class WriteFragment : Fragment() {
             }
 
         }
-        val  w : Window? = activity?.window
-        w?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
-                or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
+//        val  w : Window? = activity?.window
+//        w?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
+//                or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
+        hideSystemUI()
+    }
+    private fun hideSystemUI () {
+        val window : Window? = activity?.window
+        if (window != null) {
+            WindowCompat.setDecorFitsSystemWindows(window, false)
+        }
+        if (window != null) {
+            WindowInsetsControllerCompat (window, window.decorView).let { controller ->
+                controller.hide (WindowInsetsCompat.Type.systemBars ())
+                controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            }
+        }
     }
 }

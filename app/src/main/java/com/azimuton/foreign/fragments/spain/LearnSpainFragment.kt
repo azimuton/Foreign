@@ -111,8 +111,8 @@ class LearnSpainFragment : Fragment(), LearnSpainAdapter.ViewHolder.ItemCallback
                 val translateSpainWord: String = binding.etTranslateSpain.text.toString()
                 val wordSpain = WordSpain(spainWord = spainWord, translateSpainWord = translateSpainWord, id = 0)
                 Toast.makeText(requireActivity(), "Saved!", Toast.LENGTH_SHORT).show()
-                spainInsertInject.execute(wordSpain)
-                //viewModel.insert(wordSpain)
+                //spainInsertInject.execute(wordSpain)
+                viewModel.insert(wordSpain)
                 adapter.notifyDataSetChanged()
                 val ims = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 ims.hideSoftInputFromWindow(binding.etNewWordSpain.windowToken, 0)

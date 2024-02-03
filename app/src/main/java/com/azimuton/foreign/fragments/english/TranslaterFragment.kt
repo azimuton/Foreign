@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.azimuton.domain.models.english.Word
+import com.azimuton.foreign.Constants
 import com.azimuton.foreign.databinding.FragmentTranslaterBinding
 import com.azimuton.foreign.viewmodels.english.TranslaterViewModel
 import com.google.mlkit.nl.translate.TranslateLanguage
@@ -49,7 +50,7 @@ class TranslaterFragment : Fragment() {
         }
         binding.tvSaveTranslate.setOnClickListener {
             if (binding.etEnterWordForTranslate.text.isNotEmpty() && binding.tvTranslatjngWord.text.isNotEmpty()) {
-                if(binding.tvEnglish.text == ENG && binding.tvRussian.text == RUS){
+                if(binding.tvEnglish.text == Constants.ENG && binding.tvRussian.text == Constants.RUS){
                     val englishWord: String = binding.etEnterWordForTranslate.text.toString()
                     val translateWord: String = binding.tvTranslatjngWord.text.toString()
                     val word = Word(englishWord = englishWord, translateWord = translateWord)
@@ -78,7 +79,7 @@ class TranslaterFragment : Fragment() {
         binding.tvDoTranslate.setOnClickListener {
             if (binding.etEnterWordForTranslate.text.isNotEmpty()){
                 text = binding.etEnterWordForTranslate.text.toString()
-                if(binding.tvEnglish.text == ENG && binding.tvRussian.text == RUS){
+                if(binding.tvEnglish.text == Constants.ENG && binding.tvRussian.text == Constants.RUS){
                     prepareLangTransMode2()
                 }else{
                     prepareLangTransMode()
@@ -167,19 +168,15 @@ class TranslaterFragment : Fragment() {
     }
     private val firstButtonListener: View.OnClickListener = View.OnClickListener {
         // меняем обработчик нажатия кнопки на второй
-        binding.tvEnglish.text = RUS
-        binding.tvRussian.text = ENG
+        binding.tvEnglish.text = Constants.RUS
+        binding.tvRussian.text = Constants.ENG
         binding.ivChangeLanguages.setOnClickListener(secondButtonListener)
     }
     private val secondButtonListener: View.OnClickListener = View.OnClickListener {
         // возвращаем первый обработчик нажатия кнопки
-        binding.tvEnglish.text = ENG
-        binding.tvRussian.text = RUS
+        binding.tvEnglish.text = Constants.ENG
+        binding.tvRussian.text = Constants.RUS
         binding.ivChangeLanguages.setOnClickListener(firstButtonListener)
     }
 
-    companion object{
-        const val ENG = "English"
-        const val RUS = "Russian"
-    }
 }

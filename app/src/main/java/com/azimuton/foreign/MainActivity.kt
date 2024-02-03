@@ -23,6 +23,8 @@ import com.azimuton.foreign.fragments.english.TranslaterFragment
 import com.azimuton.foreign.fragments.english.WriteFragment
 import com.azimuton.foreign.fragments.spain.LearnSpainFragment
 import com.azimuton.foreign.fragments.spain.LearnedSpainFragment
+import com.azimuton.foreign.fragments.spain.TranslaterSpainFragment
+import com.azimuton.foreign.fragments.spain.WriteSpainFragment
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -43,7 +45,9 @@ class MainActivity : AppCompatActivity() {
     private var learnedcor : Job? = null
     private var learnedspaincor : Job? = null
     private var writecor : Job? = null
+    private var writespaincor : Job? = null
     private var translatecor : Job? = null
+    private var translatespaincor : Job? = null
     private var newscor : Job? = null
     private var newwordscor : Job? = null
     private var frasalscor : Job? = null
@@ -738,6 +742,7 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainspainmenu = false
+                learnspaincor?.cancel()
             }
         }
         binding.ivLearnedWordsSpanish.setOnClickListener {
@@ -756,6 +761,45 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainspainmenu = false
+                learnedspaincor?.cancel()
+            }
+        }
+        binding.ivWriteWordsSpanish.setOnClickListener {
+            writespaincor = coroutineScope.launch {
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, WriteSpainFragment())
+                    .commit()
+                val dpValue = 145
+                val pxValue = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP, dpValue.toFloat(), resources.displayMetrics
+                )
+                ObjectAnimator.ofFloat(binding.svSpanish, "translationX", pxValue).apply {
+                    duration = 1000
+                    start()
+                }
+                openmainspanishmenu = false
+                writespaincor?.cancel()
+            }
+        }
+        binding.ivTranslateWordsSpanish.setOnClickListener {
+            translatespaincor = coroutineScope.launch {
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, TranslaterSpainFragment())
+                    .commit()
+                val dpValue = 145
+                val pxValue = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP, dpValue.toFloat(), resources.displayMetrics
+                )
+                ObjectAnimator.ofFloat(binding.svSpanish, "translationX", pxValue).apply {
+                    duration = 1000
+                    start()
+                }
+                openmainenglishmenu = false
+                translatespaincor?.cancel()
             }
         }
     }

@@ -112,8 +112,8 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
                 val translateWord: String = binding.etTranslate.text.toString()
                 val word = Word(englishWord = englishWord, translateWord = translateWord, id = 0)
                 Toast.makeText(requireActivity(), "Saved!", Toast.LENGTH_SHORT).show()
-                insertInject.execute(word)
-                //viewModel.insert(word)
+                //insertInject.execute(word)
+                viewModel.insert(word)
                 adapter.notifyDataSetChanged()
                 val ims = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 ims.hideSoftInputFromWindow(binding.etNewWord.windowToken, 0)

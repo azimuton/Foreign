@@ -15,7 +15,7 @@ import com.azimuton.domain.models.english.LearnedWord
 import com.azimuton.domain.usecase.english.LearnedWordGetAllUseCase
 import com.azimuton.foreign.fragments.english.adapters.LearnedWordsAdapter
 import com.azimuton.foreign.databinding.FragmentLearnedBinding
-import com.azimuton.foreign.viewmodels.LearnedViewModel
+import com.azimuton.foreign.viewmodels.english.LearnedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -119,7 +119,7 @@ class LearnedFragment : Fragment(), LearnedWordsAdapter.ViewHolder.ItemCallback 
             binding.tvCheckingWord.text = resultRandom.learnedEnglishWord
             binding.tvCheckingTranslate.text = resultRandom.learnedTranslateWord
         } else{
-            Toast.makeText(requireActivity(), "Нет слов для отображения!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireActivity(), "No words!", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -129,7 +129,7 @@ class LearnedFragment : Fragment(), LearnedWordsAdapter.ViewHolder.ItemCallback 
             binding.tvCheckingWord.text = resultRandom.learnedTranslateWord
             binding.tvCheckingTranslate.text = resultRandom.learnedEnglishWord
         } else{
-            Toast.makeText(requireActivity(), "Нет слов для отображения!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireActivity(), "No words!", Toast.LENGTH_SHORT).show()
         }
     }
 }

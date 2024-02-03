@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     android:background="@drawable/circle_new">
 
+    <ImageView
+        android:id="@+id/ivBackFlagEng"
+        android:layout_width="390dp"
+        android:layout_height="340dp"
+        android:alpha="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flagengland" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvNewWords"
         android:layout_width="0dp"
@@ -15,9 +26,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tvTransfer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSaveNewWord"
-        tools:itemCount="5"
-        tools:listitem="@layout/item_new_words" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSaveNewWord" />
 
     <EditText
         android:id="@+id/etNewWord"

@@ -1,4 +1,4 @@
-package com.azimuton.foreign.viewmodels
+package com.azimuton.foreign.viewmodels.english
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,9 +10,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class FrasalVerbsTwoModel @Inject constructor(
+class NewWordsViewModel @Inject constructor(
     private var insertUseCase: WordInsertUseCase
-) : ViewModel(){
+) : ViewModel() {
     fun insert(word: Word){
         viewModelScope.launch(Dispatchers.IO){
             insertUseCase.execute(word)

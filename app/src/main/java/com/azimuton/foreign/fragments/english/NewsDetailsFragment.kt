@@ -11,7 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LifecycleOwner
 import com.azimuton.foreign.R
 import com.azimuton.foreign.databinding.FragmentNewsDetailsBinding
-import com.azimuton.foreign.viewmodels.NewsDataViewModel
+import com.azimuton.foreign.viewmodels.english.NewsDataViewModel
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 

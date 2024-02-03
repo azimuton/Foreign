@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     android:background="@drawable/circle_new">
 
+    <ImageView
+        android:id="@+id/ivBackFlagSpain"
+        android:layout_width="390dp"
+        android:layout_height="340dp"
+        android:alpha="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/flagspain" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvNewWordsSpain"
         android:layout_width="0dp"
@@ -136,10 +147,10 @@
         android:visibility="gone"
         app:cardCornerRadius="15dp"
         app:cardElevation="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/rvNewWords"
+        app:layout_constraintBottom_toBottomOf="@+id/rvNewWordsSpain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rvNewWords">
+        app:layout_constraintTop_toTopOf="@+id/rvNewWordsSpain">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

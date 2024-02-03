@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.azimuton.domain.models.english.Word
 import com.azimuton.foreign.databinding.FragmentPopularExpressionsTwoBinding
-import com.azimuton.foreign.viewmodels.PopExpTwoViewModel
+import com.azimuton.foreign.viewmodels.english.PopExpTwoViewModel
 
 class PopularExpressionsTwoFragment : Fragment() {
     private lateinit var binding: FragmentPopularExpressionsTwoBinding

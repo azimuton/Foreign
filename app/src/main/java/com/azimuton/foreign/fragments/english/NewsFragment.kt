@@ -16,7 +16,7 @@ import com.azimuton.domain.usecase.english.GetNewsUseCase
 import com.azimuton.foreign.R
 import com.azimuton.foreign.fragments.english.adapters.NewsAdapter
 import com.azimuton.foreign.databinding.FragmentNewsBinding
-import com.azimuton.foreign.viewmodels.NewsDataViewModel
+import com.azimuton.foreign.viewmodels.english.NewsDataViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

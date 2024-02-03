@@ -1,0 +1,10 @@
+package com.azimuton.domain.usecase.spain
+
+import com.azimuton.domain.models.spain.WordSpain
+import com.azimuton.domain.repository.roomrepository.spain.SpainWordRepository
+
+class SpainWordInsertUseCase( private val wordSpainRepository: SpainWordRepository) {
+    fun execute(wordSpain: WordSpain){
+        return wordSpainRepository.insertSpainWord(wordSpain)
+    }
+}

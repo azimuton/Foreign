@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.azimuton.domain.models.english.Word
 import com.azimuton.foreign.databinding.FragmentFrasalVerbsThreeBinding
-import com.azimuton.foreign.viewmodels.FrasalVerbsThreeModel
+import com.azimuton.foreign.viewmodels.english.FrasalVerbsThreeModel
 
 
 class FrasalVerbsThreeFragment : Fragment() {

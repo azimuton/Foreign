@@ -21,6 +21,8 @@ import com.azimuton.foreign.fragments.english.NewWordsFragment
 import com.azimuton.foreign.fragments.english.NewsFragment
 import com.azimuton.foreign.fragments.english.TranslaterFragment
 import com.azimuton.foreign.fragments.english.WriteFragment
+import com.azimuton.foreign.fragments.spain.LearnSpainFragment
+import com.azimuton.foreign.fragments.spain.LearnedSpainFragment
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -37,7 +39,9 @@ class MainActivity : AppCompatActivity() {
     private val coroutineScope = CoroutineScope(Dispatchers.Main + Job())
     private var coroutine : Job? = null
     private var learncor : Job? = null
+    private var learnspaincor : Job? = null
     private var learnedcor : Job? = null
+    private var learnedspaincor : Job? = null
     private var writecor : Job? = null
     private var translatecor : Job? = null
     private var newscor : Job? = null
@@ -47,6 +51,7 @@ class MainActivity : AppCompatActivity() {
     private var running = false
     private var openmainmenu = false
     private var openmainenglishmenu = false
+    private var openmainspainmenu = false
     private var openmainfrenchmenu = false
     private var openmainspanishmenu = false
     private var openmaingermanmenu = false
@@ -321,6 +326,11 @@ class MainActivity : AppCompatActivity() {
                 duration = 1000
                 start()
             }
+            supportFragmentManager
+                .beginTransaction()
+                .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                .replace(R.id.flMain, LearnFragment())
+                .commit()
             openmainmenu = false
 
             binding.svEnglish.visibility = View.VISIBLE
@@ -386,6 +396,11 @@ class MainActivity : AppCompatActivity() {
                 duration = 1000
                 start()
             }
+            supportFragmentManager
+                .beginTransaction()
+                .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                .replace(R.id.flMain, LearnSpainFragment())
+                .commit()
             openmainmenu = false
             binding.svEnglish.visibility = View.GONE
             binding.svFrench.visibility = View.GONE
@@ -704,6 +719,43 @@ class MainActivity : AppCompatActivity() {
                 sharedPrefs.edit().putBoolean("engNewWords", engNewWords).apply()
                 sharedPrefs.edit().putBoolean("engFrasals", engFrasals).apply()
                 frasalscor?.cancel()
+            }
+        }
+
+        binding.ivLearnNewWordsSpanish.setOnClickListener {
+            learnspaincor = coroutineScope.launch {
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, LearnSpainFragment())
+                    .commit()
+                val dpValue = 145
+                val pxValue = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP, dpValue.toFloat(), resources.displayMetrics
+                )
+                ObjectAnimator.ofFloat(binding.svSpanish, "translationX", pxValue).apply {
+                    duration = 1000
+                    start()
+                }
+                openmainspainmenu = false
+            }
+        }
+        binding.ivLearnedWordsSpanish.setOnClickListener {
+            learnedspaincor = coroutineScope.launch {
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, LearnedSpainFragment())
+                    .commit()
+                val dpValue = 145
+                val pxValue = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP, dpValue.toFloat(), resources.displayMetrics
+                )
+                ObjectAnimator.ofFloat(binding.svSpanish, "translationX", pxValue).apply {
+                    duration = 1000
+                    start()
+                }
+                openmainspainmenu = false
             }
         }
     }

@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.azimuton.domain.models.english.Word
 import com.azimuton.foreign.databinding.FragmentFrasalVerbsBinding
-import com.azimuton.foreign.viewmodels.FrasalsViewModel
+import com.azimuton.foreign.viewmodels.english.FrasalsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

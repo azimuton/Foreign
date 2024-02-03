@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.azimuton.domain.models.english.Word
 import com.azimuton.foreign.databinding.FragmentTranslaterBinding
-import com.azimuton.foreign.viewmodels.TranslaterViewModel
+import com.azimuton.foreign.viewmodels.english.TranslaterViewModel
 import com.google.mlkit.nl.translate.TranslateLanguage
 import com.google.mlkit.nl.translate.Translation
 import com.google.mlkit.nl.translate.TranslatorOptions

@@ -11,7 +11,7 @@ import com.azimuton.domain.models.english.Word
 import com.azimuton.foreign.fragments.english.NewWordsFragment
 import com.azimuton.foreign.R
 import com.azimuton.foreign.databinding.FragmentNatureBinding
-import com.azimuton.foreign.viewmodels.NewWordsViewModel
+import com.azimuton.foreign.viewmodels.english.NewWordsViewModel
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 

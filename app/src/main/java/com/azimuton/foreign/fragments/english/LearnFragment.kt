@@ -24,7 +24,7 @@ import com.azimuton.domain.usecase.english.WordDeleteUseCase
 import com.azimuton.domain.usecase.english.WordGetAllUseCase
 import com.azimuton.domain.usecase.english.WordGetWordByIdUseCase
 import com.azimuton.domain.usecase.english.WordInsertUseCase
-import com.azimuton.foreign.viewmodels.LearnViewModel
+import com.azimuton.foreign.viewmodels.english.LearnViewModel
 import com.azimuton.foreign.R
 import com.azimuton.foreign.fragments.english.adapters.NewWordsAdapter
 import com.azimuton.foreign.databinding.FragmentLearnBinding
@@ -61,6 +61,7 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         wordList = ArrayList<Word>()
         wordDatabase = AppRoomDatabase.getDatabase(requireActivity())
         getData()

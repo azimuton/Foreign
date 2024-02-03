@@ -1,4 +1,4 @@
-package com.azimuton.foreign.viewmodels
+package com.azimuton.foreign.viewmodels.english
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class LearnedViewModel@Inject constructor(
+class LearnedViewModel @Inject constructor(
     private var learnedWordGetAllUseCase: LearnedWordGetAllUseCase,
     private var learnedWordDeleteUseCase: LearnedWordDeleteUseCase,
     private val learnedWordRandomUseCase: LearnedWordRandomUseCase

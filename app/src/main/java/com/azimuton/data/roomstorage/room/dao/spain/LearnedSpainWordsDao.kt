@@ -1,11 +1,13 @@
 package com.azimuton.data.roomstorage.room.dao.spain
 
+import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.azimuton.data.roomstorage.models.english.LearnedWordEntity
 import com.azimuton.data.roomstorage.models.spain.LearnedSpainWordEntity
 
+@Dao
 interface LearnedSpainWordsDao {
 
     @Query("SELECT * FROM learnedspainwords")

@@ -7,7 +7,7 @@
     android:background="@drawable/circle_new">
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imageView77"
         android:layout_width="390dp"
         android:layout_height="340dp"
         android:alpha="0.5"
@@ -17,10 +17,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.227"
-        app:srcCompat="@drawable/flagengland" />
+        app:srcCompat="@drawable/flagspain" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvDialog"
+        android:id="@+id/cvDialogSpain"
         android:layout_width="0dp"
         android:layout_height="140dp"
         android:layout_marginStart="16dp"
@@ -31,7 +31,7 @@
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rvLearnedWords">
+        app:layout_constraintTop_toTopOf="@+id/rvLearnedWordsSpain">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -39,7 +39,7 @@
             android:background="@color/broun">
 
             <TextView
-                android:id="@+id/tvTitleDialog"
+                android:id="@+id/tvTitleDialogSpain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -52,7 +52,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/btDialogOk"
+                android:id="@+id/btDialogOkSpain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -66,7 +66,7 @@
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <Button
-                android:id="@+id/btDialogCancel"
+                android:id="@+id/btDialogCancelSpain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -75,24 +75,24 @@
                 android:textColor="@color/broun"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/btDialogOk"
-                app:layout_constraintEnd_toStartOf="@+id/btDialogOk"
-                app:layout_constraintTop_toTopOf="@+id/btDialogOk" />
+                app:layout_constraintBottom_toBottomOf="@+id/btDialogOkSpain"
+                app:layout_constraintEnd_toStartOf="@+id/btDialogOkSpain"
+                app:layout_constraintTop_toTopOf="@+id/btDialogOkSpain" />
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/imageView66"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitleDialog"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleDialogSpain"
                 app:srcCompat="@drawable/baseline_delete_forever_24" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/tvQuantityOfLearnedWords"
+        android:id="@+id/tvQuantityOfLearnedWordsSpain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -104,7 +104,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -116,16 +116,16 @@
         android:textColor="@color/translatecolor"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/tvQuantityOfLearnedWords"
+        app:layout_constraintEnd_toStartOf="@+id/tvQuantityOfLearnedWordsSpain"
         app:layout_constraintTop_toTopOf="parent" />
 
     <SearchView
-        android:id="@+id/searchView"
+        android:id="@+id/searchViewSpain"
         android:layout_width="0dp"
         android:layout_height="38dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/textView22"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -143,7 +143,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvLearnedWords"
+        android:id="@+id/rvLearnedWordsSpain"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="4dp"
@@ -152,13 +152,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        app:layout_constraintTop_toBottomOf="@+id/searchViewSpain"
         app:layout_constraintVertical_bias="0.0"
         tools:itemCount="5"
         tools:listitem="@layout/item_learned_words" />
 
     <TextView
-        android:id="@+id/tvChooseWord"
+        android:id="@+id/tvChooseWordSpain"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -183,10 +183,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvChooseWord">
+        app:layout_constraintTop_toBottomOf="@+id/tvChooseWordSpain">
 
         <ImageView
-            android:id="@+id/ivCloseCheckingWord"
+            android:id="@+id/ivCloseCheckingWordSpain"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginTop="8dp"
@@ -196,28 +196,28 @@
             app:srcCompat="@drawable/ic_baseline_close_24" />
 
         <ImageView
-            android:id="@+id/ivEyeOpen"
+            android:id="@+id/ivEyeOpenSpain"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:src="@drawable/eyeopen"
-            app:layout_constraintEnd_toStartOf="@+id/ivCloseCheckingWord"
+            app:layout_constraintEnd_toStartOf="@+id/ivCloseCheckingWordSpain"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/translatecolor" />
 
         <ImageView
-            android:id="@+id/ivChangeWords"
+            android:id="@+id/ivChangeWordsSpain"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="51dp"
             android:src="@drawable/ic_baseline_cached_24"
-            app:layout_constraintEnd_toStartOf="@+id/ivCloseCheckingWord"
+            app:layout_constraintEnd_toStartOf="@+id/ivCloseCheckingWordSpain"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvCheckingWord"
+            android:id="@+id/tvCheckingWordSpain"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -226,12 +226,12 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/ivChangeWords"
+            app:layout_constraintEnd_toStartOf="@+id/ivChangeWordsSpain"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvCheckingTranslate"
+            android:id="@+id/tvCheckingTranslateSpain"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -248,17 +248,17 @@
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvCheckingWord" />
+            app:layout_constraintTop_toBottomOf="@+id/tvCheckingWordSpain" />
 
         <ImageView
-            android:id="@+id/ivEyeClosed"
+            android:id="@+id/ivEyeClosedSpain"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:src="@drawable/eyeclose"
             android:visibility="gone"
-            app:layout_constraintEnd_toStartOf="@+id/ivCloseCheckingWord"
+            app:layout_constraintEnd_toStartOf="@+id/ivCloseCheckingWordSpain"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/translatecolor" />
 

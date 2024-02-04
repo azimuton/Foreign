@@ -7,6 +7,6 @@ import com.azimuton.domain.repository.networkrepository.spain.SpainNetworkReposi
 class SpainNetworkRepositoryImpl( private val spainNewsDataSource : SpainNewsDataSource) :
     SpainNetworkRepository {
     override  fun getNews() {
-        spainNewsDataSource.getNews()
+        spainNewsDataSource.getSpainNews()
     }
 }

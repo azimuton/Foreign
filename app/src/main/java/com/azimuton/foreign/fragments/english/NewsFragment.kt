@@ -5,6 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -83,9 +86,10 @@ class NewsFragment : Fragment() {
                 })
             }
         }
-        val  w : Window? = activity?.window
-        w?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
-                or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
+//        val  w : Window? = activity?.window
+//        w?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
+//                or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
+            hideSystemUI()
     }
 //    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 //        val isLoaded = true
@@ -118,6 +122,18 @@ class NewsFragment : Fragment() {
 //        dataModel.vmImage.value = listNews[position].image_url
 //    }
 
+    private fun hideSystemUI () {
+        val window : Window? = activity?.window
+        if (window != null) {
+            WindowCompat.setDecorFitsSystemWindows(window, false)
+        }
+        if (window != null) {
+            WindowInsetsControllerCompat (window, window.decorView).let { controller ->
+                controller.hide (WindowInsetsCompat.Type.systemBars ())
+                controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            }
+        }
+    }
 }
 
 

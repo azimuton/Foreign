@@ -7,19 +7,25 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class GetSpainNewsDataSource: SpainNewsDataSource {
-    override  fun getNews() {
+    override  fun getSpainNews() {
         val retrofit = RetrofitClient()
             .getClient("https://newsdata.io/api/1/")
             .create(APISpain::class.java)
-        retrofit.getNews().enqueue(object : Callback<News> {
-            override fun onResponse(call: Call<News>, response: Response<News>) {
+        retrofit.getSpainNews().enqueue(object : Callback<com.azimuton.domain.apimodels.spain.News> {
+            override fun onResponse(
+                call: Call<com.azimuton.domain.apimodels.spain.News>,
+                response: Response<com.azimuton.domain.apimodels.spain.News>
+            ) {
                 response.body().let {
                     it?.let { }
                 }
             }
-            override fun onFailure(call: Call<News>, t: Throwable) {
+
+            override fun onFailure(
+                call: Call<com.azimuton.domain.apimodels.spain.News>,
+                t: Throwable) {
 
             }
         })
     }
-}
+    }

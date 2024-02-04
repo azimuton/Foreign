@@ -21,6 +21,7 @@ import com.azimuton.foreign.fragments.english.NewWordsFragment
 import com.azimuton.foreign.fragments.english.NewsFragment
 import com.azimuton.foreign.fragments.english.TranslaterFragment
 import com.azimuton.foreign.fragments.english.WriteFragment
+import com.azimuton.foreign.fragments.spain.FrasalsSpainFragment
 import com.azimuton.foreign.fragments.spain.LearnSpainFragment
 import com.azimuton.foreign.fragments.spain.LearnedSpainFragment
 import com.azimuton.foreign.fragments.spain.NewsSpainFragment
@@ -53,6 +54,7 @@ class MainActivity : AppCompatActivity() {
     private var newsspaincor : Job? = null
     private var newwordscor : Job? = null
     private var frasalscor : Job? = null
+    private var frasalsspaincor : Job? = null
     private var seconds = 0
     private var running = false
     private var openmainmenu = false
@@ -821,6 +823,25 @@ class MainActivity : AppCompatActivity() {
                 }
                 openmainspanishmenu = false
                 newsspaincor?.cancel()
+            }
+        }
+        binding.ivFrasalsSpanish.setOnClickListener {
+            frasalsspaincor = coroutineScope.launch {
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, FrasalsSpainFragment())
+                    .commit()
+                val dpValue = 145
+                val pxValue = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP, dpValue.toFloat(), resources.displayMetrics
+                )
+                ObjectAnimator.ofFloat(binding.svSpanish, "translationX", pxValue).apply {
+                    duration = 1000
+                    start()
+                }
+                openmainenglishmenu = false
+                frasalsspaincor?.cancel()
             }
         }
     }

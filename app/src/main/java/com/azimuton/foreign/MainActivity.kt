@@ -24,6 +24,7 @@ import com.azimuton.foreign.fragments.english.WriteFragment
 import com.azimuton.foreign.fragments.spain.FrasalsSpainFragment
 import com.azimuton.foreign.fragments.spain.LearnSpainFragment
 import com.azimuton.foreign.fragments.spain.LearnedSpainFragment
+import com.azimuton.foreign.fragments.spain.NewWordsSpainFragment
 import com.azimuton.foreign.fragments.spain.NewsSpainFragment
 import com.azimuton.foreign.fragments.spain.TranslaterSpainFragment
 import com.azimuton.foreign.fragments.spain.WriteSpainFragment
@@ -53,6 +54,7 @@ class MainActivity : AppCompatActivity() {
     private var newscor : Job? = null
     private var newsspaincor : Job? = null
     private var newwordscor : Job? = null
+    private var newwordsspaincor : Job? = null
     private var frasalscor : Job? = null
     private var frasalsspaincor : Job? = null
     private var seconds = 0
@@ -100,6 +102,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         running = true
         runTimer()
+        //Glide.with(this).asGif().load(R.drawable.earth).into(binding.ivBaseMain)
 
         sharedPrefs = getSharedPreferences("OpenLanguage", MODE_PRIVATE)
         pressEngl = sharedPrefs.getBoolean("pressEnglish", false)
@@ -184,6 +187,7 @@ class MainActivity : AppCompatActivity() {
             binding.ivMainItalianMenu.visibility = View.VISIBLE
             binding.svItalian.visibility = View.VISIBLE
         }
+
 
 
         Glide.with(this).asGif().load(R.drawable.stopwatchs).into(binding.ivTimer)
@@ -783,7 +787,7 @@ class MainActivity : AppCompatActivity() {
                     duration = 1000
                     start()
                 }
-                openmainspanishmenu = false
+                openmainspainmenu = false
                 writespaincor?.cancel()
             }
         }
@@ -802,7 +806,7 @@ class MainActivity : AppCompatActivity() {
                     duration = 1000
                     start()
                 }
-                openmainenglishmenu = false
+                openmainspainmenu = false
                 translatespaincor?.cancel()
             }
         }
@@ -821,7 +825,7 @@ class MainActivity : AppCompatActivity() {
                     duration = 1000
                     start()
                 }
-                openmainspanishmenu = false
+                openmainspainmenu = false
                 newsspaincor?.cancel()
             }
         }
@@ -840,8 +844,27 @@ class MainActivity : AppCompatActivity() {
                     duration = 1000
                     start()
                 }
-                openmainenglishmenu = false
+                openmainspainmenu = false
                 frasalsspaincor?.cancel()
+            }
+        }
+        binding.ivNewWordsSpanish.setOnClickListener {
+            newwordsspaincor = coroutineScope.launch {
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, NewWordsSpainFragment())
+                    .commit()
+                val dpValue = 145
+                val pxValue = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP, dpValue.toFloat(), resources.displayMetrics
+                )
+                ObjectAnimator.ofFloat(binding.svSpanish, "translationX", pxValue).apply {
+                    duration = 1000
+                    start()
+                }
+                openmainspainmenu = false
+                newwordsspaincor?.cancel()
             }
         }
     }

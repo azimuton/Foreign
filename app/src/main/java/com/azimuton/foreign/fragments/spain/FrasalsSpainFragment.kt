@@ -61,26 +61,26 @@ class FrasalsSpainFragment : Fragment() {
                     tab.icon?.setTint(ContextCompat.getColor(requireActivity(), R.color.two))
                     binding.vpPager2Spain.setPageTransformer(DepthPageTransformer())
                 }
-                4 -> {
-                    tab.text = "popular expressions"
-                    tab.icon?.setTint(ContextCompat.getColor(requireActivity(), R.color.two))
-                    binding.vpPager2Spain.setPageTransformer(DepthPageTransformer())
-                }
-                5 -> {
-                    tab.text = "popular expressions"
-                    tab.icon?.setTint(ContextCompat.getColor(requireActivity(), R.color.two))
-                    binding.vpPager2Spain.setPageTransformer(DepthPageTransformer())
-                }
-                6 -> {
-                    tab.text = "popular expressions"
-                    tab.icon?.setTint(ContextCompat.getColor(requireActivity(), R.color.two))
-                    binding.vpPager2Spain.setPageTransformer(DepthPageTransformer())
-                }
-                7 -> {
-                    tab.text = "popular expressions"
-                    tab.icon?.setTint(ContextCompat.getColor(requireActivity(), R.color.two))
-                    binding.vpPager2Spain.setPageTransformer(DepthPageTransformer())
-                }
+//                4 -> {
+//                    tab.text = "popular expressions"
+//                    tab.icon?.setTint(ContextCompat.getColor(requireActivity(), R.color.two))
+//                    binding.vpPager2Spain.setPageTransformer(DepthPageTransformer())
+//                }
+//                5 -> {
+//                    tab.text = "popular expressions"
+//                    tab.icon?.setTint(ContextCompat.getColor(requireActivity(), R.color.two))
+//                    binding.vpPager2Spain.setPageTransformer(DepthPageTransformer())
+//                }
+//                6 -> {
+//                    tab.text = "popular expressions"
+//                    tab.icon?.setTint(ContextCompat.getColor(requireActivity(), R.color.two))
+//                    binding.vpPager2Spain.setPageTransformer(DepthPageTransformer())
+//                }
+//                7 -> {
+//                    tab.text = "popular expressions"
+//                    tab.icon?.setTint(ContextCompat.getColor(requireActivity(), R.color.two))
+//                    binding.vpPager2Spain.setPageTransformer(DepthPageTransformer())
+//                }
             }
 
         }.attach()

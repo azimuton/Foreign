@@ -3,13 +3,14 @@ package com.azimuton.foreign.fragments.spain.adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.azimuton.foreign.fragments.spain.popularspainexpressions.PopularExpSpainFourFragment
 import com.azimuton.foreign.fragments.spain.popularspainexpressions.PopularExpSpainFragment
 import com.azimuton.foreign.fragments.spain.popularspainexpressions.PopularExpSpainThreeFragment
 import com.azimuton.foreign.fragments.spain.popularspainexpressions.PopularExpSpainTwoFragment
 
 class FrasalsSpainAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapter(fragmentActivity) {
     override fun getItemCount(): Int {
-        return 8
+        return 4
     }
 
     override fun createFragment(position: Int): Fragment {
@@ -21,7 +22,8 @@ class FrasalsSpainAdapter(fragmentActivity: FragmentActivity): FragmentStateAdap
 //            4 -> PopularExpressionsFragment()
 //            5 -> PopularExpressionsTwoFragment()
 //            6 -> PopularExpressionsThreeFragment()
-            else -> PopularExpSpainThreeFragment()
+            2 -> PopularExpSpainThreeFragment()
+            else -> PopularExpSpainFourFragment()
         }
     }
 }

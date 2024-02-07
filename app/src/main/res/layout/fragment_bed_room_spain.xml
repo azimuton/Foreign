@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/circle_new">
+
+    <ImageView
+        android:id="@+id/ivBackToNewWordsListSpain"
+        android:layout_width="78dp"
+        android:layout_height="42dp"
+        android:src="@drawable/backnote"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBackToNewWordsListSpain"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/bedroomSpain"
+                    style="@style/english"
+                    android:text="Dormitorio" />
+
+                <TextView
+                    android:id="@+id/tvBedroomSpain"
+                    style="@style/translate"
+                    android:text="Спальня" />
+
+                <ImageView
+                    android:id="@+id/ivBedroomSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/bedSpain"
+                    style="@style/english"
+                    android:text="Саma" />
+
+                <TextView
+                    android:id="@+id/tvBedSpain"
+                    style="@style/translate"
+                    android:text="Кровать" />
+
+                <ImageView
+                    android:id="@+id/ivBedSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/nightstandSpain"
+                    style="@style/english"
+                    android:text="Mesita de noche" />
+
+                <TextView
+                    android:id="@+id/tvNightstandSpain"
+                    style="@style/translate"
+                    android:text="Прикроватная тумба" />
+
+                <ImageView
+                    android:id="@+id/ivNightstandSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/closetSpain"
+                    style="@style/english"
+                    android:text="Armario" />
+
+                <TextView
+                    android:id="@+id/tvClosetSpain"
+                    style="@style/translate"
+                    android:text="Шкаф" />
+
+                <ImageView
+                    android:id="@+id/ivClosetSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sconceSpain"
+                    style="@style/english"
+                    android:text="Apliques" />
+
+                <TextView
+                    android:id="@+id/tvSconceSpain"
+                    style="@style/translate"
+                    android:text="Бра" />
+
+                <ImageView
+                    android:id="@+id/ivSconceSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/coverSpain"
+                    style="@style/english"
+                    android:text="Manta" />
+
+                <TextView
+                    android:id="@+id/tvCoverSpain"
+                    style="@style/translate"
+                    android:text="Покрывало" />
+
+                <ImageView
+                    android:id="@+id/ivCoverSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pillowSpain"
+                    style="@style/english"
+                    android:text="Almohada" />
+
+                <TextView
+                    android:id="@+id/tvPillowSpain"
+                    style="@style/translate"
+                    android:text="Подушка" />
+
+                <ImageView
+                    android:id="@+id/ivPillowSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/blanketSpain"
+                    style="@style/english"
+                    android:text="Manta" />
+
+                <TextView
+                    android:id="@+id/tvBlanketSpain"
+                    style="@style/translate"
+                    android:text="Одеяло" />
+
+                <ImageView
+                    android:id="@+id/ivBlanketSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sheetSpain"
+                    style="@style/english"
+                    android:text="Sábana" />
+
+                <TextView
+                    android:id="@+id/tvSheetSpain"
+                    style="@style/translate"
+                    android:text="Простынь" />
+
+                <ImageView
+                    android:id="@+id/ivSheetSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/duvetcoverSpain"
+                    style="@style/english"
+                    android:text="Edredón" />
+
+                <TextView
+                    android:id="@+id/tvDuvetcoverSpain"
+                    style="@style/translate"
+                    android:text="Пододеяльник" />
+
+                <ImageView
+                    android:id="@+id/ivDuvetcoverSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pillowcaseSpain"
+                    style="@style/english"
+                    android:text="Funda de almohada" />
+
+                <TextView
+                    android:id="@+id/tvPillowcaseSpain"
+                    style="@style/translate"
+                    android:text="Наволочка" />
+
+                <ImageView
+                    android:id="@+id/ivPillowcaseSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/curtainsSpain"
+                    style="@style/english"
+                    android:text="Cortinas" />
+
+                <TextView
+                    android:id="@+id/tvCurtainsSpain"
+                    style="@style/translate"
+                    android:text="Шторы" />
+
+                <ImageView
+                    android:id="@+id/ivCurtainsSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tulleSpain"
+                    style="@style/english"
+                    android:text="Tul" />
+
+                <TextView
+                    android:id="@+id/tvTulleSpain"
+                    style="@style/translate"
+                    android:text="Тюль" />
+
+                <ImageView
+                    android:id="@+id/ivTulleSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/carpetSpain"
+                    style="@style/english"
+                    android:text="Alfombra" />
+
+                <TextView
+                    android:id="@+id/tvCarpetSpain"
+                    style="@style/translate"
+                    android:text="Ковер" />
+
+                <ImageView
+                    android:id="@+id/ivCarpetSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sofaSpain"
+                    style="@style/english"
+                    android:text="Sofá" />
+
+                <TextView
+                    android:id="@+id/tvSofaSpain"
+                    style="@style/translate"
+                    android:text="Диван" />
+
+                <ImageView
+                    android:id="@+id/ivSofaSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lampSpain"
+                    style="@style/english"
+                    android:text="Lámpara de pie" />
+
+                <TextView
+                    android:id="@+id/tvLampSpain"
+                    style="@style/translate"
+                    android:text="Торшер" />
+
+                <ImageView
+                    android:id="@+id/ivLampSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mirrorSpain"
+                    style="@style/english"
+                    android:text="Espejo" />
+
+                <TextView
+                    android:id="@+id/tvMirrorSpain"
+                    style="@style/translate"
+                    android:text="Зеркало" />
+
+                <ImageView
+                    android:id="@+id/ivMirrorSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/wardrobeSpain"
+                    style="@style/english"
+                    android:text="Vestidor" />
+
+                <TextView
+                    android:id="@+id/tvWardrobeSpain"
+                    style="@style/translate"
+                    android:text="Гардеробная" />
+
+                <ImageView
+                    android:id="@+id/ivWardrobeSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

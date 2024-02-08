@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/circle_new">
+
+    <ImageView
+        android:id="@+id/ivBackToNewWordsListSpain"
+        android:layout_width="78dp"
+        android:layout_height="42dp"
+        android:src="@drawable/backnote"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBackToNewWordsListSpain"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/motherSpain"
+                    style="@style/english"
+                    android:text="Mamá" />
+
+                <TextView
+                    android:id="@+id/tvMotherSpain"
+                    style="@style/translate"
+                    android:text="Мама" />
+
+                <ImageView
+                    android:id="@+id/ivMotherSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fatherSpain"
+                    style="@style/english"
+                    android:text="Рapá" />
+
+                <TextView
+                    android:id="@+id/tvFatherSpain"
+                    style="@style/translate"
+                    android:text="Папа" />
+
+                <ImageView
+                    android:id="@+id/ivFatherSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sisterSpain"
+                    style="@style/english"
+                    android:text="Hermana" />
+
+                <TextView
+                    android:id="@+id/tvSisterSpain"
+                    style="@style/translate"
+                    android:text="Сестра" />
+
+                <ImageView
+                    android:id="@+id/ivSisterSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/brotherSpain"
+                    style="@style/english"
+                    android:text="Hermano" />
+
+                <TextView
+                    android:id="@+id/tvBrotherSpain"
+                    style="@style/translate"
+                    android:text="Брат" />
+
+                <ImageView
+                    android:id="@+id/ivBrotherSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/wifeSpain"
+                    style="@style/english"
+                    android:text="Еsposa" />
+
+                <TextView
+                    android:id="@+id/tvWifeSpain"
+                    style="@style/translate"
+                    android:text="Жена" />
+
+                <ImageView
+                    android:id="@+id/ivWifeSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/husbandSpain"
+                    style="@style/english"
+                    android:text="Мarido" />
+
+                <TextView
+                    android:id="@+id/tvHusbandSpain"
+                    style="@style/translate"
+                    android:text="Муж" />
+
+                <ImageView
+                    android:id="@+id/ivHusbandSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sonSpain"
+                    style="@style/english"
+                    android:text="Hijo" />
+
+                <TextView
+                    android:id="@+id/tvSonSpain"
+                    style="@style/translate"
+                    android:text="Сын" />
+
+                <ImageView
+                    android:id="@+id/ivSonSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/daughterSpain"
+                    style="@style/english"
+                    android:text="Hija" />
+
+                <TextView
+                    android:id="@+id/tvDaughterSpain"
+                    style="@style/translate"
+                    android:text="Дочь" />
+
+                <ImageView
+                    android:id="@+id/ivDaughterSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/grandmotherSpain"
+                    style="@style/english"
+                    android:text="Аbuela" />
+
+                <TextView
+                    android:id="@+id/tvGrandmotherSpain"
+                    style="@style/translate"
+                    android:text="Бабушка" />
+
+                <ImageView
+                    android:id="@+id/ivGrandmotherSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/grandfatherSpain"
+                    style="@style/english"
+                    android:text="Аbuelo" />
+
+                <TextView
+                    android:id="@+id/tvGrandfatherSpain"
+                    style="@style/translate"
+                    android:text="Дедушка" />
+
+                <ImageView
+                    android:id="@+id/ivGrandfatherSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fatherinlawSpain"
+                    style="@style/english"
+                    android:text="Suegro" />
+
+                <TextView
+                    android:id="@+id/tvFatherInLawSpain"
+                    style="@style/translate"
+                    android:text="Тесть" />
+
+                <ImageView
+                    android:id="@+id/ivFatherInLawSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/motherinlawSpain"
+                    style="@style/english"
+                    android:text="Suegra" />
+
+                <TextView
+                    android:id="@+id/tvMotherInLawSpain"
+                    style="@style/translate"
+                    android:text="Теща" />
+
+                <ImageView
+                    android:id="@+id/ivMotherInLawSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/brotherinlawSpain"
+                    style="@style/english"
+                    android:text="Уerno" />
+
+                <TextView
+                    android:id="@+id/tvBrotherInLawSpain"
+                    style="@style/translate"
+                    android:text="Зять" />
+
+                <ImageView
+                    android:id="@+id/ivBrotherInLawSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sisterinlawSpain"
+                    style="@style/english"
+                    android:text="Nuera" />
+
+                <TextView
+                    android:id="@+id/tvSisterInLawSpain"
+                    style="@style/translate"
+                    android:text="Невестка" />
+
+                <ImageView
+                    android:id="@+id/ivSisterInLawSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/nieceSpain"
+                    style="@style/english"
+                    android:text="Sobrina" />
+
+                <TextView
+                    android:id="@+id/tvNieceSpain"
+                    style="@style/translate"
+                    android:text="Племянница" />
+
+                <ImageView
+                    android:id="@+id/ivNieceSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/nephewSpain"
+                    style="@style/english"
+                    android:text="Sobrinо" />
+
+                <TextView
+                    android:id="@+id/tvNephewSpain"
+                    style="@style/translate"
+                    android:text="Племянник" />
+
+                <ImageView
+                    android:id="@+id/ivNephewSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/uncleSpain"
+                    style="@style/english"
+                    android:text="Тío" />
+
+                <TextView
+                    android:id="@+id/tvUncleSpain"
+                    style="@style/translate"
+                    android:text="Дядя" />
+
+                <ImageView
+                    android:id="@+id/ivUncleSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/auntSpain"
+                    style="@style/english"
+                    android:text="Тíа" />
+
+                <TextView
+                    android:id="@+id/tvAuntSpain"
+                    style="@style/translate"
+                    android:text="Тетя" />
+
+                <ImageView
+                    android:id="@+id/ivAuntSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

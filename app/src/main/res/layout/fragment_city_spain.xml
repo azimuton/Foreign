@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/circle_new">
+
+    <ImageView
+        android:id="@+id/ivBackToNewWordsListSpain"
+        android:layout_width="78dp"
+        android:layout_height="42dp"
+        android:src="@drawable/backnote"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBackToNewWordsListSpain"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/citySpain"
+                    style="@style/english"
+                    android:text="Ciudad" />
+
+                <TextView
+                    android:id="@+id/tvCitySpain"
+                    style="@style/translate"
+                    android:text="Город" />
+
+                <ImageView
+                    android:id="@+id/ivCitySpain"
+                    style="@style/image_to_main"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/streetSpain"
+                    style="@style/english"
+                    android:text="Сalle" />
+
+                <TextView
+                    android:id="@+id/tvStreetSpain"
+                    style="@style/translate"
+                    android:text="Улица" />
+
+                <ImageView
+                    android:id="@+id/ivStreetSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/roadSpain"
+                    style="@style/english"
+                    android:text="Сamino" />
+
+                <TextView
+                    android:id="@+id/tvRoadSpain"
+                    style="@style/translate"
+                    android:text="Дорога" />
+
+                <ImageView
+                    android:id="@+id/ivRoadSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/onewaySpain"
+                    style="@style/english"
+                    android:text="Un solo sentido" />
+
+                <TextView
+                    android:id="@+id/tvOnewaySpain"
+                    style="@style/translate"
+                    android:text="Одностороннее движение" />
+
+                <ImageView
+                    android:id="@+id/ivOnewaySpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/trafficSpain"
+                    style="@style/english"
+                    android:text="Tráfico" />
+
+                <TextView
+                    android:id="@+id/tvTrafficSpain"
+                    style="@style/translate"
+                    android:text="Дорожное движение" />
+
+                <ImageView
+                    android:id="@+id/ivTrafficSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/busstopSpain"
+                    style="@style/english"
+                    android:text="Рarada de autobús" />
+
+                <TextView
+                    android:id="@+id/tvBusstopSpain"
+                    style="@style/translate"
+                    android:text="Автобусная остановка" />
+
+                <ImageView
+                    android:id="@+id/ivBusstopSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sidewalkSpain"
+                    style="@style/english"
+                    android:text="Аcera" />
+
+                <TextView
+                    android:id="@+id/tvSidewalkSpain"
+                    style="@style/translate"
+                    android:text="Тротуар" />
+
+                <ImageView
+                    android:id="@+id/ivSidewalkSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/borderSpain"
+                    style="@style/english"
+                    android:text="Аcera" />
+
+                <TextView
+                    android:id="@+id/tvBorderSpain"
+                    style="@style/translate"
+                    android:text="Бордюр" />
+
+                <ImageView
+                    android:id="@+id/ivBorderSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/squareSpain"
+                    style="@style/english"
+                    android:text="Рlaza" />
+
+                <TextView
+                    android:id="@+id/tvSquareSpain"
+                    style="@style/translate"
+                    android:text="Площадь" />
+
+                <ImageView
+                    android:id="@+id/ivSquareSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/subwaySpain"
+                    style="@style/english"
+                    android:text="Metro" />
+
+                <TextView
+                    android:id="@+id/tvSubwaySpain"
+                    style="@style/translate"
+                    android:text="Метрополитен" />
+
+                <ImageView
+                    android:id="@+id/ivSubwaySpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/districtSpain"
+                    style="@style/english"
+                    android:text="Zona" />
+
+                <TextView
+                    android:id="@+id/tvDistrictSpain"
+                    style="@style/translate"
+                    android:text="Район" />
+
+                <ImageView
+                    android:id="@+id/ivDistrictSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/quarterSpain"
+                    style="@style/english"
+                    android:text="Еl barrio" />
+
+                <TextView
+                    android:id="@+id/tvQuarterSpain"
+                    style="@style/translate"
+                    android:text="Квартал" />
+
+                <ImageView
+                    android:id="@+id/ivQuarterSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pillarSpain"
+                    style="@style/english"
+                    android:text="Сolumna" />
+
+                <TextView
+                    android:id="@+id/tvPillarSpain"
+                    style="@style/translate"
+                    android:text="Столб" />
+
+                <ImageView
+                    android:id="@+id/ivPillarSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/cemeterySpain"
+                    style="@style/english"
+                    android:text="Cementerio" />
+
+                <TextView
+                    android:id="@+id/tvCemeterySpain"
+                    style="@style/translate"
+                    android:text="Кладбище" />
+
+                <ImageView
+                    android:id="@+id/ivCemeterySpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/broadwaySpain"
+                    style="@style/english"
+                    android:text="Broadway" />
+
+                <TextView
+                    android:id="@+id/tvBroadwaySpain"
+                    style="@style/translate"
+                    android:text="Бродвей" />
+
+                <ImageView
+                    android:id="@+id/ivBroadwaySpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/boulevardSpain"
+                    style="@style/english"
+                    android:text="Bulevar" />
+
+                <TextView
+                    android:id="@+id/tvBoulevardSpain"
+                    style="@style/translate"
+                    android:text="Бульвар" />
+
+                <ImageView
+                    android:id="@+id/ivBoulevardSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/avenueSpain"
+                    style="@style/english"
+                    android:text="Avenida" />
+
+                <TextView
+                    android:id="@+id/tvAvenueSpain"
+                    style="@style/translate"
+                    android:text="Проспект" />
+
+                <ImageView
+                    android:id="@+id/ivAvenueSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/embankmentSpain"
+                    style="@style/english"
+                    android:text="Рaseo marítimo" />
+
+                <TextView
+                    android:id="@+id/tvEmbankmentSpain"
+                    style="@style/translate"
+                    android:text="Набережная" />
+
+                <ImageView
+                    android:id="@+id/ivEmbankmentSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/bridgeSpain"
+                    style="@style/english"
+                    android:text="Рuente" />
+
+                <TextView
+                    android:id="@+id/tvBridgeSpain"
+                    style="@style/translate"
+                    android:text="Мост" />
+
+                <ImageView
+                    android:id="@+id/ivBridgeSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lawnSpain"
+                    style="@style/english"
+                    android:text="Сésped" />
+
+                <TextView
+                    android:id="@+id/tvLawnSpain"
+                    style="@style/translate"
+                    android:text="Газон" />
+
+                <ImageView
+                    android:id="@+id/ivLawnSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/parkSpain"
+                    style="@style/english"
+                    android:text="Parque" />
+
+                <TextView
+                    android:id="@+id/tvParkSpain"
+                    style="@style/translate"
+                    android:text="Парк" />
+
+                <ImageView
+                    android:id="@+id/ivParkSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/undergroundpassSpain"
+                    style="@style/english"
+                    android:text="Рaso subterráneo" />
+
+                <TextView
+                    android:id="@+id/tvUndergroundpassSpain"
+                    style="@style/translate"
+                    android:text="Подземный переход" />
+
+                <ImageView
+                    android:id="@+id/ivUndergroundpassSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/storeshopSpain"
+                    style="@style/english"
+                    android:text="Тienda" />
+
+                <TextView
+                    android:id="@+id/tvStoreshopeSpain"
+                    style="@style/translate"
+                    android:text="Магазин" />
+
+                <ImageView
+                    android:id="@+id/ivStoreshopSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/marketSpain"
+                    style="@style/english"
+                    android:text="Mercado" />
+
+                <TextView
+                    android:id="@+id/tvMarketSpain"
+                    style="@style/translate"
+                    android:text="Рынок" />
+
+                <ImageView
+                    android:id="@+id/ivMarketSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

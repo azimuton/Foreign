@@ -36,6 +36,11 @@ import com.azimuton.foreign.fragments.english.newwords.WildAnimalsFragment
 import com.azimuton.foreign.fragments.spain.newspainwords.BedRoomSpainFragment
 import com.azimuton.foreign.fragments.spain.newspainwords.BerrySpainFragment
 import com.azimuton.foreign.fragments.spain.newspainwords.BuildingSpainFragment
+import com.azimuton.foreign.fragments.spain.newspainwords.CitySpainFragment
+import com.azimuton.foreign.fragments.spain.newspainwords.FamilySpainFragment
+import com.azimuton.foreign.fragments.spain.newspainwords.FruitsSpainFragment
+import com.azimuton.foreign.fragments.spain.newspainwords.HomeAnimalsSpainFragment
+import com.azimuton.foreign.fragments.spain.newspainwords.KitchenSpainFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -105,7 +110,7 @@ class NewWordsSpainFragment : Fragment() {
                         activity?.supportFragmentManager
                             ?.beginTransaction()
                             ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
-                            ?.replace(R.id.flMain, CityFragment())
+                            ?.replace(R.id.flMain, CitySpainFragment())
                             ?.commit()
                     }
                     5 -> {
@@ -119,7 +124,7 @@ class NewWordsSpainFragment : Fragment() {
                         activity?.supportFragmentManager
                             ?.beginTransaction()
                             ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
-                            ?.replace(R.id.flMain, HomeAnimalsFragment())
+                            ?.replace(R.id.flMain, HomeAnimalsSpainFragment())
                             ?.commit()
                     }
                     7 -> {
@@ -140,7 +145,7 @@ class NewWordsSpainFragment : Fragment() {
                         activity?.supportFragmentManager
                             ?.beginTransaction()
                             ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
-                            ?.replace(R.id.flMain, KitchenFragment())
+                            ?.replace(R.id.flMain, KitchenSpainFragment())
                             ?.commit()
                     }
                     10 -> {
@@ -168,7 +173,7 @@ class NewWordsSpainFragment : Fragment() {
                         activity?.supportFragmentManager
                             ?.beginTransaction()
                             ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
-                            ?.replace(R.id.flMain, FamilyFragment())
+                            ?.replace(R.id.flMain, FamilySpainFragment())
                             ?.commit()
                     }
                     14 -> {
@@ -189,7 +194,7 @@ class NewWordsSpainFragment : Fragment() {
                         activity?.supportFragmentManager
                             ?.beginTransaction()
                             ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
-                            ?.replace(R.id.flMain, FruitsFragment())
+                            ?.replace(R.id.flMain, FruitsSpainFragment())
                             ?.commit()
                     }
                     17 -> {

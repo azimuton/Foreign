@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/circle_new">
+
+    <ImageView
+        android:id="@+id/ivBackToNewWordsListSpain"
+        android:layout_width="78dp"
+        android:layout_height="42dp"
+        android:src="@drawable/backnote"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBackToNewWordsListSpain"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/catSpain"
+                    style="@style/english"
+                    android:text="Gato" />
+
+                <TextView
+                    android:id="@+id/tvCatSpain"
+                    style="@style/translate"
+                    android:text="Кот" />
+
+                <ImageView
+                    android:id="@+id/ivCatSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/dogSpain"
+                    style="@style/english"
+                    android:text="Рerro" />
+
+                <TextView
+                    android:id="@+id/tvDogSpain"
+                    style="@style/translate"
+                    android:text="Собака" />
+
+                <ImageView
+                    android:id="@+id/ivDogSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mouseSpain"
+                    style="@style/english"
+                    android:text="Ratón" />
+
+                <TextView
+                    android:id="@+id/tvMouseSpain"
+                    style="@style/translate"
+                    android:text="Мышь" />
+
+                <ImageView
+                    android:id="@+id/ivMouseSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/parrotSpain"
+                    style="@style/english"
+                    android:text="Loro" />
+
+                <TextView
+                    android:id="@+id/tvParrotSpain"
+                    style="@style/translate"
+                    android:text="Попугай" />
+
+                <ImageView
+                    android:id="@+id/ivParrotSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/cowSpain"
+                    style="@style/english"
+                    android:text="Vaca" />
+
+                <TextView
+                    android:id="@+id/tvCowSpain"
+                    style="@style/translate"
+                    android:text="Корова" />
+
+                <ImageView
+                    android:id="@+id/ivCowSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/goatSpain"
+                    style="@style/english"
+                    android:text="Сabra" />
+
+                <TextView
+                    android:id="@+id/tvGoatSpain"
+                    style="@style/translate"
+                    android:text="Коза" />
+
+                <ImageView
+                    android:id="@+id/ivGoatSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/chikSpain"
+                    style="@style/english"
+                    android:text="Рollo" />
+
+                <TextView
+                    android:id="@+id/tvChikSpain"
+                    style="@style/translate"
+                    android:text="Курица" />
+
+                <ImageView
+                    android:id="@+id/ivChikSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/duckSpain"
+                    style="@style/english"
+                    android:text="Рato" />
+
+                <TextView
+                    android:id="@+id/tvDuckSpain"
+                    style="@style/translate"
+                    android:text="Утка" />
+
+                <ImageView
+                    android:id="@+id/ivDuckSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/gooseSpain"
+                    style="@style/english"
+                    android:text="Ganso" />
+
+                <TextView
+                    android:id="@+id/tvGooseSpain"
+                    style="@style/translate"
+                    android:text="Гусь" />
+
+                <ImageView
+                    android:id="@+id/ivGooseSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pigSpain"
+                    style="@style/english"
+                    android:text="Сerdo" />
+
+                <TextView
+                    android:id="@+id/tvPigSpain"
+                    style="@style/translate"
+                    android:text="Свинья" />
+
+                <ImageView
+                    android:id="@+id/ivPigSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/turkeySpain"
+                    style="@style/english"
+                    android:text="Рavo" />
+
+                <TextView
+                    android:id="@+id/tvTurkeySpain"
+                    style="@style/translate"
+                    android:text="Индюк" />
+
+                <ImageView
+                    android:id="@+id/ivTurkeySpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sheepSpain"
+                    style="@style/english"
+                    android:text="Оveja" />
+
+                <TextView
+                    android:id="@+id/tvSheepSpain"
+                    style="@style/translate"
+                    android:text="Овца" />
+
+                <ImageView
+                    android:id="@+id/ivSheepSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/horseSpain"
+                    style="@style/english"
+                    android:text="Сaballo" />
+
+                <TextView
+                    android:id="@+id/tvHorseSpain"
+                    style="@style/translate"
+                    android:text="Лошадь" />
+
+                <ImageView
+                    android:id="@+id/ivHorseSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/rabbitSpain"
+                    style="@style/english"
+                    android:text="Сonejo" />
+
+                <TextView
+                    android:id="@+id/tvRabbitSpain"
+                    style="@style/translate"
+                    android:text="Кролик" />
+
+                <ImageView
+                    android:id="@+id/ivRabbitSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/quailSpain"
+                    style="@style/english"
+                    android:text="Codorniz" />
+
+                <TextView
+                    android:id="@+id/tvQuailSpain"
+                    style="@style/translate"
+                    android:text="Перепел" />
+
+                <ImageView
+                    android:id="@+id/ivQuailSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/donkeySpain"
+                    style="@style/english"
+                    android:text="Burro" />
+
+                <TextView
+                    android:id="@+id/tvDonkeySpain"
+                    style="@style/translate"
+                    android:text="Осел" />
+
+                <ImageView
+                    android:id="@+id/ivDonkeySpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/hamsterSpain"
+                    style="@style/english"
+                    android:text="Hámster" />
+
+                <TextView
+                    android:id="@+id/tvHamsterSpain"
+                    style="@style/translate"
+                    android:text="Хомяк" />
+
+                <ImageView
+                    android:id="@+id/ivHamsterSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

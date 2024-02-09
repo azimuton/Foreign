@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/circle_new">
+
+    <ImageView
+        android:id="@+id/ivBackToNewWordsListSpain"
+        android:layout_width="78dp"
+        android:layout_height="42dp"
+        android:src="@drawable/backnote"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBackToNewWordsListSpain"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/busSpain"
+                    style="@style/english"
+                    android:text="Аutobús" />
+
+                <TextView
+                    android:id="@+id/tvBusSpain"
+                    style="@style/translate"
+                    android:text="Автобус" />
+
+                <ImageView
+                    android:id="@+id/ivBusSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/automobileSpain"
+                    style="@style/english"
+                    android:text="Сoche" />
+
+                <TextView
+                    android:id="@+id/tvAutomobileSpain"
+                    style="@style/translate"
+                    android:text="Автомобиль" />
+
+                <ImageView
+                    android:id="@+id/ivAutomobileSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/trolleybusSpain"
+                    style="@style/english"
+                    android:text="Trolebús" />
+
+                <TextView
+                    android:id="@+id/tvTrolleybusSpain"
+                    style="@style/translate"
+                    android:text="Троллейбус" />
+
+                <ImageView
+                    android:id="@+id/ivTrolleybusSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tramSpain"
+                    style="@style/english"
+                    android:text="Tranvía" />
+
+                <TextView
+                    android:id="@+id/tvTramSpain"
+                    style="@style/translate"
+                    android:text="Трамвай" />
+
+                <ImageView
+                    android:id="@+id/ivTramSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/truckSpain"
+                    style="@style/english"
+                    android:text="Сamión" />
+
+                <TextView
+                    android:id="@+id/tvTruckSpain"
+                    style="@style/translate"
+                    android:text="Грузовик" />
+
+                <ImageView
+                    android:id="@+id/ivTruckSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/dumptruckSpain"
+                    style="@style/english"
+                    android:text="Сamión" />
+
+                <TextView
+                    android:id="@+id/tvDumptruckSpain"
+                    style="@style/translate"
+                    android:text="Самосвал" />
+
+                <ImageView
+                    android:id="@+id/ivDumptruckSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tractorSpain"
+                    style="@style/english"
+                    android:text="Tractor" />
+
+                <TextView
+                    android:id="@+id/tvTractorSpain"
+                    style="@style/translate"
+                    android:text="Трактор" />
+
+                <ImageView
+                    android:id="@+id/ivTractorSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/motorcycleSpain"
+                    style="@style/english"
+                    android:text="Moto" />
+
+                <TextView
+                    android:id="@+id/tvMotorcycleSpain"
+                    style="@style/translate"
+                    android:text="Мотоцикл" />
+
+                <ImageView
+                    android:id="@+id/ivMotorcycleSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/bikeSpain"
+                    style="@style/english"
+                    android:text="Bicicleta" />
+
+                <TextView
+                    android:id="@+id/tvBikeSpain"
+                    style="@style/translate"
+                    android:text="Велосипед" />
+
+                <ImageView
+                    android:id="@+id/ivBikeSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/taxiSpain"
+                    style="@style/english"
+                    android:text="Taxi" />
+
+                <TextView
+                    android:id="@+id/tvTaxiSpain"
+                    style="@style/translate"
+                    android:text="Такси" />
+
+                <ImageView
+                    android:id="@+id/ivTaxiSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/minibusSpain"
+                    style="@style/english"
+                    android:text="Minibús" />
+
+                <TextView
+                    android:id="@+id/tvMinibusSpain"
+                    style="@style/translate"
+                    android:text="Микроавтобус" />
+
+                <ImageView
+                    android:id="@+id/ivMinibusSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/trainSpain"
+                    style="@style/english"
+                    android:text="Tren" />
+
+                <TextView
+                    android:id="@+id/tvTrainSpain"
+                    style="@style/translate"
+                    android:text="Поезд" />
+
+                <ImageView
+                    android:id="@+id/ivTrainSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/electrictrainSpain"
+                    style="@style/english"
+                    android:text="Тren eléctrico" />
+
+                <TextView
+                    android:id="@+id/tvElectrictrainSpain"
+                    style="@style/translate"
+                    android:text="Электричка" />
+
+                <ImageView
+                    android:id="@+id/ivElectrictrainSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/airplaneSpain"
+                    style="@style/english"
+                    android:text="Avión" />
+
+                <TextView
+                    android:id="@+id/tvAirplaneSpain"
+                    style="@style/translate"
+                    android:text="Самолет" />
+
+                <ImageView
+                    android:id="@+id/ivAirplaneSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/conveyorSpain"
+                    style="@style/english"
+                    android:text="Тransportador" />
+
+                <TextView
+                    android:id="@+id/tvConveyorSpain"
+                    style="@style/translate"
+                    android:text="Транспортер" />
+
+                <ImageView
+                    android:id="@+id/ivConveyorSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/horsedrawnSpain"
+                    style="@style/english"
+                    android:text="Тransporte de caballos" />
+
+                <TextView
+                    android:id="@+id/tvHorsedrawnSpain"
+                    style="@style/translate"
+                    android:text="Гужевой транспорт" />
+
+                <ImageView
+                    android:id="@+id/ivHorsedrawnSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/metroSpain"
+                    style="@style/english"
+                    android:text="Metro" />
+
+                <TextView
+                    android:id="@+id/tvMetroSpain"
+                    style="@style/translate"
+                    android:text="Метро" />
+
+                <ImageView
+                    android:id="@+id/ivMetroSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/helicopterSpain"
+                    style="@style/english"
+                    android:text="Helicóptero" />
+
+                <TextView
+                    android:id="@+id/tvHelicopterSpain"
+                    style="@style/translate"
+                    android:text="Вертолет" />
+
+                <ImageView
+                    android:id="@+id/ivHelicopterSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/shipSpain"
+                    style="@style/english"
+                    android:text="Nave" />
+
+                <TextView
+                    android:id="@+id/tvShipSpain"
+                    style="@style/translate"
+                    android:text="Корабль" />
+
+                <ImageView
+                    android:id="@+id/ivShipSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mopeSpain"
+                    style="@style/english"
+                    android:text="Сiclomotor" />
+
+                <TextView
+                    android:id="@+id/tvMopeSpain"
+                    style="@style/translate"
+                    android:text="Мопед" />
+
+                <ImageView
+                    android:id="@+id/ivMopeSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/boatSpain"
+                    style="@style/english"
+                    android:text="Barco" />
+
+                <TextView
+                    android:id="@+id/tvBoatSpain"
+                    style="@style/translate"
+                    android:text="Лодка" />
+
+                <ImageView
+                    android:id="@+id/ivBoatSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/yachtSpain"
+                    style="@style/english"
+                    android:text="Yate" />
+
+                <TextView
+                    android:id="@+id/tvYachtSpain"
+                    style="@style/translate"
+                    android:text="Яхта" />
+
+                <ImageView
+                    android:id="@+id/ivYachtSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/bargeSpain"
+                    style="@style/english"
+                    android:text="Barcaza" />
+
+                <TextView
+                    android:id="@+id/tvBargeSpain"
+                    style="@style/translate"
+                    android:text="Баржа" />
+
+                <ImageView
+                    android:id="@+id/ivBargeSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

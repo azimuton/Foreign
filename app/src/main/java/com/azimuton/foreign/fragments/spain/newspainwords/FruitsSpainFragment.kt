@@ -38,6 +38,7 @@ class FruitsSpainFragment : Fragment() {
         binding.ivBackToNewWordsListSpain.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
+                ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
                 ?.replace(R.id.flMain, NewWordsSpainFragment())
                 ?.commit()
         }

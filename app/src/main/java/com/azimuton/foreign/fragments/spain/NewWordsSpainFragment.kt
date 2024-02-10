@@ -47,6 +47,7 @@ import com.azimuton.foreign.fragments.spain.newspainwords.SeaSpainFragment
 import com.azimuton.foreign.fragments.spain.newspainwords.ToolsSpainFragment
 import com.azimuton.foreign.fragments.spain.newspainwords.TransportSpainFragment
 import com.azimuton.foreign.fragments.spain.newspainwords.VegetablesSpainFragment
+import com.azimuton.foreign.fragments.spain.newspainwords.VerbsSpainFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -102,7 +103,7 @@ class NewWordsSpainFragment : Fragment() {
                         activity?.supportFragmentManager
                             ?.beginTransaction()
                             ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
-                            ?.replace(R.id.flMain, VerbsFragment())
+                            ?.replace(R.id.flMain, VerbsSpainFragment())
                             ?.commit()
                     }
                     3 -> {

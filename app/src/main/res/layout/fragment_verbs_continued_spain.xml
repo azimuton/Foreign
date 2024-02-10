@@ -1,0 +1,1476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/circle_new">
+
+    <ImageView
+        android:id="@+id/ivBackToNewWordsListSpain"
+        android:layout_width="78dp"
+        android:layout_height="42dp"
+        android:src="@drawable/backnote"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBackToNewWordsListSpain"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/letSpain"
+                    style="@style/english"
+                    android:text="permitir" />
+
+                <TextView
+                    android:id="@+id/tvLetSpain"
+                    style="@style/translate"
+                    android:text="Позволять" />
+
+                <ImageView
+                    android:id="@+id/ivLetSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lieSpain"
+                    style="@style/english"
+                    android:text="mentir" />
+
+                <TextView
+                    android:id="@+id/tvLieSpain"
+                    style="@style/translate"
+                    android:text="Лгать" />
+
+                <ImageView
+                    android:id="@+id/ivLieSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lightSpain"
+                    style="@style/english"
+                    android:text="iluminar" />
+
+                <TextView
+                    android:id="@+id/tvLightSpain"
+                    style="@style/translate"
+                    android:text="Зажигать, Освещать" />
+
+                <ImageView
+                    android:id="@+id/ivLightSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/loseSpain"
+                    style="@style/english"
+                    android:text="perder" />
+
+                <TextView
+                    android:id="@+id/tvLoseSpain"
+                    style="@style/translate"
+                    android:text="Терять" />
+
+                <ImageView
+                    android:id="@+id/ivLoseSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/makeSpain"
+                    style="@style/english"
+                    android:text="juguetear" />
+
+                <TextView
+                    android:id="@+id/tvMakeSpain"
+                    style="@style/translate"
+                    android:text="Делать, Мастерить" />
+
+                <ImageView
+                    android:id="@+id/ivMakeSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/meanSpain"
+                    style="@style/english"
+                    android:text="significar" />
+
+                <TextView
+                    android:id="@+id/tvMeanSpain"
+                    style="@style/translate"
+                    android:text="Значить" />
+
+                <ImageView
+                    android:id="@+id/ivMeanSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/meetSpain"
+                    style="@style/english"
+                    android:text="conocer" />
+
+                <TextView
+                    android:id="@+id/tvMeetSpain"
+                    style="@style/translate"
+                    android:text="Встречать" />
+
+                <ImageView
+                    android:id="@+id/ivMeetSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/paySpain"
+                    style="@style/english"
+                    android:text="pagar" />
+
+                <TextView
+                    android:id="@+id/tvPaySpain"
+                    style="@style/translate"
+                    android:text="Платить" />
+
+                <ImageView
+                    android:id="@+id/ivPaySpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/putSpain"
+                    style="@style/english"
+                    android:text="poner" />
+
+                <TextView
+                    android:id="@+id/tvPutSpain"
+                    style="@style/translate"
+                    android:text="Класть, Ставить" />
+
+                <ImageView
+                    android:id="@+id/ivPutSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/readSpain"
+                    style="@style/english"
+                    android:text="leer" />
+
+                <TextView
+                    android:id="@+id/tvReadSpain"
+                    style="@style/translate"
+                    android:text="Читать" />
+
+                <ImageView
+                    android:id="@+id/ivReadSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/rideSpain"
+                    style="@style/english"
+                    android:text="montar a caballo" />
+
+                <TextView
+                    android:id="@+id/tvRideSpain"
+                    style="@style/translate"
+                    android:text="Ездить верхом" />
+
+                <ImageView
+                    android:id="@+id/ivRideSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ringSpain"
+                    style="@style/english"
+                    android:text="llamar" />
+
+                <TextView
+                    android:id="@+id/tvRingSpain"
+                    style="@style/translate"
+                    android:text="Звонить" />
+
+                <ImageView
+                    android:id="@+id/ivRingSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/riseSpain"
+                    style="@style/english"
+                    android:text="subir" />
+
+                <TextView
+                    android:id="@+id/tvRiseSpain"
+                    style="@style/translate"
+                    android:text="Подниматься" />
+
+                <ImageView
+                    android:id="@+id/ivRiseSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/runSpain"
+                    style="@style/english"
+                    android:text="huir" />
+
+                <TextView
+                    android:id="@+id/tvRunSpain"
+                    style="@style/translate"
+                    android:text="Бежать" />
+
+                <ImageView
+                    android:id="@+id/ivRunSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/saySpain"
+                    style="@style/english"
+                    android:text="decir" />
+
+                <TextView
+                    android:id="@+id/tvSaySpain"
+                    style="@style/translate"
+                    android:text="Сказать" />
+
+                <ImageView
+                    android:id="@+id/ivSaySpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/seeSpain"
+                    style="@style/english"
+                    android:text="ver" />
+
+                <TextView
+                    android:id="@+id/tvSeeSpain"
+                    style="@style/translate"
+                    android:text="Видеть" />
+
+                <ImageView
+                    android:id="@+id/ivSeeSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/seekSpain"
+                    style="@style/english"
+                    android:text="buscar" />
+
+                <TextView
+                    android:id="@+id/tvSeekSpain"
+                    style="@style/translate"
+                    android:text="Искать" />
+
+                <ImageView
+                    android:id="@+id/ivSeekSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sellSpain"
+                    style="@style/english"
+                    android:text="vender" />
+
+                <TextView
+                    android:id="@+id/tvSellSpain"
+                    style="@style/translate"
+                    android:text="Продавать" />
+
+                <ImageView
+                    android:id="@+id/ivSellSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sendSpain"
+                    style="@style/english"
+                    android:text="enviar" />
+
+                <TextView
+                    android:id="@+id/tvSendSpain"
+                    style="@style/translate"
+                    android:text="Посылать" />
+
+                <ImageView
+                    android:id="@+id/ivSendSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/setSpain"
+                    style="@style/english"
+                    android:text="establecer" />
+
+                <TextView
+                    android:id="@+id/tvSetSpain"
+                    style="@style/translate"
+                    android:text="Устанавливать" />
+
+                <ImageView
+                    android:id="@+id/ivSetSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/shakeSpain"
+                    style="@style/english"
+                    android:text="sacudir" />
+
+                <TextView
+                    android:id="@+id/tvShakeSpain"
+                    style="@style/translate"
+                    android:text="Трясти" />
+
+                <ImageView
+                    android:id="@+id/ivShakeSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/shineSpain"
+                    style="@style/english"
+                    android:text="brillar" />
+
+                <TextView
+                    android:id="@+id/tvShineSpain"
+                    style="@style/translate"
+                    android:text="Светить, Сиять" />
+
+                <ImageView
+                    android:id="@+id/ivShineSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/shootSpain"
+                    style="@style/english"
+                    android:text="disparar" />
+
+                <TextView
+                    android:id="@+id/tvShootSpain"
+                    style="@style/translate"
+                    android:text="Стрелять" />
+
+                <ImageView
+                    android:id="@+id/ivShootSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/showSpain"
+                    style="@style/english"
+                    android:text="mostrar" />
+
+                <TextView
+                    android:id="@+id/tvShowSpain"
+                    style="@style/translate"
+                    android:text="Показывать" />
+
+                <ImageView
+                    android:id="@+id/ivShowSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/shrinkSpain"
+                    style="@style/english"
+                    android:text="contraerse" />
+
+                <TextView
+                    android:id="@+id/tvShrinkSpain"
+                    style="@style/translate"
+                    android:text="Сжиматься" />
+
+                <ImageView
+                    android:id="@+id/ivShrinkSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/shutSpain"
+                    style="@style/english"
+                    android:text="cerrar" />
+
+                <TextView
+                    android:id="@+id/tvShutSpain"
+                    style="@style/translate"
+                    android:text="Закрывать" />
+
+                <ImageView
+                    android:id="@+id/ivShutSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/singSpain"
+                    style="@style/english"
+                    android:text="cantar" />
+
+                <TextView
+                    android:id="@+id/tvSingSpain"
+                    style="@style/translate"
+                    android:text="Петь" />
+
+                <ImageView
+                    android:id="@+id/ivSingSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sitSpain"
+                    style="@style/english"
+                    android:text="sentar" />
+
+                <TextView
+                    android:id="@+id/tvSitSpain"
+                    style="@style/translate"
+                    android:text="Сидеть" />
+
+                <ImageView
+                    android:id="@+id/ivSitSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sleepSpain"
+                    style="@style/english"
+                    android:text="dormir" />
+
+                <TextView
+                    android:id="@+id/tvSleepSpain"
+                    style="@style/translate"
+                    android:text="Спать" />
+
+                <ImageView
+                    android:id="@+id/ivSleepSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/slideSpain"
+                    style="@style/english"
+                    android:text="deslizarse" />
+
+                <TextView
+                    android:id="@+id/tvSlideSpain"
+                    style="@style/translate"
+                    android:text="Скользить" />
+
+                <ImageView
+                    android:id="@+id/ivSlideSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/smellSpain"
+                    style="@style/english"
+                    android:text="oler" />
+
+                <TextView
+                    android:id="@+id/tvSmellSpain"
+                    style="@style/translate"
+                    android:text="Пахнуть, Нюхать" />
+
+                <ImageView
+                    android:id="@+id/ivSmellSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/speakSpain"
+                    style="@style/english"
+                    android:text="hablar" />
+
+                <TextView
+                    android:id="@+id/tvSpeakSpain"
+                    style="@style/translate"
+                    android:text="Говорить" />
+
+                <ImageView
+                    android:id="@+id/ivSpeakSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/spellSpain"
+                    style="@style/english"
+                    android:text="deletrear" />
+
+                <TextView
+                    android:id="@+id/tvSpellSpain"
+                    style="@style/translate"
+                    android:text="Произносить по буквам" />
+
+                <ImageView
+                    android:id="@+id/ivSpellSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/spendSpain"
+                    style="@style/english"
+                    android:text="gastar" />
+
+                <TextView
+                    android:id="@+id/tvSpendSpain"
+                    style="@style/translate"
+                    android:text="Тратить" />
+
+                <ImageView
+                    android:id="@+id/ivSpendSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/spillSpain"
+                    style="@style/english"
+                    android:text="verter" />
+
+                <TextView
+                    android:id="@+id/tvSpillSpain"
+                    style="@style/translate"
+                    android:text="Разлить" />
+
+                <ImageView
+                    android:id="@+id/ivSpillSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/spinSpain"
+                    style="@style/english"
+                    android:text="girar" />
+
+                <TextView
+                    android:id="@+id/tvSpinSpain"
+                    style="@style/translate"
+                    android:text="Крутить" />
+
+                <ImageView
+                    android:id="@+id/ivSpinSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/splitSpain"
+                    style="@style/english"
+                    android:text="compartir" />
+
+                <TextView
+                    android:id="@+id/tvSplitSpain"
+                    style="@style/translate"
+                    android:text="Разделять" />
+
+                <ImageView
+                    android:id="@+id/ivSplitSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/spoilSpain"
+                    style="@style/english"
+                    android:text="arruinar" />
+
+                <TextView
+                    android:id="@+id/tvSpoilSpain"
+                    style="@style/translate"
+                    android:text="Портить" />
+
+                <ImageView
+                    android:id="@+id/ivSpoilSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/spreadSpain"
+                    style="@style/english"
+                    android:text="desplegar" />
+
+                <TextView
+                    android:id="@+id/tvSpreadSpain"
+                    style="@style/translate"
+                    android:text="Разворачивать" />
+
+                <ImageView
+                    android:id="@+id/ivSpreadSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/standSpain"
+                    style="@style/english"
+                    android:text="estar" />
+
+                <TextView
+                    android:id="@+id/tvStandSpain"
+                    style="@style/translate"
+                    android:text="Стоять" />
+
+                <ImageView
+                    android:id="@+id/ivStandSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/stealSpain"
+                    style="@style/english"
+                    android:text="robar" />
+
+                <TextView
+                    android:id="@+id/tvStealSpain"
+                    style="@style/translate"
+                    android:text="Воровать" />
+
+                <ImageView
+                    android:id="@+id/ivStealSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/stingSpain"
+                    style="@style/english"
+                    android:text="picar" />
+
+                <TextView
+                    android:id="@+id/tvStingSpain"
+                    style="@style/translate"
+                    android:text="Жалить" />
+
+                <ImageView
+                    android:id="@+id/ivStingSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/stinkSpain"
+                    style="@style/english"
+                    android:text="apestar" />
+
+                <TextView
+                    android:id="@+id/tvStinkSpain"
+                    style="@style/translate"
+                    android:text="Вонять" />
+
+                <ImageView
+                    android:id="@+id/ivStinkSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/strikeSpain"
+                    style="@style/english"
+                    android:text="huelga" />
+
+                <TextView
+                    android:id="@+id/tvStrikeSpain"
+                    style="@style/translate"
+                    android:text="Бастовать" />
+
+                <ImageView
+                    android:id="@+id/ivStrikeSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/swearSpain"
+                    style="@style/english"
+                    android:text="jurar" />
+
+                <TextView
+                    android:id="@+id/tvSwearSpain"
+                    style="@style/translate"
+                    android:text="Клясться" />
+
+                <ImageView
+                    android:id="@+id/ivSwearSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sweepSpain"
+                    style="@style/english"
+                    android:text="barrer" />
+
+                <TextView
+                    android:id="@+id/tvSweepSpain"
+                    style="@style/translate"
+                    android:text="Подметать" />
+
+                <ImageView
+                    android:id="@+id/ivSweepSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/swellSpain"
+                    style="@style/english"
+                    android:text="hincharse" />
+
+                <TextView
+                    android:id="@+id/tvSwellSpain"
+                    style="@style/translate"
+                    android:text="Опухать" />
+
+                <ImageView
+                    android:id="@+id/ivSwellSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/swimSpain"
+                    style="@style/english"
+                    android:text="nadar" />
+
+                <TextView
+                    android:id="@+id/tvSwimSpain"
+                    style="@style/translate"
+                    android:text="Плавать" />
+
+                <ImageView
+                    android:id="@+id/ivSwimSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/takeSpain"
+                    style="@style/english"
+                    android:text="tomar" />
+
+                <TextView
+                    android:id="@+id/tvTakeSpain"
+                    style="@style/translate"
+                    android:text="Брать" />
+
+                <ImageView
+                    android:id="@+id/ivTakeSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/teachSpain"
+                    style="@style/english"
+                    android:text="enseñar" />
+
+                <TextView
+                    android:id="@+id/tvTeachSpain"
+                    style="@style/translate"
+                    android:text="Обучать" />
+
+                <ImageView
+                    android:id="@+id/ivTeachSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tearSpain"
+                    style="@style/english"
+                    android:text="vomitar" />
+
+                <TextView
+                    android:id="@+id/tvTearSpain"
+                    style="@style/translate"
+                    android:text="Рвать" />
+
+                <ImageView
+                    android:id="@+id/ivTearSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tellSpain"
+                    style="@style/english"
+                    android:text="contar" />
+
+                <TextView
+                    android:id="@+id/tvTellSpain"
+                    style="@style/translate"
+                    android:text="Рассказывать" />
+
+                <ImageView
+                    android:id="@+id/ivTellSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/thinkSpain"
+                    style="@style/english"
+                    android:text="pensar" />
+
+                <TextView
+                    android:id="@+id/tvThinkSpain"
+                    style="@style/translate"
+                    android:text="Думать" />
+
+                <ImageView
+                    android:id="@+id/ivThinkSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ThrowSpain"
+                    style="@style/english"
+                    android:text="dejar" />
+
+                <TextView
+                    android:id="@+id/tvThrowSpain"
+                    style="@style/translate"
+                    android:text="Бросать" />
+
+                <ImageView
+                    android:id="@+id/ivThrowSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/understandSpain"
+                    style="@style/english"
+                    android:text="entender" />
+
+                <TextView
+                    android:id="@+id/tvUnderstandSpain"
+                    style="@style/translate"
+                    android:text="Понимать" />
+
+                <ImageView
+                    android:id="@+id/ivUnderstandSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/wakeSpain"
+                    style="@style/english"
+                    android:text="despertar" />
+
+                <TextView
+                    android:id="@+id/tvWakeSpain"
+                    style="@style/translate"
+                    android:text="Будить" />
+
+                <ImageView
+                    android:id="@+id/ivWakeSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/wearSpain"
+                    style="@style/english"
+                    android:text="usar ropa" />
+
+                <TextView
+                    android:id="@+id/tvWearSpain"
+                    style="@style/translate"
+                    android:text="Носить(одежду)" />
+
+                <ImageView
+                    android:id="@+id/ivWearSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/winSpain"
+                    style="@style/english"
+                    android:text="ganar" />
+
+                <TextView
+                    android:id="@+id/tvWinSpain"
+                    style="@style/translate"
+                    android:text="Побеждать" />
+
+                <ImageView
+                    android:id="@+id/ivWinSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/windSpain"
+                    style="@style/english"
+                    android:text="bobina" />
+
+                <TextView
+                    android:id="@+id/tvWindSpain"
+                    style="@style/translate"
+                    android:text="Обматывать,Изгибать" />
+
+                <ImageView
+                    android:id="@+id/ivWindSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/writeSpain"
+                    style="@style/english"
+                    android:text="escribir" />
+
+                <TextView
+                    android:id="@+id/tvWriteSpain"
+                    style="@style/translate"
+                    android:text="Писать" />
+
+                <ImageView
+                    android:id="@+id/ivWriteSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

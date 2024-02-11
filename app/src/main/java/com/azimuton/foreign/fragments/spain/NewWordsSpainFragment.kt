@@ -47,7 +47,11 @@ import com.azimuton.foreign.fragments.spain.newspainwords.SeaSpainFragment
 import com.azimuton.foreign.fragments.spain.newspainwords.ToolsSpainFragment
 import com.azimuton.foreign.fragments.spain.newspainwords.TransportSpainFragment
 import com.azimuton.foreign.fragments.spain.newspainwords.VegetablesSpainFragment
+import com.azimuton.foreign.fragments.spain.newspainwords.VerbsContinuedSpainFragment
 import com.azimuton.foreign.fragments.spain.newspainwords.VerbsSpainFragment
+import com.azimuton.foreign.fragments.spain.newspainwords.WashRoomSpainFragment
+import com.azimuton.foreign.fragments.spain.newspainwords.WeatherSpainFragment
+import com.azimuton.foreign.fragments.spain.newspainwords.WildAnimalsSpainFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -89,7 +93,7 @@ class NewWordsSpainFragment : Fragment() {
                         activity?.supportFragmentManager
                             ?.beginTransaction()
                             ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
-                            ?.replace(R.id.flMain, WashRoomFragment())
+                            ?.replace(R.id.flMain, WashRoomSpainFragment())
                             ?.commit()
                     }
                     1 -> {
@@ -110,7 +114,7 @@ class NewWordsSpainFragment : Fragment() {
                         activity?.supportFragmentManager
                             ?.beginTransaction()
                             ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
-                            ?.replace(R.id.flMain, VerbsContinuedFragment())
+                            ?.replace(R.id.flMain, VerbsContinuedSpainFragment())
                             ?.commit()
                     }
                     4 -> {
@@ -124,7 +128,7 @@ class NewWordsSpainFragment : Fragment() {
                         activity?.supportFragmentManager
                             ?.beginTransaction()
                             ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
-                            ?.replace(R.id.flMain, WildAnimalsFragment())
+                            ?.replace(R.id.flMain, WildAnimalsSpainFragment())
                             ?.commit()
                     }
                     6 -> {
@@ -166,7 +170,7 @@ class NewWordsSpainFragment : Fragment() {
                         activity?.supportFragmentManager
                             ?.beginTransaction()
                             ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
-                            ?.replace(R.id.flMain, WeatherFragment())
+                            ?.replace(R.id.flMain, WeatherSpainFragment())
                             ?.commit()
                     }
                     12-> {

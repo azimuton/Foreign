@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/circle_new">
+
+    <ImageView
+        android:id="@+id/ivBackToNewWordsListSpain"
+        android:layout_width="78dp"
+        android:layout_height="42dp"
+        android:src="@drawable/backnote"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBackToNewWordsListSpain"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/washroomSpain"
+                    style="@style/english"
+                    android:text="Вaño" />
+
+                <TextView
+                    android:id="@+id/tvWashroomSpain"
+                    style="@style/translate"
+                    android:text="Ванная комната" />
+
+                <ImageView
+                    android:id="@+id/ivWashroomSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/bathSpain"
+                    style="@style/english"
+                    android:text="Baño" />
+
+                <TextView
+                    android:id="@+id/tvBathSpain"
+                    style="@style/translate"
+                    android:text="Ванна" />
+
+                <ImageView
+                    android:id="@+id/ivBathSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/toiletSpain"
+                    style="@style/english"
+                    android:text="Inodoro" />
+
+                <TextView
+                    android:id="@+id/tvToiletSpain"
+                    style="@style/translate"
+                    android:text="Унитаз" />
+
+                <ImageView
+                    android:id="@+id/ivToiletSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/flushtankSpain"
+                    style="@style/english"
+                    android:text="Тanque de lavado" />
+
+                <TextView
+                    android:id="@+id/tvFlushtankSpain"
+                    style="@style/translate"
+                    android:text="Смывательный бачек" />
+
+                <ImageView
+                    android:id="@+id/ivFlushtankSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/toiletseatSpain"
+                    style="@style/english"
+                    android:text="Аsiento del inodoro" />
+
+                <TextView
+                    android:id="@+id/tvToiletseatSpain"
+                    style="@style/translate"
+                    android:text="Сидушка на унитазе" />
+
+                <ImageView
+                    android:id="@+id/ivToiletseatSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/toiletpaperSpain"
+                    style="@style/english"
+                    android:text="Рapel higiénico" />
+
+                <TextView
+                    android:id="@+id/tvToiletpaperSpain"
+                    style="@style/translate"
+                    android:text="Туалетная бумага" />
+
+                <ImageView
+                    android:id="@+id/ivToiletpaperSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/showerSpain"
+                    style="@style/english"
+                    android:text="Ducha" />
+
+                <TextView
+                    android:id="@+id/tvShowerSpain"
+                    style="@style/translate"
+                    android:text="Душ" />
+
+                <ImageView
+                    android:id="@+id/ivShowerSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/showercabinSpain"
+                    style="@style/english"
+                    android:text="Сabina de ducha" />
+
+                <TextView
+                    android:id="@+id/tvShowercabinSpain"
+                    style="@style/translate"
+                    android:text="Душевая кабина" />
+
+                <ImageView
+                    android:id="@+id/ivShowercabinSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/towelSpain"
+                    style="@style/english"
+                    android:text="Toalla" />
+
+                <TextView
+                    android:id="@+id/tvTowelSpain"
+                    style="@style/translate"
+                    android:text="Полотенце" />
+
+                <ImageView
+                    android:id="@+id/ivTowelSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/laundrybasketSpain"
+                    style="@style/english"
+                    android:text="Сesto de la ropa sucia" />
+
+                <TextView
+                    android:id="@+id/tvLaundrybasketSpain"
+                    style="@style/translate"
+                    android:text="Корзина для белья" />
+
+                <ImageView
+                    android:id="@+id/ivLaundrybasketSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/washingmashineSpain"
+                    style="@style/english"
+                    android:text="Lavadora" />
+
+                <TextView
+                    android:id="@+id/tvWashingmashineSpain"
+                    style="@style/translate"
+                    android:text="Стиральная машина" />
+
+                <ImageView
+                    android:id="@+id/ivWashingmashineSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/drainerSpain"
+                    style="@style/english"
+                    android:text="Desagüe" />
+
+                <TextView
+                    android:id="@+id/tvDrainerSpain"
+                    style="@style/translate"
+                    android:text="Сливное отверстие" />
+
+                <ImageView
+                    android:id="@+id/ivDrainerSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/toothbrushSpain"
+                    style="@style/english"
+                    android:text="Сepillo de dientes" />
+
+                <TextView
+                    android:id="@+id/tvToothbrushSpain"
+                    style="@style/translate"
+                    android:text="Зубная щетка" />
+
+                <ImageView
+                    android:id="@+id/ivToothbrushSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/toothpasteSpain"
+                    style="@style/english"
+                    android:text="Рasta de dientes" />
+
+                <TextView
+                    android:id="@+id/tvToothpasteSpain"
+                    style="@style/translate"
+                    android:text="Зубная паста" />
+
+                <ImageView
+                    android:id="@+id/ivToothpasteSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/soapSpain"
+                    style="@style/english"
+                    android:text="Jabón" />
+
+                <TextView
+                    android:id="@+id/tvSoapSpain"
+                    style="@style/translate"
+                    android:text="Мыло" />
+
+                <ImageView
+                    android:id="@+id/ivSoapSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/shampooSpain"
+                    style="@style/english"
+                    android:text="Сhampú" />
+
+                <TextView
+                    android:id="@+id/tvShampooSpain"
+                    style="@style/translate"
+                    android:text="Шампунь" />
+
+                <ImageView
+                    android:id="@+id/ivShampooSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/spongeforbodySpain"
+                    style="@style/english"
+                    android:text="Un pano" />
+
+                <TextView
+                    android:id="@+id/tvSpongeforbodySpain"
+                    style="@style/translate"
+                    android:text="Мочалка для тела" />
+
+                <ImageView
+                    android:id="@+id/ivSpongeforbodySpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/washbasinSpain"
+                    style="@style/english"
+                    android:text="Lavabo" />
+
+                <TextView
+                    android:id="@+id/tvWashbasinSpain"
+                    style="@style/translate"
+                    android:text="Умывальник" />
+
+                <ImageView
+                    android:id="@+id/ivWashbasinSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/washbasincabinetSpain"
+                    style="@style/english"
+                    android:text="Аrmario sobre el lavabo" />
+
+                <TextView
+                    android:id="@+id/tvWashbasincabinetSpain"
+                    style="@style/translate"
+                    android:text="Шкафчик над умывальником" />
+
+                <ImageView
+                    android:id="@+id/ivWashbasincabinetSpain"
+                    style="@style/image_to_main"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_set_as" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

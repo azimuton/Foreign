@@ -6,6 +6,8 @@ interface SpainWordStorage {
 
     fun getAll(): List<SpainWordEntity>
 
+    fun copyId(id : Int)
+
     fun copy()
 
     fun deleteAll()

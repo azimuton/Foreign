@@ -6,6 +6,8 @@ interface SpainWordRepository {
 
     fun getAll(): List<WordSpain>
 
+    fun copyId(id : Int)
+
     fun copy()
 
     fun deleteAll()

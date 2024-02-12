@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -60,6 +61,19 @@ class LearnedFragment : Fragment(), LearnedWordsAdapter.ViewHolder.ItemCallback 
             binding.ivEyeOpen.visibility = View.VISIBLE
         }
 
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+                p0?.let { search(p0) }
+                return true
+            }
+
+            override fun onQueryTextChange(p0: String?): Boolean {
+                p0?.let { search(p0) }
+                return true
+            }
+
+        })
+
         binding.ivEyeOpen.setOnClickListener {
                 binding.tvCheckingTranslate.visibility = View.VISIBLE
             binding.ivEyeOpen.visibility = View.GONE
@@ -73,6 +87,10 @@ class LearnedFragment : Fragment(), LearnedWordsAdapter.ViewHolder.ItemCallback 
         val  w : Window? = activity?.window
         w?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
                 or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
+    }
+    private fun search(query: String) {
+        val filteredList = learnedWordsList.filter { it.englishLearnedWord.contains(query, ignoreCase = true) }
+        adapter.submitList(filteredList)
     }
     private fun getData() {
         val wordFromDb: List<LearnedWord> = getAll.execute()

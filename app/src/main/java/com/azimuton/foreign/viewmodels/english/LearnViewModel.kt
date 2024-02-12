@@ -3,6 +3,7 @@ package com.azimuton.foreign.viewmodels.english
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.azimuton.domain.models.english.Word
+import com.azimuton.domain.usecase.english.WordCopyIdUseCase
 import com.azimuton.domain.usecase.english.WordCopyUseCase
 import com.azimuton.domain.usecase.english.WordDeleteUseCase
 import com.azimuton.domain.usecase.english.WordGetAllUseCase
@@ -16,7 +17,8 @@ class LearnViewModel @Inject constructor(
     private var wordGetAllUseCase: WordGetAllUseCase,
     private var wordDeleteUseCase: WordDeleteUseCase,
     private var wordInsertUseCase: WordInsertUseCase,
-    private var wordCopyUseCase: WordCopyUseCase
+    private var wordCopyUseCase: WordCopyUseCase,
+    private var wordCopyIdUseCase: WordCopyIdUseCase
 ) : ViewModel() {
 
     fun getAll(){
@@ -37,6 +39,12 @@ class LearnViewModel @Inject constructor(
     fun copy(){
         viewModelScope.launch(){
             wordCopyUseCase.execute()
+        }
+    }
+
+    fun copyId(id : Int) {
+        viewModelScope.launch(){
+            wordCopyIdUseCase.execute(id)
         }
     }
 }

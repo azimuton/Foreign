@@ -9,6 +9,10 @@ class WordStorageRoomImpl(private  val wordDao : WordDao) : WordStorage {
         return  wordDao.getAll()
     }
 
+    override fun copyId(id: Int) {
+        wordDao.copyId(id)
+    }
+
     override fun copy() {
         wordDao.copy()
     }

@@ -7,6 +7,8 @@ interface WordRepository {
 
     fun getAll(): List<Word>
 
+    fun copyId(id: Int)
+
     fun copy()
 
     fun deleteAll()

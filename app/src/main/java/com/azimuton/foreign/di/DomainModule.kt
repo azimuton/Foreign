@@ -11,6 +11,7 @@ import com.azimuton.domain.usecase.english.GetNewsUseCase
 import com.azimuton.domain.usecase.english.LearnedWordDeleteUseCase
 import com.azimuton.domain.usecase.english.LearnedWordGetAllUseCase
 import com.azimuton.domain.usecase.english.LearnedWordRandomUseCase
+import com.azimuton.domain.usecase.english.WordCopyIdUseCase
 import com.azimuton.domain.usecase.english.WordCopyUseCase
 import com.azimuton.domain.usecase.english.WordDeleteAllUseCase
 import com.azimuton.domain.usecase.english.WordDeleteUseCase
@@ -21,6 +22,7 @@ import com.azimuton.domain.usecase.spain.SpainGetNewsUseCase
 import com.azimuton.domain.usecase.spain.SpainLearnedWordDeleteUseCase
 import com.azimuton.domain.usecase.spain.SpainLearnedWordGetAllUseCase
 import com.azimuton.domain.usecase.spain.SpainLearnedWordRandomUseCase
+import com.azimuton.domain.usecase.spain.SpainWordCopyIdUseCase
 import com.azimuton.domain.usecase.spain.SpainWordCopyUseCase
 import com.azimuton.domain.usecase.spain.SpainWordDeleteAllUseCase
 import com.azimuton.domain.usecase.spain.SpainWordDeleteUseCase
@@ -58,8 +60,16 @@ object DomainModule {
         return  WordCopyUseCase(wordRepository = wordRepository)
     }
     @Provides
+    fun provideWordCopyIdUseCase(wordRepository: WordRepository): WordCopyIdUseCase {
+        return  WordCopyIdUseCase(wordRepository = wordRepository)
+    }
+    @Provides
     fun provideSpainWordCopyUseCase(wordRepository: SpainWordRepository): SpainWordCopyUseCase {
         return  SpainWordCopyUseCase(wordSpainRepository = wordRepository)
+    }
+    @Provides
+    fun provideSpainWordCopyIdUseCase(wordRepository: SpainWordRepository): SpainWordCopyIdUseCase {
+        return  SpainWordCopyIdUseCase(wordSpainRepository = wordRepository)
     }
     @Provides
     fun provideWordDeleteAllUseCase(wordRepository: WordRepository): WordDeleteAllUseCase {

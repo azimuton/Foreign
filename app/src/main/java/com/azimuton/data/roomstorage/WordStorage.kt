@@ -6,6 +6,8 @@ interface WordStorage {
 
     fun getAll(): List<WordEntity>
 
+    fun copyId(id: Int)
+
     fun copy()
 
     fun deleteAll()

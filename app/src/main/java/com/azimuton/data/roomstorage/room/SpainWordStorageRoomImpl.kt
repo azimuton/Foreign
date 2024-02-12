@@ -9,6 +9,10 @@ class SpainWordStorageRoomImpl(private  val spainWordDao : SpainWordDao) : Spain
         return spainWordDao.getAll()
     }
 
+    override fun copyId(id: Int) {
+        spainWordDao.copyId(id)
+    }
+
     override fun copy() {
         spainWordDao.copy()
     }

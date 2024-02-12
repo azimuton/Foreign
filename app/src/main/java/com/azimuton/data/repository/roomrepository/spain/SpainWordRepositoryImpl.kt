@@ -12,6 +12,10 @@ class SpainWordRepositoryImpl (private val spainWordStorage: SpainWordStorage) :
         return SpainWordListMapper().mapFromEntity(spainWordStorage.getAll())
     }
 
+    override fun copyId(id: Int) {
+        spainWordStorage.copyId(id)
+    }
+
     override fun copy(){
         spainWordStorage.copy()
     }

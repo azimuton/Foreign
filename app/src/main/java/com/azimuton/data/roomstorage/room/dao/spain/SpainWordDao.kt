@@ -14,12 +14,9 @@ interface SpainWordDao {
     @Query("SELECT * FROM spainword")
     fun getAll(): List<SpainWordEntity>
 
-//    @Transaction
-//    @Query("INSERT INTO learnedwords  SELECT englishWord, translateWord FROM word WHERE id = :id LIMIT 1")
-//    fun copyId(id : Int)
-//
-//    @Query("DELETE FROM word WHERE id = :id")
-//    fun deleteId(id : Int)
+    @Transaction
+    @Query("INSERT INTO learnedspainwords  SELECT * FROM spainword LIMIT 1 OFFSET :id")
+    fun copyId(id : Int)
 
     @Transaction
     @Query("INSERT INTO learnedspainwords SELECT * FROM spainword")

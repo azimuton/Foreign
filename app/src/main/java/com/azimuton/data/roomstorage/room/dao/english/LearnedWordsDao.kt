@@ -3,6 +3,7 @@ package com.azimuton.data.roomstorage.room.dao.english
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.azimuton.data.roomstorage.models.english.LearnedWordEntity
 
@@ -21,7 +22,7 @@ interface LearnedWordsDao {
     @Query("SELECT * FROM learnedwords  ORDER BY RANDOM() LIMIT 1")
     fun randoms() : LearnedWordEntity
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertLearnedWord(learnedWordEntity: LearnedWordEntity)
 
     @Delete

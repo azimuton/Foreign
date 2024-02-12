@@ -18,6 +18,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.azimuton.data.roomstorage.room.AppRoomDatabase
 import com.azimuton.domain.models.english.Word
+import com.azimuton.domain.usecase.english.WordCopyIdUseCase
 import com.azimuton.domain.usecase.english.WordCopyUseCase
 import com.azimuton.domain.usecase.english.WordDeleteAllUseCase
 import com.azimuton.domain.usecase.english.WordDeleteUseCase
@@ -97,6 +98,7 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
             binding.cvDialogList.visibility = View.GONE
             activity?.supportFragmentManager
                 ?.beginTransaction()
+                ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
                 ?.replace(R.id.flMain, LearnedFragment())
                 ?.commit()
             binding.rvNewWords.visibility = View.VISIBLE
@@ -127,10 +129,7 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
                     ?.commit()
                 //activity?.finish()
             } else {
-                Toast.makeText(
-                    requireActivity(), "Заполните пустые поля!",
-                    Toast.LENGTH_LONG
-                ).show()
+                Toast.makeText(requireActivity(), "Please, full empty fields!", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -142,10 +141,18 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
 
     @SuppressLint("NotifyDataSetChanged")
     override fun copyId(index: Int) {
-//        wordDatabase.wordDao().copyId(index)
-//        wordDatabase.wordDao().deleteId(index)
-//        getData()
-//        adapter.submitList(wordList)
+        val words = wordList[index]
+        //wordDatabase.wordDao().copyId(index)
+        viewModel.copyId(index)
+        deleteInject.execute(words)
+        getData()
+        adapter.submitList(wordList)
+        activity?.supportFragmentManager
+            ?.beginTransaction()
+            //?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+            ?.replace(R.id.flMain, LearnFragment())
+            ?.commit()
+        Toast.makeText(requireActivity(), "Word copied!", Toast.LENGTH_LONG).show()
     }
 
     @SuppressLint("NotifyDataSetChanged", "InflateParams", "SetTextI18n")

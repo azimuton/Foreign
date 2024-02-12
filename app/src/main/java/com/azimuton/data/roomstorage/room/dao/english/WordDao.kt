@@ -2,7 +2,9 @@ package com.azimuton.data.roomstorage.room.dao.english
 
 
 import androidx.room.*
+import com.azimuton.data.roomstorage.models.english.LearnedWordEntity
 import com.azimuton.data.roomstorage.models.english.WordEntity
+import com.azimuton.domain.models.english.Word
 
 @Dao
 interface WordDao {
@@ -10,12 +12,12 @@ interface WordDao {
     @Query("SELECT * FROM word")
     fun getAll(): List<WordEntity>
 
-//    @Transaction
-//    @Query("INSERT INTO learnedwords  SELECT englishWord, translateWord FROM word WHERE id = :id LIMIT 1")
-//    fun copyId(id : Int)
-//
-//    @Query("DELETE FROM word WHERE id = :id")
-//    fun deleteId(id : Int)
+//    @Query("SELECT * FROM learnedwords WHERE learnedEnglishWord LIKE '%' || :title || '%'")
+//    fun searchByTitle(title: String): List<LearnedWordEntity>
+
+    @Transaction
+    @Query("INSERT INTO learnedwords  SELECT * FROM word LIMIT 1 OFFSET :id")
+    fun copyId(id : Int)
 
     @Transaction
     @Query("INSERT INTO learnedwords SELECT * FROM word")

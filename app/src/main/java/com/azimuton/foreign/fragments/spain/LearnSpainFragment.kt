@@ -26,6 +26,7 @@ import com.azimuton.domain.usecase.spain.SpainWordGetWordByIdUseCase
 import com.azimuton.domain.usecase.spain.SpainWordInsertUseCase
 import com.azimuton.foreign.R
 import com.azimuton.foreign.databinding.FragmentLearnSpainBinding
+import com.azimuton.foreign.fragments.english.LearnFragment
 import com.azimuton.foreign.fragments.english.LearnedFragment
 import com.azimuton.foreign.fragments.spain.adapters.LearnSpainAdapter
 import com.azimuton.foreign.viewmodels.spain.LearnSpainViewModel
@@ -123,7 +124,7 @@ class LearnSpainFragment : Fragment(), LearnSpainAdapter.ViewHolder.ItemCallback
                     ?.commit()
             } else {
                 Toast.makeText(
-                    requireActivity(), "Please, full all fields!",
+                    requireActivity(), "Please, full empty fields!",
                     Toast.LENGTH_LONG
                 ).show()
             }
@@ -153,7 +154,18 @@ class LearnSpainFragment : Fragment(), LearnSpainAdapter.ViewHolder.ItemCallback
     }
 
     override fun copyId(index: Int) {
-        TODO("Not yet implemented")
+        val words = wordList[index]
+        //wordDatabase.spainWordDao().copyId(index)
+        viewModel.copyId(index)
+        spainDeleteInject.execute(words)
+        getData()
+        adapter.submitList(wordList)
+        activity?.supportFragmentManager
+            ?.beginTransaction()
+           // ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+            ?.replace(R.id.flMain, LearnSpainFragment())
+            ?.commit()
+        Toast.makeText(requireActivity(), "Word copied!", Toast.LENGTH_LONG).show()
     }
 
     @SuppressLint("NotifyDataSetChanged")

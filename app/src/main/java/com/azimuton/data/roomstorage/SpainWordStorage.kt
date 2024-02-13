@@ -4,19 +4,19 @@ import com.azimuton.data.roomstorage.models.spain.SpainWordEntity
 
 interface SpainWordStorage {
 
-    fun getAll(): List<SpainWordEntity>
+    suspend fun getAll(): List<SpainWordEntity>
 
-    fun copyId(id : Int)
+    suspend fun copyId(id : Int)
 
-    fun copy()
+    suspend fun copy()
 
-    fun deleteAll()
+    suspend fun deleteAll()
 
-    fun insertSpainWord(spainWordEntity: SpainWordEntity)
+    suspend fun insertSpainWord(spainWordEntity: SpainWordEntity)
 
-    fun deleteSpainWord(spainWordEntity: SpainWordEntity)
+    suspend fun deleteSpainWord(spainWordEntity: SpainWordEntity)
 
-    fun updateSpainWord(spainWordEntity: SpainWordEntity)
+    suspend fun updateSpainWord(spainWordEntity: SpainWordEntity)
 
-    fun getSpainWordById(id: Int): SpainWordEntity?
+    suspend fun getSpainWordById(id: Int): SpainWordEntity?
 }

@@ -9,20 +9,24 @@ import com.azimuton.domain.repository.roomrepository.english.LearnedWordsReposit
 
 class LearnedWordsRepositoryImpl(private val learnedWordsStorage: LearnedWordsStorage) :
     LearnedWordsRepository {
-    override fun getAll(): List<LearnedWord> {
+    override suspend fun getAll(): List<LearnedWord> {
         return  LearnedWordListMapper().mapFromEntity(learnedWordsStorage.getAll())
     }
 
-    override fun randoms() : LearnedWordEntity {
+    override suspend fun count(): Int {
+        return learnedWordsStorage.count()
+    }
+
+    override suspend fun randoms() : LearnedWordEntity {
        return learnedWordsStorage.randoms()
     }
 
-    override fun insertLearnedWord(learnedWord: LearnedWord) {
+    override suspend fun insertLearnedWord(learnedWord: LearnedWord) {
         return learnedWordsStorage.insertLearnedWord(learnedWordEntity =
         LearnedWordMapper().mapToEntity(learnedWord))
     }
 
-    override fun deleteLearnedWord(learnedWord: LearnedWord) {
+    override suspend fun deleteLearnedWord(learnedWord: LearnedWord) {
         return learnedWordsStorage.deleteLearnedWord(learnedWordEntity =
         LearnedWordMapper().mapToEntity(learnedWord))
     }

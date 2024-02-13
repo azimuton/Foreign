@@ -77,6 +77,9 @@ class TranslaterFragment : Fragment() {
             }
         }
         binding.tvDoTranslate.setOnClickListener {
+            if(binding.tvTranslatjngWord.text.isEmpty()){
+                binding.progressBarEnglishTranslate.visibility = View.VISIBLE
+            }
             if (binding.etEnterWordForTranslate.text.isNotEmpty()){
                 text = binding.etEnterWordForTranslate.text.toString()
                 if(binding.tvEnglish.text == Constants.ENG && binding.tvRussian.text == Constants.RUS){
@@ -133,8 +136,9 @@ class TranslaterFragment : Fragment() {
         russianEnglishTranslator.translate(text)
             .addOnSuccessListener { translatedText ->
                 binding.tvTranslatjngWord.text = translatedText
+                binding.progressBarEnglishTranslate.visibility = View.GONE
                 if(binding.tvTranslatjngWord.text == text){
-                    binding.tvAlarmMessage.text = "В данном языке нет такого слова!"
+                    binding.tvAlarmMessage.text = "There is no such word in this language!"
                     binding.tvSaveTranslate.isEnabled = false
                     binding.tvSaveTranslate.alpha = 0.5f
                 } else {
@@ -152,6 +156,7 @@ class TranslaterFragment : Fragment() {
         englishRussianTranslator.translate(text)
             .addOnSuccessListener { translatedText ->
                 binding.tvTranslatjngWord.text = translatedText
+                binding.progressBarEnglishTranslate.visibility = View.GONE
                 if(binding.tvTranslatjngWord.text == text){
                     binding.tvAlarmMessage.text = "There is no such word in this language!"
                     binding.tvSaveTranslate.isEnabled = false

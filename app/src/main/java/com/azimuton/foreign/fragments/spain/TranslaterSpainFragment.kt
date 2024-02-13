@@ -104,6 +104,9 @@ class TranslaterSpainFragment : Fragment() {
 //            w?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
 //                    or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
             hideSystemUI()
+            if(binding.tvTranslatjngWordSpain.text.isEmpty()){
+                binding.progressBarSpainTranslate.visibility = View.VISIBLE
+            }
         }
         hideSystemUI()
     }
@@ -142,6 +145,7 @@ class TranslaterSpainFragment : Fragment() {
         russianSpainTranslator.translate(text)
             .addOnSuccessListener { translatedText ->
                 binding.tvTranslatjngWordSpain.text = translatedText
+                binding.progressBarSpainTranslate.visibility = View.GONE
                 if(binding.tvTranslatjngWordSpain.text == text){
                     binding.tvAlarmMessageSpain.text = "There is no such word in this language!"
                     binding.tvSaveTranslateSpain.isEnabled = false
@@ -161,6 +165,7 @@ class TranslaterSpainFragment : Fragment() {
         spainRussianTranslator.translate(text)
             .addOnSuccessListener { translatedText ->
                 binding.tvTranslatjngWordSpain.text = translatedText
+                binding.progressBarSpainTranslate.visibility = View.GONE
                 if(binding.tvTranslatjngWordSpain.text == text){
                     binding.tvAlarmMessageSpain.text = "There is no such word in this language!"
                     binding.tvSaveTranslateSpain.isEnabled = false

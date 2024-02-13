@@ -5,19 +5,23 @@ import com.azimuton.data.roomstorage.models.english.LearnedWordEntity
 import com.azimuton.data.roomstorage.room.dao.english.LearnedWordsDao
 
 class LearnedWordStorageRoomImpl(private val learnedWordsDao: LearnedWordsDao) : LearnedWordsStorage {
-    override fun getAll(): List<LearnedWordEntity> {
+    override suspend fun getAll(): List<LearnedWordEntity> {
        return learnedWordsDao.getAll()
     }
 
-    override fun randoms() : LearnedWordEntity {
+    override suspend fun count(): Int {
+        return learnedWordsDao.count()
+    }
+
+    override suspend fun randoms() : LearnedWordEntity {
         return learnedWordsDao.randoms()
     }
 
-    override fun insertLearnedWord(learnedWordEntity: LearnedWordEntity) {
+    override suspend fun insertLearnedWord(learnedWordEntity: LearnedWordEntity) {
         learnedWordsDao.insertLearnedWord(learnedWordEntity = learnedWordEntity)
     }
 
-    override fun deleteLearnedWord(learnedWordEntity: LearnedWordEntity) {
+    override suspend fun deleteLearnedWord(learnedWordEntity: LearnedWordEntity) {
         learnedWordsDao.deleteLearnedWord(learnedWordEntity = learnedWordEntity)
     }
 }

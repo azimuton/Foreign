@@ -9,20 +9,20 @@ import com.azimuton.domain.repository.roomrepository.spain.SpainLearnedWordsRepo
 
 class LearnedSpainWordsRepositoryImpl(private val learnedSpainWordsStorage: LearnedSpainWordsStorage) :
     SpainLearnedWordsRepository {
-    override fun getAll(): List<LearnedSpainWord> {
+    override suspend fun getAll(): List<LearnedSpainWord> {
         return  LearnedSpainWordListMapper().mapFromEntity(learnedSpainWordsStorage.getAll())
     }
 
-    override fun randoms() : LearnedSpainWordEntity {
+    override suspend fun randoms() : LearnedSpainWordEntity {
         return learnedSpainWordsStorage.randoms()
     }
 
-    override fun insertLearnedSpainWord(learnedSpainWord: LearnedSpainWord) {
+    override suspend fun insertLearnedSpainWord(learnedSpainWord: LearnedSpainWord) {
         return learnedSpainWordsStorage.insertLearnedSpainWord(learnedSpainWordEntity =
         LearnedSpainWordMapper().mapToEntity(learnedSpainWord))
     }
 
-    override fun deleteLearnedSpainWord(learnedSpainWord: LearnedSpainWord) {
+    override suspend fun deleteLearnedSpainWord(learnedSpainWord: LearnedSpainWord) {
         return learnedSpainWordsStorage.deleteLearnedSpainWord(learnedSpainWordEntity =
         LearnedSpainWordMapper().mapToEntity(learnedSpainWord))
     }

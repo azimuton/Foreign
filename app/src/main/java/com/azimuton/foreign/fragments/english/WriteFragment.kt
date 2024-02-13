@@ -16,17 +16,25 @@ import androidx.fragment.app.activityViewModels
 import com.azimuton.data.roomstorage.models.english.LearnedWordEntity
 import com.azimuton.data.roomstorage.room.AppRoomDatabase
 import com.azimuton.foreign.databinding.FragmentWriteBinding
+import com.azimuton.foreign.viewmodels.english.LearnedViewModel
 import com.azimuton.foreign.viewmodels.english.WriteViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
 class WriteFragment : Fragment() {
+    private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
     lateinit var binding : FragmentWriteBinding
     lateinit var database : AppRoomDatabase
      lateinit var randomWord : LearnedWordEntity
-    private val viewModel : WriteViewModel by activityViewModels()
+    private val viewModel : LearnedViewModel by activityViewModels()
     private var countRight = 0
     private var countFail = 0
+     var susp : Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,20 +46,36 @@ class WriteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         database = AppRoomDatabase.getDatabase(requireActivity())
+        coroutineScope.launch {
+             susp = database.learnedWordDao().count()
+        }
+
         binding.tvWriteChooseWordForCheck.setOnClickListener {
-            if(database.learnedWordDao().count() != 0){
-                binding.tvWriteHintWord.text = ""
-                binding.etWriteWordForChecking.text.clear()
-                binding.ivWriteOk.visibility = View.GONE
-                binding.ivWriteBad.visibility = View.GONE
-                randomWord = database.learnedWordDao().randoms()
-                binding.tvWriteWord.text = randomWord.learnedTranslateWord
-            } else {
-                Toast.makeText(requireActivity(), "Нет ни одного выученного слова!", Toast.LENGTH_SHORT).show()
+            coroutineScope.launch {
+                if (susp != 0) {
+                    activity?.runOnUiThread {
+                        binding.tvWriteHintWord.text = ""
+                        binding.etWriteWordForChecking.text.clear()
+                        binding.ivWriteOk.visibility = View.GONE
+                        binding.ivWriteBad.visibility = View.GONE
+                    }
+                    randomWord = database.learnedWordDao().randoms()
+                    activity?.runOnUiThread {
+                        binding.tvWriteWord.text = randomWord.learnedTranslateWord
+                    }
+                } else {
+                    activity?.runOnUiThread {
+                        Toast.makeText(
+                            requireActivity(),
+                            "No words!",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
             }
         }
         binding.tvWriteCheck.setOnClickListener {
-            if(database.learnedWordDao().count() != 0){
+            if(susp != 0){
 //                val  w : Window? = activity?.window
 //                w?.decorView?.setSystemUiVisibility(
 //                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
@@ -66,7 +90,7 @@ class WriteFragment : Fragment() {
                             binding.ivWriteOk.visibility = View.VISIBLE
                             val ims = activity?.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
                             ims.hideSoftInputFromWindow(binding.etWriteWordForChecking.windowToken, 0)
-                            Toast.makeText(requireActivity(), "Правильно!", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireActivity(), "Write!", Toast.LENGTH_SHORT).show()
                         } else{
                             countFail++
                             binding.tvFail.text = countFail.toString()
@@ -74,17 +98,17 @@ class WriteFragment : Fragment() {
                             binding.ivWriteBad.visibility = View.VISIBLE
                             val ims = activity?.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
                             ims.hideSoftInputFromWindow(binding.etWriteWordForChecking.windowToken, 0)
-                            Toast.makeText(requireActivity(), "Неправильно!", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireActivity(), "Wrong!", Toast.LENGTH_SHORT).show()
                         }
                     } else {
-                        Toast.makeText(requireActivity(), "Не забудьте написать слово!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireActivity(), "Remember to write the word!", Toast.LENGTH_SHORT).show()
                     }
                 }else{
-                    Toast.makeText(requireActivity(), "Выберите новое слово для проверки!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireActivity(), "Select a new word to test!", Toast.LENGTH_SHORT).show()
                 }
 
             }else {
-                Toast.makeText(requireActivity(), "Нет ни одного выученного слова!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireActivity(), "No words!", Toast.LENGTH_SHORT).show()
             }
         }
         binding.ivWriteClear.setOnClickListener {
@@ -94,7 +118,7 @@ class WriteFragment : Fragment() {
             if(binding.tvWriteWord.text.isNotEmpty()){
                 binding.tvWriteHintWord.text = randomWord.learnedEnglishWord
             } else{
-                Toast.makeText(requireActivity(), "Нет слов для подсказки !", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireActivity(), "No words for a tip !", Toast.LENGTH_SHORT).show()
             }
 
         }

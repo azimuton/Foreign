@@ -5,11 +5,13 @@ import com.azimuton.data.roomstorage.models.english.LearnedWordEntity
 
 interface LearnedWordsStorage {
 
-    fun getAll(): List<LearnedWordEntity>
+    suspend fun getAll(): List<LearnedWordEntity>
 
-    fun randoms() : LearnedWordEntity
+    suspend fun count() : Int
 
-    fun insertLearnedWord(learnedWordEntity: LearnedWordEntity)
+    suspend fun randoms() : LearnedWordEntity
 
-    fun deleteLearnedWord(learnedWordEntity: LearnedWordEntity)
+    suspend fun insertLearnedWord(learnedWordEntity: LearnedWordEntity)
+
+    suspend fun deleteLearnedWord(learnedWordEntity: LearnedWordEntity)
 }

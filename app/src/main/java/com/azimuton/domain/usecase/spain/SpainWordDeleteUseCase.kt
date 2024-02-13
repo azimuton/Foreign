@@ -4,7 +4,7 @@ import com.azimuton.domain.models.spain.WordSpain
 import com.azimuton.domain.repository.roomrepository.spain.SpainWordRepository
 
 class SpainWordDeleteUseCase ( private val wordSpainRepository: SpainWordRepository) {
-    fun execute(wordSpain: WordSpain){
+    suspend fun execute(wordSpain: WordSpain){
         return wordSpainRepository.deleteSpainWord(wordSpain)
     }
 }

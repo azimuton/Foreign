@@ -12,29 +12,29 @@ import com.azimuton.data.roomstorage.models.spain.SpainWordEntity
 interface SpainWordDao {
 
     @Query("SELECT * FROM spainword")
-    fun getAll(): List<SpainWordEntity>
+    suspend fun getAll(): List<SpainWordEntity>
 
     @Transaction
     @Query("INSERT INTO learnedspainwords  SELECT * FROM spainword LIMIT 1 OFFSET :id")
-    fun copyId(id : Int)
+    suspend fun copyId(id : Int)
 
     @Transaction
     @Query("INSERT INTO learnedspainwords SELECT * FROM spainword")
-    fun copy()
+    suspend fun copy()
 
     @Query("DELETE FROM spainword")
-    fun deleteAll()
+    suspend fun deleteAll()
 
     @Insert
-    fun insertSpainWord(spainWordEntity: SpainWordEntity)
+    suspend fun insertSpainWord(spainWordEntity: SpainWordEntity)
 
     @Delete
-    fun deleteSpainWord(spainWordEntity: SpainWordEntity)
+    suspend fun deleteSpainWord(spainWordEntity: SpainWordEntity)
 
     @Update
-    fun updateSpainWord(spainWordEntity: SpainWordEntity)
+    suspend fun updateSpainWord(spainWordEntity: SpainWordEntity)
 
     @Query("SELECT * FROM spainword WHERE id = :id")
-    fun getSpainWordById(id: Int): SpainWordEntity?
+    suspend fun getSpainWordById(id: Int): SpainWordEntity?
 
 }

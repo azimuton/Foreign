@@ -31,10 +31,15 @@ import com.azimuton.foreign.fragments.english.LearnedFragment
 import com.azimuton.foreign.fragments.spain.adapters.LearnSpainAdapter
 import com.azimuton.foreign.viewmodels.spain.LearnSpainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class LearnSpainFragment : Fragment(), LearnSpainAdapter.ViewHolder.ItemCallback {
+    private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
     private lateinit var binding: FragmentLearnSpainBinding
     private lateinit var adapter: LearnSpainAdapter
     lateinit var wordDatabase : AppRoomDatabase
@@ -91,7 +96,8 @@ class LearnSpainFragment : Fragment(), LearnSpainAdapter.ViewHolder.ItemCallback
         binding.btDialogOkListSpain.setOnClickListener {
             getData()
             viewModel.copy()
-            spainDeleteAll.execute()
+            //spainDeleteAll.execute()
+            viewModel.deleteAll()
             adapter.notifyDataSetChanged()
             hideSystemUI()
             Toast.makeText(requireActivity(), "The list is transfered!", Toast.LENGTH_SHORT).show()
@@ -148,16 +154,20 @@ class LearnSpainFragment : Fragment(), LearnSpainAdapter.ViewHolder.ItemCallback
     }
 
     private fun getData() {
-        val wordFromDb: List<WordSpain> = spainGetAll.execute()
-        wordList.clear()
-        wordList.addAll(wordFromDb)
+        coroutineScope.launch {
+            val wordFromDb: List<WordSpain> = spainGetAll.execute()
+            wordList.clear()
+            wordList.addAll(wordFromDb)
+        }
     }
 
     override fun copyId(index: Int) {
         val words = wordList[index]
         //wordDatabase.spainWordDao().copyId(index)
         viewModel.copyId(index)
-        spainDeleteInject.execute(words)
+        coroutineScope.launch {
+            spainDeleteInject.execute(words)
+        }
         getData()
         adapter.submitList(wordList)
         activity?.supportFragmentManager
@@ -174,7 +184,9 @@ class LearnSpainFragment : Fragment(), LearnSpainAdapter.ViewHolder.ItemCallback
         binding.rvNewWordsSpain.visibility = View.GONE
         binding.btDialogOk.setOnClickListener {
             val words = wordList[index]
-            spainDeleteInject.execute(words)
+            coroutineScope.launch {
+                spainDeleteInject.execute(words)
+            }
             getData()
             adapter.notifyDataSetChanged()
             hideSystemUI()

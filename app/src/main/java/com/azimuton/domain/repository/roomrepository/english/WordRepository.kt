@@ -5,19 +5,19 @@ import com.azimuton.domain.models.english.Word
 
 interface WordRepository {
 
-    fun getAll(): List<Word>
+    suspend fun getAll(): List<Word>
 
-    fun copyId(id: Int)
+    suspend fun copyId(id: Int)
 
-    fun copy()
+    suspend fun copy()
 
-    fun deleteAll()
+    suspend fun deleteAll()
 
-    fun insertWord(word: Word)
+    suspend fun insertWord(word: Word)
 
-    fun deleteWord(word: Word)
+    suspend fun deleteWord(word: Word)
 
-    fun updateWord(word: Word)
+    suspend fun updateWord(word: Word)
 
-    fun getWordById(id: Int): Word?
+    suspend fun getWordById(id: Int): Word?
 }

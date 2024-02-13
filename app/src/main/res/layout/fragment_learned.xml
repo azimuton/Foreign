@@ -121,12 +121,20 @@
 
     <SearchView
         android:id="@+id/searchView"
+        style="@android:style/Widget.Material.SearchView"
         android:layout_width="0dp"
         android:layout_height="38dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="4dp"
+        android:closeIcon="@drawable/ic_baseline_close_24"
+        android:queryBackground="@color/yellow"
         android:queryHint="search words"
+        android:searchHintIcon="@drawable/baseline_search_24"
+        android:searchIcon="@drawable/baseline_search_24"
+        android:showDividers="beginning"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

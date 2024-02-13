@@ -18,7 +18,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.azimuton.data.roomstorage.room.AppRoomDatabase
 import com.azimuton.domain.models.english.Word
-import com.azimuton.domain.usecase.english.WordCopyIdUseCase
 import com.azimuton.domain.usecase.english.WordCopyUseCase
 import com.azimuton.domain.usecase.english.WordDeleteAllUseCase
 import com.azimuton.domain.usecase.english.WordDeleteUseCase
@@ -30,10 +29,15 @@ import com.azimuton.foreign.R
 import com.azimuton.foreign.fragments.english.adapters.NewWordsAdapter
 import com.azimuton.foreign.databinding.FragmentLearnBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
+    private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
     private lateinit var binding: FragmentLearnBinding
     private lateinit var adapter: NewWordsAdapter
     lateinit var wordDatabase : AppRoomDatabase
@@ -91,7 +95,8 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
         binding.btDialogOkList.setOnClickListener {
             getData()
             viewModel.copy()
-            deleteAll.execute()
+            //deleteAll.execute()
+            viewModel.deleteAll()
             adapter.notifyDataSetChanged()
             hideSystemUI()
             Toast.makeText(requireActivity(), "The list is transfered!", Toast.LENGTH_SHORT).show()
@@ -134,9 +139,11 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
         }
     }
     private fun getData() {
-        val wordFromDb: List<Word> = getAll.execute()
-        wordList.clear()
-        wordList.addAll(wordFromDb)
+        coroutineScope.launch {
+            val wordFromDb: List<Word> = getAll.execute()
+            wordList.clear()
+            wordList.addAll(wordFromDb)
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -144,7 +151,8 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
         val words = wordList[index]
         //wordDatabase.wordDao().copyId(index)
         viewModel.copyId(index)
-        deleteInject.execute(words)
+        //deleteInject.execute(words)
+        viewModel.delete(words)
         getData()
         adapter.submitList(wordList)
         activity?.supportFragmentManager
@@ -161,7 +169,8 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
         binding.rvNewWords.visibility = View.GONE
         binding.btDialogOk.setOnClickListener {
             val words = wordList[index]
-            deleteInject.execute(words)
+            //deleteInject.execute(words)
+            viewModel.delete(words)
             getData()
             adapter.notifyDataSetChanged()
             hideSystemUI()

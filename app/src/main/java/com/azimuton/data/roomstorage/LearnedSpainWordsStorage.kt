@@ -4,11 +4,11 @@ import com.azimuton.data.roomstorage.models.spain.LearnedSpainWordEntity
 
 interface LearnedSpainWordsStorage {
 
-    fun getAll(): List<LearnedSpainWordEntity>
+    suspend fun getAll(): List<LearnedSpainWordEntity>
 
-    fun randoms() : LearnedSpainWordEntity
+    suspend fun randoms() : LearnedSpainWordEntity
 
-    fun insertLearnedSpainWord(learnedSpainWordEntity: LearnedSpainWordEntity)
+    suspend fun insertLearnedSpainWord(learnedSpainWordEntity: LearnedSpainWordEntity)
 
-    fun deleteLearnedSpainWord(learnedSpainWordEntity: LearnedSpainWordEntity)
+    suspend fun deleteLearnedSpainWord(learnedSpainWordEntity: LearnedSpainWordEntity)
 }

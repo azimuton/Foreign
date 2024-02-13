@@ -7,35 +7,35 @@ import com.azimuton.domain.models.english.Word
 import com.azimuton.domain.repository.roomrepository.english.WordRepository
 
 class WordRepositoryImpl(private val wordStorage: WordStorage) : WordRepository {
-    override fun getAll(): List<Word> {
+    override suspend fun getAll(): List<Word> {
         return WordListMapper().mapFromEntity(wordStorage.getAll())
     }
 
-    override fun copyId(id: Int) {
+    override suspend fun copyId(id: Int) {
         wordStorage.copyId(id)
     }
 
-    override fun copy(){
+    override suspend fun copy(){
         wordStorage.copy()
     }
 
-    override fun deleteAll() {
+    override suspend fun deleteAll() {
         wordStorage.deleteAll()
     }
 
-    override fun insertWord(word: Word) {
+    override suspend fun insertWord(word: Word) {
        return wordStorage.insertWord(wordEntity = WordMapper().mapToEntity(word))
     }
 
-    override fun deleteWord(word: Word) {
+    override suspend fun deleteWord(word: Word) {
         return wordStorage.deleteWord(wordEntity = WordMapper().mapToEntity(word))
     }
 
-    override fun updateWord(word: Word) {
+    override suspend fun updateWord(word: Word) {
         return wordStorage.updateWord(wordEntity = WordMapper().mapToEntity(word))
     }
 
-    override fun getWordById(id: Int): Word? {
+    override suspend fun getWordById(id: Int): Word? {
         return wordStorage.getWordById(id)?.let { WordMapper().mapFromEntity(it) }
     }
 }

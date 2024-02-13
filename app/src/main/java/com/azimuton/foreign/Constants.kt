@@ -6,5 +6,5 @@ object Constants {
     const val FRN = "France"
     const val ITL = "Italy"
     const val GER= "Germany"
-    const val SPN = "Spain"
+    const val SPN = "Spanish"
 }

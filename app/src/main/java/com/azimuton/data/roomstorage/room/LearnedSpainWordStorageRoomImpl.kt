@@ -6,19 +6,19 @@ import com.azimuton.data.roomstorage.room.dao.spain.LearnedSpainWordsDao
 
 class LearnedSpainWordStorageRoomImpl(private val learnedSpainWordsDao: LearnedSpainWordsDao) :
     LearnedSpainWordsStorage {
-    override fun getAll(): List<LearnedSpainWordEntity> {
+    override suspend fun getAll(): List<LearnedSpainWordEntity> {
         return learnedSpainWordsDao.getAll()
     }
 
-    override fun randoms() : LearnedSpainWordEntity {
+    override suspend fun randoms() : LearnedSpainWordEntity {
         return learnedSpainWordsDao.randoms()
     }
 
-    override fun insertLearnedSpainWord(learnedSpainWordEntity: LearnedSpainWordEntity) {
+    override suspend fun insertLearnedSpainWord(learnedSpainWordEntity: LearnedSpainWordEntity) {
         learnedSpainWordsDao.insertLearnedSpainWord(learnedSpainWordEntity = learnedSpainWordEntity)
     }
 
-    override fun deleteLearnedSpainWord(learnedSpainWordEntity: LearnedSpainWordEntity) {
+    override suspend fun deleteLearnedSpainWord(learnedSpainWordEntity: LearnedSpainWordEntity) {
         learnedSpainWordsDao.deleteLearnedSpainWord(learnedSpainWordEntity = learnedSpainWordEntity)
     }
 

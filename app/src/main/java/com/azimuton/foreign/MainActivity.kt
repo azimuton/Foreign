@@ -88,6 +88,15 @@ class MainActivity : AppCompatActivity() {
     private var enNewWords = false
     private var enFrasals = false
 
+    private var spLearn = false
+    private var spLearned = false
+    private var spWrite = false
+    private var spTranslate = false
+    private var spChat = false
+    private var spNews = false
+    private var spNewWords = false
+    private var spFrasals = false
+
     private var engLearn = false
     private var engLearned = false
     private var engWrite = false
@@ -96,13 +105,21 @@ class MainActivity : AppCompatActivity() {
     private var engNews = false
     private var engNewWords = false
     private var engFrasals = false
+
+    private var spnLearn = false
+    private var spnLearned = false
+    private var spnWrite = false
+    private var spnTranslate = false
+    private var spnChat = false
+    private var spnNews = false
+    private var spnNewWords = false
+    private var spnFrasals = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         running = true
         runTimer()
-        //Glide.with(this).asGif().load(R.drawable.earth).into(binding.ivBaseMain)
 
         sharedPrefs = getSharedPreferences("OpenLanguage", MODE_PRIVATE)
         pressEngl = sharedPrefs.getBoolean("pressEnglish", false)
@@ -178,6 +195,63 @@ class MainActivity : AppCompatActivity() {
         if(pressSpan){
             binding.ivMainSpanishMenu.visibility = View.VISIBLE
             binding.svSpanish.visibility = View.VISIBLE
+            sharedPrefs = getSharedPreferences("SpainMenu", MODE_PRIVATE)
+            spLearn = sharedPrefs.getBoolean("spnLearn", false)
+            spLearned = sharedPrefs.getBoolean("spnLearned", false)
+            spWrite = sharedPrefs.getBoolean("spnWrite", false)
+            spTranslate = sharedPrefs.getBoolean("spnTranslate", false)
+            spNews = sharedPrefs.getBoolean("spnNews", false)
+            spNewWords = sharedPrefs.getBoolean("spnNewWords", false)
+            spFrasals = sharedPrefs.getBoolean("spnFrasals", false)
+            if(spLearn){
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, LearnSpainFragment())
+                    .commit()
+            }
+            if(spLearned){
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, LearnedSpainFragment())
+                    .commit()
+            }
+            if(spWrite){
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, WriteSpainFragment())
+                    .commit()
+            }
+            if(spTranslate){
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, TranslaterSpainFragment())
+                    .commit()
+            }
+            if(spNews){
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, NewsSpainFragment())
+                    .commit()
+            }
+            if(spNewWords){
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, NewWordsSpainFragment())
+                    .commit()
+            }
+            if(spFrasals){
+                supportFragmentManager
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                    .replace(R.id.flMain, FrasalsSpainFragment())
+                    .commit()
+            }
         }
         if(pressGerm){
             binding.ivMainGermanMenu.visibility = View.VISIBLE
@@ -187,8 +261,6 @@ class MainActivity : AppCompatActivity() {
             binding.ivMainItalianMenu.visibility = View.VISIBLE
             binding.svItalian.visibility = View.VISIBLE
         }
-
-
 
         Glide.with(this).asGif().load(R.drawable.stopwatchs).into(binding.ivTimer)
         Glide.with(this).asGif().load(R.drawable.flagengland).into(binding.ivFlagEngland)
@@ -750,6 +822,21 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainspainmenu = false
+                spnLearn = true
+                spnLearned = false
+                spnWrite = false
+                spnTranslate = false
+                spnNews = false
+                spnNewWords = false
+                spnFrasals = false
+                sharedPrefs = getSharedPreferences("SpainMenu", AppCompatActivity.MODE_PRIVATE)
+                sharedPrefs.edit().putBoolean("spnLearn", spnLearn).apply()
+                sharedPrefs.edit().putBoolean("spnLearned", spnLearned).apply()
+                sharedPrefs.edit().putBoolean("spnWrite", spnWrite).apply()
+                sharedPrefs.edit().putBoolean("spnTranslate", spnTranslate).apply()
+                sharedPrefs.edit().putBoolean("spnNews", spnNews).apply()
+                sharedPrefs.edit().putBoolean("spnNewWords", spnNewWords).apply()
+                sharedPrefs.edit().putBoolean("spnFrasals", spnFrasals).apply()
                 learnspaincor?.cancel()
             }
         }
@@ -769,6 +856,21 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainspainmenu = false
+                spnLearn = false
+                spnLearned = true
+                spnWrite = false
+                spnTranslate = false
+                spnNews = false
+                spnNewWords = false
+                spnFrasals = false
+                sharedPrefs = getSharedPreferences("SpainMenu", AppCompatActivity.MODE_PRIVATE)
+                sharedPrefs.edit().putBoolean("spnLearn", spnLearn).apply()
+                sharedPrefs.edit().putBoolean("spnLearned", spnLearned).apply()
+                sharedPrefs.edit().putBoolean("spnWrite", spnWrite).apply()
+                sharedPrefs.edit().putBoolean("spnTranslate", spnTranslate).apply()
+                sharedPrefs.edit().putBoolean("spnNews", spnNews).apply()
+                sharedPrefs.edit().putBoolean("spnNewWords", spnNewWords).apply()
+                sharedPrefs.edit().putBoolean("spnFrasals", spnFrasals).apply()
                 learnedspaincor?.cancel()
             }
         }
@@ -788,6 +890,21 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainspainmenu = false
+                spnLearn = false
+                spnLearned = false
+                spnWrite = true
+                spnTranslate = false
+                spnNews = false
+                spnNewWords = false
+                spnFrasals = false
+                sharedPrefs = getSharedPreferences("SpainMenu", AppCompatActivity.MODE_PRIVATE)
+                sharedPrefs.edit().putBoolean("spnLearn", spnLearn).apply()
+                sharedPrefs.edit().putBoolean("spnLearned", spnLearned).apply()
+                sharedPrefs.edit().putBoolean("spnWrite", spnWrite).apply()
+                sharedPrefs.edit().putBoolean("spnTranslate", spnTranslate).apply()
+                sharedPrefs.edit().putBoolean("spnNews", spnNews).apply()
+                sharedPrefs.edit().putBoolean("spnNewWords", spnNewWords).apply()
+                sharedPrefs.edit().putBoolean("spnFrasals", spnFrasals).apply()
                 writespaincor?.cancel()
             }
         }
@@ -807,6 +924,21 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainspainmenu = false
+                spnLearn = false
+                spnLearned = false
+                spnWrite = false
+                spnTranslate = true
+                spnNews = false
+                spnNewWords = false
+                spnFrasals = false
+                sharedPrefs = getSharedPreferences("SpainMenu", AppCompatActivity.MODE_PRIVATE)
+                sharedPrefs.edit().putBoolean("spnLearn", spnLearn).apply()
+                sharedPrefs.edit().putBoolean("spnLearned", spnLearned).apply()
+                sharedPrefs.edit().putBoolean("spnWrite", spnWrite).apply()
+                sharedPrefs.edit().putBoolean("spnTranslate", spnTranslate).apply()
+                sharedPrefs.edit().putBoolean("spnNews", spnNews).apply()
+                sharedPrefs.edit().putBoolean("spnNewWords", spnNewWords).apply()
+                sharedPrefs.edit().putBoolean("spnFrasals", spnFrasals).apply()
                 translatespaincor?.cancel()
             }
         }
@@ -826,6 +958,21 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainspainmenu = false
+                spnLearn = false
+                spnLearned = false
+                spnWrite = false
+                spnTranslate = false
+                spnNews = true
+                spnNewWords = false
+                spnFrasals = false
+                sharedPrefs = getSharedPreferences("SpainMenu", AppCompatActivity.MODE_PRIVATE)
+                sharedPrefs.edit().putBoolean("spnLearn", spnLearn).apply()
+                sharedPrefs.edit().putBoolean("spnLearned", spnLearned).apply()
+                sharedPrefs.edit().putBoolean("spnWrite", spnWrite).apply()
+                sharedPrefs.edit().putBoolean("spnTranslate", spnTranslate).apply()
+                sharedPrefs.edit().putBoolean("spnNews", spnNews).apply()
+                sharedPrefs.edit().putBoolean("spnNewWords", spnNewWords).apply()
+                sharedPrefs.edit().putBoolean("spnFrasals", spnFrasals).apply()
                 newsspaincor?.cancel()
             }
         }
@@ -845,6 +992,21 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainspainmenu = false
+                spnLearn = false
+                spnLearned = false
+                spnWrite = false
+                spnTranslate = false
+                spnNews = false
+                spnNewWords = true
+                spnFrasals = false
+                sharedPrefs = getSharedPreferences("SpainMenu", AppCompatActivity.MODE_PRIVATE)
+                sharedPrefs.edit().putBoolean("spnLearn", spnLearn).apply()
+                sharedPrefs.edit().putBoolean("spnLearned", spnLearned).apply()
+                sharedPrefs.edit().putBoolean("spnWrite", spnWrite).apply()
+                sharedPrefs.edit().putBoolean("spnTranslate", spnTranslate).apply()
+                sharedPrefs.edit().putBoolean("spnNews", spnNews).apply()
+                sharedPrefs.edit().putBoolean("spnNewWords", spnNewWords).apply()
+                sharedPrefs.edit().putBoolean("spnFrasals", spnFrasals).apply()
                 frasalsspaincor?.cancel()
             }
         }
@@ -864,6 +1026,21 @@ class MainActivity : AppCompatActivity() {
                     start()
                 }
                 openmainspainmenu = false
+                spnLearn = false
+                spnLearned = false
+                spnWrite = false
+                spnTranslate = false
+                spnNews = false
+                spnNewWords = false
+                spnFrasals = true
+                sharedPrefs = getSharedPreferences("SpainMenu", AppCompatActivity.MODE_PRIVATE)
+                sharedPrefs.edit().putBoolean("spnLearn", spnLearn).apply()
+                sharedPrefs.edit().putBoolean("spnLearned", spnLearned).apply()
+                sharedPrefs.edit().putBoolean("spnWrite", spnWrite).apply()
+                sharedPrefs.edit().putBoolean("spnTranslate", spnTranslate).apply()
+                sharedPrefs.edit().putBoolean("spnNews", spnNews).apply()
+                sharedPrefs.edit().putBoolean("spnNewWords", spnNewWords).apply()
+                sharedPrefs.edit().putBoolean("spnFrasals", spnFrasals).apply()
                 newwordsspaincor?.cancel()
             }
         }

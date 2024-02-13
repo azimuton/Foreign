@@ -5,35 +5,35 @@ import com.azimuton.data.roomstorage.models.english.WordEntity
 import com.azimuton.data.roomstorage.room.dao.english.WordDao
 
 class WordStorageRoomImpl(private  val wordDao : WordDao) : WordStorage {
-    override  fun getAll(): List<WordEntity> {
+    override suspend fun getAll(): List<WordEntity> {
         return  wordDao.getAll()
     }
 
-    override fun copyId(id: Int) {
+    override suspend fun copyId(id: Int) {
         wordDao.copyId(id)
     }
 
-    override fun copy() {
+    override suspend fun copy() {
         wordDao.copy()
     }
 
-    override fun deleteAll() {
+    override suspend fun deleteAll() {
         wordDao.deleteAll()
     }
 
-    override fun insertWord(wordEntity: WordEntity) {
+    override suspend fun insertWord(wordEntity: WordEntity) {
         return wordDao.insertWord(wordEntity = wordEntity)
     }
 
-    override fun deleteWord(wordEntity: WordEntity) {
+    override suspend fun deleteWord(wordEntity: WordEntity) {
         return wordDao.deleteWord(wordEntity = wordEntity)
     }
 
-    override fun updateWord(wordEntity: WordEntity) {
+    override suspend fun updateWord(wordEntity: WordEntity) {
         return wordDao.updateWord(wordEntity = wordEntity)
     }
 
-    override fun getWordById(id: Int): WordEntity? {
+    override suspend fun getWordById(id: Int): WordEntity? {
         return wordDao.getWordById(id)
     }
 }

@@ -8,6 +8,7 @@ import com.azimuton.domain.repository.roomrepository.spain.SpainLearnedWordsRepo
 import com.azimuton.domain.repository.roomrepository.spain.SpainWordRepository
 import com.azimuton.domain.usecase.*
 import com.azimuton.domain.usecase.english.GetNewsUseCase
+import com.azimuton.domain.usecase.english.LearnedWordCountUseCase
 import com.azimuton.domain.usecase.english.LearnedWordDeleteUseCase
 import com.azimuton.domain.usecase.english.LearnedWordGetAllUseCase
 import com.azimuton.domain.usecase.english.LearnedWordRandomUseCase
@@ -130,5 +131,9 @@ object DomainModule {
     @Provides
     fun provideSpainLearnedWordsRandomUseCase(learnedWordsRepository : SpainLearnedWordsRepository) : SpainLearnedWordRandomUseCase {
         return SpainLearnedWordRandomUseCase(learnedSpainWordsRepository = learnedWordsRepository)
+    }
+    @Provides
+    fun provideLearnedWordsCountUseCase(learnedWordsRepository : LearnedWordsRepository) : LearnedWordCountUseCase {
+        return LearnedWordCountUseCase(learnedWordsRepository = learnedWordsRepository)
     }
 }

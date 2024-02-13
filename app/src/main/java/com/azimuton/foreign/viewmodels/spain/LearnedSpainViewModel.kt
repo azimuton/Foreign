@@ -23,12 +23,14 @@ class LearnedSpainViewModel @Inject constructor(
 ) : ViewModel() {
 
     fun getAll(){
-        viewModelScope.launch(Dispatchers.Main){
+        viewModelScope.launch(Dispatchers.IO){
             learnedSpainWordGetAllUseCase.execute()
         }
     }
     fun delete(learnedSpainWord : LearnedSpainWord){
-        learnedSpainWordDeleteUseCase.execute(learnedSpainWord)
+        viewModelScope.launch(Dispatchers.IO) {
+            learnedSpainWordDeleteUseCase.execute(learnedSpainWord)
+        }
     }
     fun random(){
         viewModelScope.launch(Dispatchers.IO){

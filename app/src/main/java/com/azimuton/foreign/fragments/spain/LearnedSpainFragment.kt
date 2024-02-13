@@ -1,13 +1,17 @@
 package com.azimuton.foreign.fragments.spain
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
+import android.widget.ImageView
 import android.widget.SearchView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -17,14 +21,22 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.azimuton.data.roomstorage.room.AppRoomDatabase
 import com.azimuton.domain.models.spain.LearnedSpainWord
 import com.azimuton.domain.usecase.spain.SpainLearnedWordGetAllUseCase
+import com.azimuton.foreign.R
 import com.azimuton.foreign.databinding.FragmentLearnedSpainBinding
+import com.azimuton.foreign.fragments.english.LearnedFragment
 import com.azimuton.foreign.fragments.spain.adapters.LearnedSpainWordsAdapter
 import com.azimuton.foreign.viewmodels.spain.LearnedSpainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class LearnedSpainFragment : Fragment(), LearnedSpainWordsAdapter.ViewHolder.ItemCallback{
+    private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
     private lateinit var binding : FragmentLearnedSpainBinding
     private lateinit var adapter: LearnedSpainWordsAdapter
     lateinit var learnedWordDatabase : AppRoomDatabase
@@ -40,8 +52,14 @@ class LearnedSpainFragment : Fragment(), LearnedSpainWordsAdapter.ViewHolder.Ite
         return binding.root
     }
 
+    @SuppressLint("DiscouragedApi", "ResourceAsColor", "ResourceType")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val searchView = activity?.findViewById(com.azimuton.foreign.R.id.searchViewSpain) as SearchView
+        val id = searchView.context.resources.getIdentifier("android:id/search_src_text", null, null)
+        val textView = searchView.findViewById<View>(id) as TextView
+        textView.setTextColor(ContextCompat.getColor(requireActivity(), R.color.black))
 
         learnedWordsList = ArrayList<LearnedSpainWord>()
         learnedWordDatabase = AppRoomDatabase.getDatabase(requireActivity())
@@ -51,7 +69,9 @@ class LearnedSpainFragment : Fragment(), LearnedSpainWordsAdapter.ViewHolder.Ite
         binding.rvLearnedWordsSpain.adapter = adapter
         adapter.submitList(learnedWordsList)
 
-        binding.tvQuantityOfLearnedWordsSpain.text = learnedWordDatabase.learnedSpainWordDao().count().toString()
+        coroutineScope.launch(Dispatchers.Main) {
+            binding.tvQuantityOfLearnedWordsSpain.text = learnedWordDatabase.learnedSpainWordDao().count().toString()
+        }
 
         binding.tvChooseWordSpain.setOnClickListener {randomLearned()}
         binding.ivChangeWordsSpain.setOnClickListener { changeLanguage() }
@@ -96,9 +116,11 @@ class LearnedSpainFragment : Fragment(), LearnedSpainWordsAdapter.ViewHolder.Ite
     }
 
     private fun getData() {
-        val wordFromDb: List<LearnedSpainWord> = getAll.execute()
-        learnedWordsList.clear()
-        learnedWordsList.addAll(wordFromDb)
+        coroutineScope.launch {
+            val wordFromDb: List<LearnedSpainWord> = getAll.execute()
+            learnedWordsList.clear()
+            learnedWordsList.addAll(wordFromDb)
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -107,9 +129,15 @@ class LearnedSpainFragment : Fragment(), LearnedSpainWordsAdapter.ViewHolder.Ite
         binding.btDialogOkSpain.setOnClickListener {
             val learnedSpainWords = learnedWordsList[index]
             viewModel.delete(learnedSpainWords)
-            binding.tvQuantityOfLearnedWordsSpain.text = learnedWordDatabase.learnedSpainWordDao().count().toString()
+            coroutineScope.launch(Dispatchers.Main) {
+                binding.tvQuantityOfLearnedWordsSpain.text = learnedWordDatabase.learnedSpainWordDao().count().toString()
+            }
             getData()
             adapter.notifyDataSetChanged()
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+                ?.replace(R.id.flMain, LearnedSpainFragment())
+                ?.commit()
             Toast.makeText(requireActivity(), "The entry is deleted!", Toast.LENGTH_SHORT).show()
             binding.cvDialogSpain.visibility = View.GONE
         }
@@ -118,22 +146,28 @@ class LearnedSpainFragment : Fragment(), LearnedSpainWordsAdapter.ViewHolder.Ite
         }
     }
     private fun randomLearned(){
-        val resultRandom = learnedWordDatabase.learnedSpainWordDao().randoms()
-        if(learnedWordDatabase.learnedSpainWordDao().count() != 0){
-            binding.tvCheckingWordSpain.text = resultRandom.learnedSpainWord
-            binding.tvCheckingTranslateSpain.text = resultRandom.learnedTranslateSpainWord
-        } else{
-            Toast.makeText(requireActivity(), "No words!", Toast.LENGTH_SHORT).show()
+        coroutineScope.launch {
+            val resultRandom = learnedWordDatabase.learnedSpainWordDao().randoms()
+            if (learnedWordDatabase.learnedSpainWordDao().count() != 0) {
+                activity?.runOnUiThread {
+                    binding.tvCheckingWordSpain.text = resultRandom.learnedSpainWord
+                    binding.tvCheckingTranslateSpain.text = resultRandom.learnedTranslateSpainWord
+                }
+            } else {
+                Toast.makeText(requireActivity(), "No words!", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
     private fun changeLanguage() {
-        val resultRandom = learnedWordDatabase.learnedSpainWordDao().randoms()
-        if(learnedWordDatabase.learnedSpainWordDao().count() != 0){
-            binding.tvCheckingWordSpain.text = resultRandom.learnedTranslateSpainWord
-            binding.tvCheckingTranslateSpain.text = resultRandom.learnedSpainWord
-        } else{
-            Toast.makeText(requireActivity(), "No words!", Toast.LENGTH_SHORT).show()
+        coroutineScope.launch {
+            val resultRandom = learnedWordDatabase.learnedSpainWordDao().randoms()
+            if (learnedWordDatabase.learnedSpainWordDao().count() != 0) {
+                binding.tvCheckingWordSpain.text = resultRandom.learnedTranslateSpainWord
+                binding.tvCheckingTranslateSpain.text = resultRandom.learnedSpainWord
+            } else {
+                Toast.makeText(requireActivity(), "No words!", Toast.LENGTH_SHORT).show()
+            }
         }
     }
     private fun hideSystemUI () {

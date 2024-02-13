@@ -1,27 +1,40 @@
 package com.azimuton.foreign.fragments.english
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
+import android.widget.ImageView
 import android.widget.SearchView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.azimuton.data.roomstorage.room.AppRoomDatabase
 import com.azimuton.domain.models.english.LearnedWord
 import com.azimuton.domain.usecase.english.LearnedWordGetAllUseCase
-import com.azimuton.foreign.fragments.english.adapters.LearnedWordsAdapter
+import com.azimuton.foreign.R
 import com.azimuton.foreign.databinding.FragmentLearnedBinding
+import com.azimuton.foreign.fragments.english.adapters.LearnedWordsAdapter
 import com.azimuton.foreign.viewmodels.english.LearnedViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlin.properties.Delegates
+
 
 @AndroidEntryPoint
 class LearnedFragment : Fragment(), LearnedWordsAdapter.ViewHolder.ItemCallback {
+    private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
     private lateinit var binding: FragmentLearnedBinding
     private lateinit var adapter: LearnedWordsAdapter
     lateinit var learnedWordDatabase : AppRoomDatabase
@@ -38,7 +51,13 @@ class LearnedFragment : Fragment(), LearnedWordsAdapter.ViewHolder.ItemCallback 
         return binding.root
     }
 
+    @SuppressLint("DiscouragedApi", "ResourceAsColor", "ResourceType")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        val searchView = activity?.findViewById(com.azimuton.foreign.R.id.searchView) as SearchView
+        val id = searchView.context.resources.getIdentifier("android:id/search_src_text", null, null)
+        val textView = searchView.findViewById<View>(id) as TextView
+        textView.setTextColor(ContextCompat.getColor(requireActivity(), R.color.black))
 
         learnedWordsList = ArrayList<LearnedWord>()
         learnedWordDatabase = AppRoomDatabase.getDatabase(requireActivity())
@@ -48,7 +67,9 @@ class LearnedFragment : Fragment(), LearnedWordsAdapter.ViewHolder.ItemCallback 
         binding.rvLearnedWords.adapter = adapter
         adapter.submitList(learnedWordsList)
 
-        binding.tvQuantityOfLearnedWords.text = learnedWordDatabase.learnedWordDao().count().toString()
+        coroutineScope.launch(Dispatchers.Main) {
+            binding.tvQuantityOfLearnedWords.text = learnedWordDatabase.learnedWordDao().count().toString()
+        }
 
         binding.tvChooseWord.setOnClickListener {randomLearned()}
         binding.ivChangeWords.setOnClickListener { changeLanguage() }
@@ -93,37 +114,31 @@ class LearnedFragment : Fragment(), LearnedWordsAdapter.ViewHolder.ItemCallback 
         adapter.submitList(filteredList)
     }
     private fun getData() {
-        val wordFromDb: List<LearnedWord> = getAll.execute()
-        learnedWordsList.clear()
-        learnedWordsList.addAll(wordFromDb)
+        coroutineScope.launch {
+            val wordFromDb: List<LearnedWord> = getAll.execute()
+            learnedWordsList.clear()
+            learnedWordsList.addAll(wordFromDb)
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")
     override fun deleteLearnedWords(index: Int) {
-//        val addDialog = AlertDialog.Builder(requireActivity())
-//        addDialog
-//            .setMessage("Вы действительно хотите удалить запись?")
-//            .setPositiveButton("Ok") { dialog, _ ->
-//                val learnedWords = learnedWordsList[index]
-//                viewModel.delete(learnedWords)
-//                binding.tvQuantityOfLearnedWords.text = learnedWordDatabase.learnedWordDao().count().toString()
-//                getData()
-//                adapter.notifyDataSetChanged()
-//                Toast.makeText(requireActivity(), "Запись удалена!", Toast.LENGTH_SHORT).show()
-//                dialog.dismiss()
-//            }
-//            .setNegativeButton("Отмена") { dialog, _ ->
-//                dialog.dismiss()
-//            }
-//            .create()
-//            .show()
         binding.cvDialog.visibility = View.VISIBLE
         binding.btDialogOk.setOnClickListener {
             val learnedWords = learnedWordsList[index]
             viewModel.delete(learnedWords)
-            binding.tvQuantityOfLearnedWords.text = learnedWordDatabase.learnedWordDao().count().toString()
+            coroutineScope.launch(Dispatchers.Main) {
+                val count = learnedWordDatabase.learnedWordDao().count().toString()
+                activity?.runOnUiThread {
+                    binding.tvQuantityOfLearnedWords.text = count
+                }
+            }
             getData()
             adapter.notifyDataSetChanged()
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+                ?.replace(R.id.flMain, LearnedFragment())
+                ?.commit()
             Toast.makeText(requireActivity(), "The entry is deleted!", Toast.LENGTH_SHORT).show()
             binding.cvDialog.visibility = View.GONE
         }
@@ -131,23 +146,35 @@ class LearnedFragment : Fragment(), LearnedWordsAdapter.ViewHolder.ItemCallback 
             binding.cvDialog.visibility = View.GONE
         }
     }
-    private fun randomLearned(){
+    private fun randomLearned() {
+        coroutineScope.launch {
         val resultRandom = learnedWordDatabase.learnedWordDao().randoms()
-        if(learnedWordDatabase.learnedWordDao().count() != 0){
-            binding.tvCheckingWord.text = resultRandom.learnedEnglishWord
-            binding.tvCheckingTranslate.text = resultRandom.learnedTranslateWord
-        } else{
-            Toast.makeText(requireActivity(), "No words!", Toast.LENGTH_SHORT).show()
+        if (learnedWordDatabase.learnedWordDao().count() != 0) {
+            activity?.runOnUiThread {
+                binding.tvCheckingWord.text = resultRandom.learnedEnglishWord
+                binding.tvCheckingTranslate.text = resultRandom.learnedTranslateWord
+            }
+        } else {
+            activity?.runOnUiThread {
+                Toast.makeText(requireActivity(), "No words!", Toast.LENGTH_SHORT).show()
+            }
         }
+    }
     }
 
     private fun changeLanguage() {
-        val resultRandom = learnedWordDatabase.learnedWordDao().randoms()
-        if(learnedWordDatabase.learnedWordDao().count() != 0){
-            binding.tvCheckingWord.text = resultRandom.learnedTranslateWord
-            binding.tvCheckingTranslate.text = resultRandom.learnedEnglishWord
-        } else{
-            Toast.makeText(requireActivity(), "No words!", Toast.LENGTH_SHORT).show()
-        }
+        coroutineScope.launch {
+            val resultRandom = learnedWordDatabase.learnedWordDao().randoms()
+            if (learnedWordDatabase.learnedWordDao().count() != 0) {
+                activity?.runOnUiThread {
+                    binding.tvCheckingWord.text = resultRandom.learnedTranslateWord
+                    binding.tvCheckingTranslate.text = resultRandom.learnedEnglishWord
+                }
+            } else {
+                activity?.runOnUiThread {
+                    Toast.makeText(requireActivity(), "No words!", Toast.LENGTH_SHORT).show()
+                }
+            }
+       }
     }
 }

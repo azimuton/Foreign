@@ -16,17 +16,25 @@ import androidx.fragment.app.activityViewModels
 import com.azimuton.data.roomstorage.models.spain.LearnedSpainWordEntity
 import com.azimuton.data.roomstorage.room.AppRoomDatabase
 import com.azimuton.foreign.databinding.FragmentWriteSpainBinding
+import com.azimuton.foreign.viewmodels.spain.LearnedSpainViewModel
 import com.azimuton.foreign.viewmodels.spain.WriteSpainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 @AndroidEntryPoint
 class WriteSpainFragment : Fragment() {
+    private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
     private lateinit var binding : FragmentWriteSpainBinding
     lateinit var database : AppRoomDatabase
     lateinit var randomWord : LearnedSpainWordEntity
-    private val viewModel : WriteSpainViewModel by activityViewModels()
+    private val viewModel : LearnedSpainViewModel by activityViewModels()
     private var countRight = 0
     private var countFail = 0
+    var susp : Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,20 +47,31 @@ class WriteSpainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         database = AppRoomDatabase.getDatabase(requireActivity())
+        coroutineScope.launch {
+            susp = database.learnedSpainWordDao().count()
+        }
         binding.tvWriteChooseWordForCheckSpain.setOnClickListener {
-            if(database.learnedSpainWordDao().count() != 0){
-                binding.tvWriteHintWord.text = ""
-                binding.etWriteWordForCheckingSpain.text.clear()
-                binding.ivWriteOkSpain.visibility = View.GONE
-                binding.ivWriteBadSpain.visibility = View.GONE
-                randomWord = database.learnedSpainWordDao().randoms()
-                binding.tvWriteWordSpain.text = randomWord.learnedTranslateSpainWord
-            } else {
-                Toast.makeText(requireActivity(), "No words!", Toast.LENGTH_SHORT).show()
+            coroutineScope.launch {
+                if (susp != 0) {
+                    activity?.runOnUiThread {
+                        binding.tvWriteHintWord.text = ""
+                        binding.etWriteWordForCheckingSpain.text.clear()
+                        binding.ivWriteOkSpain.visibility = View.GONE
+                        binding.ivWriteBadSpain.visibility = View.GONE
+                    }
+                    randomWord = database.learnedSpainWordDao().randoms()
+                    activity?.runOnUiThread {
+                        binding.tvWriteWordSpain.text = randomWord.learnedTranslateSpainWord
+                    }
+                } else {
+                    activity?.runOnUiThread {
+                        Toast.makeText(requireActivity(), "No words!", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
         }
         binding.tvWriteCheckSpain.setOnClickListener {
-            if(database.learnedSpainWordDao().count() != 0){
+            if(susp != 0){
 //                val  w : Window? = activity?.window
 //                w?.decorView?.setSystemUiVisibility(
 //                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации

@@ -4,19 +4,19 @@ import com.azimuton.domain.models.spain.WordSpain
 
 interface SpainWordRepository {
 
-    fun getAll(): List<WordSpain>
+    suspend fun getAll(): List<WordSpain>
 
-    fun copyId(id : Int)
+    suspend fun copyId(id : Int)
 
-    fun copy()
+    suspend fun copy()
 
-    fun deleteAll()
+    suspend fun deleteAll()
 
-    fun insertSpainWord(wordSpain: WordSpain)
+    suspend fun insertSpainWord(wordSpain: WordSpain)
 
-    fun deleteSpainWord(wordSpain: WordSpain)
+    suspend fun deleteSpainWord(wordSpain: WordSpain)
 
-    fun updateSpainWord(wordSpain: WordSpain)
+    suspend fun updateSpainWord(wordSpain: WordSpain)
 
-    fun getSpainWordById(id: Int): WordSpain?
+    suspend fun getSpainWordById(id: Int): WordSpain?
 }

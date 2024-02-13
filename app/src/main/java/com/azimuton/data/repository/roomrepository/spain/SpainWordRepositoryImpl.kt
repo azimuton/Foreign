@@ -8,35 +8,35 @@ import com.azimuton.domain.repository.roomrepository.spain.SpainWordRepository
 
 class SpainWordRepositoryImpl (private val spainWordStorage: SpainWordStorage) :
     SpainWordRepository {
-    override fun getAll(): List<WordSpain> {
+    override suspend fun getAll(): List<WordSpain> {
         return SpainWordListMapper().mapFromEntity(spainWordStorage.getAll())
     }
 
-    override fun copyId(id: Int) {
+    override suspend fun copyId(id: Int) {
         spainWordStorage.copyId(id)
     }
 
-    override fun copy(){
+    override suspend fun copy(){
         spainWordStorage.copy()
     }
 
-    override fun deleteAll() {
+    override suspend fun deleteAll() {
         spainWordStorage.deleteAll()
     }
 
-    override fun insertSpainWord(wordSpain: WordSpain) {
+    override suspend fun insertSpainWord(wordSpain: WordSpain) {
         return spainWordStorage.insertSpainWord(spainWordEntity = SpainWordMapper().mapToEntity(wordSpain))
     }
 
-    override fun deleteSpainWord(wordSpain: WordSpain) {
+    override suspend fun deleteSpainWord(wordSpain: WordSpain) {
         return spainWordStorage.deleteSpainWord(spainWordEntity = SpainWordMapper().mapToEntity(wordSpain))
     }
 
-    override fun updateSpainWord(wordSpain : WordSpain) {
+    override suspend fun updateSpainWord(wordSpain : WordSpain) {
         return spainWordStorage.updateSpainWord(spainWordEntity = SpainWordMapper().mapToEntity(wordSpain))
     }
 
-    override fun getSpainWordById(id: Int): WordSpain? {
+    override suspend fun getSpainWordById(id: Int): WordSpain? {
         return spainWordStorage.getSpainWordById(id)?.let { SpainWordMapper().mapFromEntity(it) }
     }
 }

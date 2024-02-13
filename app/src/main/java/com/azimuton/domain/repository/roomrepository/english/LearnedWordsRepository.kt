@@ -5,12 +5,14 @@ import com.azimuton.domain.models.english.LearnedWord
 
 interface LearnedWordsRepository {
 
-    fun getAll(): List<LearnedWord>
+    suspend fun getAll(): List<LearnedWord>
 
-    fun randoms() : LearnedWordEntity
+    suspend fun count(): Int
 
-    fun insertLearnedWord(learnedWord : LearnedWord)
+    suspend fun randoms() : LearnedWordEntity
 
-    fun deleteLearnedWord(learnedWord : LearnedWord)
+    suspend fun insertLearnedWord(learnedWord : LearnedWord)
+
+    suspend fun deleteLearnedWord(learnedWord : LearnedWord)
 
 }

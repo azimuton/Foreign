@@ -11,21 +11,21 @@ import com.azimuton.data.roomstorage.models.spain.LearnedSpainWordEntity
 interface LearnedSpainWordsDao {
 
     @Query("SELECT * FROM learnedspainwords")
-    fun getAll(): List<LearnedSpainWordEntity>
+    suspend fun getAll(): List<LearnedSpainWordEntity>
 
 //    @Query("SELECT * FROM notes_table WHERE title LIKE '%' || :title || '%'")
 //    fun searchByTitle(title: String): Flow<List<NoteEntity>>
 
     @Query("SELECT  COUNT(DISTINCT id) as count FROM learnedspainwords")
-    fun count(): Int
+    suspend fun count(): Int
 
     @Query("SELECT * FROM learnedspainwords  ORDER BY RANDOM() LIMIT 1")
-    fun randoms() : LearnedSpainWordEntity
+    suspend fun randoms() : LearnedSpainWordEntity
 
     @Insert
-    fun insertLearnedSpainWord(learnedSpainWordEntity: LearnedSpainWordEntity)
+    suspend fun insertLearnedSpainWord(learnedSpainWordEntity: LearnedSpainWordEntity)
 
     @Delete
-    fun deleteLearnedSpainWord(learnedSpainWordEntity: LearnedSpainWordEntity)
+    suspend fun deleteLearnedSpainWord(learnedSpainWordEntity: LearnedSpainWordEntity)
 
 }

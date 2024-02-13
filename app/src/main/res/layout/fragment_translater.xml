@@ -36,7 +36,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/ic_baseline_swap_horiz_24"
-            android:tint="@color/translatecolor" />
+            app:tint="@color/translatecolor" />
 
         <TextView
             android:id="@+id/tvRussian"
@@ -87,10 +87,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:src="@drawable/ic_baseline_close_24"
-        android:tint="@color/translatecolor"
         app:layout_constraintBottom_toBottomOf="@+id/etEnterWordForTranslate"
         app:layout_constraintEnd_toEndOf="@+id/etEnterWordForTranslate"
-        app:layout_constraintTop_toTopOf="@+id/etEnterWordForTranslate" />
+        app:layout_constraintTop_toTopOf="@+id/etEnterWordForTranslate"
+        app:tint="@color/translatecolor" />
 
     <TextView
         android:id="@+id/tvTranslatjngWord"
@@ -113,8 +113,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:background="@color/translatecolor"
-        android:padding="8dp"
+        android:background="@drawable/button_resource"
+        android:padding="16dp"
         android:text="Translate !"
         android:textColor="@color/black"
         android:textSize="48sp"
@@ -129,8 +129,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@color/translatecolor"
-        android:padding="8dp"
+        android:background="@drawable/button_resource"
+        android:padding="16dp"
         android:text="Save !"
         android:textColor="@color/black"
         android:textSize="48sp"
@@ -145,8 +145,20 @@
         android:layout_height="80dp"
         android:layout_marginTop="24dp"
         android:src="@drawable/ic_baseline_g_translate_24"
-        android:tint="@color/translatecolor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/translatecolor" />
+
+    <ProgressBar
+        android:id="@+id/progressBarEnglishTranslate"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:indeterminateTint="@color/translatecolor"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAlarmMessage" />
 </androidx.constraintlayout.widget.ConstraintLayout>

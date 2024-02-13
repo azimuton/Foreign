@@ -5,11 +5,11 @@ import com.azimuton.domain.models.spain.LearnedSpainWord
 
 interface SpainLearnedWordsRepository {
 
-    fun getAll(): List<LearnedSpainWord>
+    suspend fun getAll(): List<LearnedSpainWord>
 
-    fun randoms() : LearnedSpainWordEntity
+    suspend fun randoms() : LearnedSpainWordEntity
 
-    fun insertLearnedSpainWord(learnedSpainWord : LearnedSpainWord)
+    suspend fun insertLearnedSpainWord(learnedSpainWord : LearnedSpainWord)
 
-    fun deleteLearnedSpainWord(learnedSpainWord : LearnedSpainWord)
+    suspend fun deleteLearnedSpainWord(learnedSpainWord : LearnedSpainWord)
 }

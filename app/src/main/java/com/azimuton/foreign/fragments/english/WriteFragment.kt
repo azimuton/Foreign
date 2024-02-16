@@ -1,5 +1,6 @@
 package com.azimuton.foreign.fragments.english
 
+import android.annotation.SuppressLint
 import android.content.Context.INPUT_METHOD_SERVICE
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,6 +16,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.azimuton.data.roomstorage.models.english.LearnedWordEntity
 import com.azimuton.data.roomstorage.room.AppRoomDatabase
+import com.azimuton.foreign.R
 import com.azimuton.foreign.databinding.FragmentWriteBinding
 import com.azimuton.foreign.viewmodels.english.LearnedViewModel
 import com.azimuton.foreign.viewmodels.english.WriteViewModel
@@ -22,6 +24,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -44,6 +47,7 @@ class WriteFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         database = AppRoomDatabase.getDatabase(requireActivity())
         coroutineScope.launch {
@@ -51,6 +55,11 @@ class WriteFragment : Fragment() {
         }
 
         binding.tvWriteChooseWordForCheck.setOnClickListener {
+            coroutineScope.launch(Dispatchers.Main) {
+                binding.tvWriteChooseWordForCheck.background = resources.getDrawable(R.drawable.button_resource_two)
+                delay(350)
+                binding.tvWriteChooseWordForCheck.background = resources.getDrawable(R.drawable.button_resource)
+            }
             coroutineScope.launch {
                 if (susp != 0) {
                     activity?.runOnUiThread {
@@ -75,11 +84,12 @@ class WriteFragment : Fragment() {
             }
         }
         binding.tvWriteCheck.setOnClickListener {
+            coroutineScope.launch(Dispatchers.Main) {
+                binding.tvWriteCheck.background = resources.getDrawable(R.drawable.button_resource_two)
+                delay(350)
+                binding.tvWriteCheck.background = resources.getDrawable(R.drawable.button_resource)
+            }
             if(susp != 0){
-//                val  w : Window? = activity?.window
-//                w?.decorView?.setSystemUiVisibility(
-//                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
-//                            or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
                 hideSystemUI()
                 if(binding.tvWriteWord.text != ""){
                     if(binding.etWriteWordForChecking.text.isNotEmpty()){
@@ -106,7 +116,6 @@ class WriteFragment : Fragment() {
                 }else{
                     Toast.makeText(requireActivity(), "Select a new word to test!", Toast.LENGTH_SHORT).show()
                 }
-
             }else {
                 Toast.makeText(requireActivity(), "No words!", Toast.LENGTH_SHORT).show()
             }
@@ -116,9 +125,17 @@ class WriteFragment : Fragment() {
         }
         binding.tvWriteHintTap.setOnClickListener {
             if(binding.tvWriteWord.text.isNotEmpty()){
-                binding.tvWriteHintWord.text = randomWord.learnedEnglishWord
+                coroutineScope.launch(Dispatchers.Main) {
+                    binding.tvWriteHintWord.visibility = View.VISIBLE
+                    binding.tvWriteHintWord.text = randomWord.learnedEnglishWord
+                    binding.tvWriteHintTap.background = resources.getDrawable(R.drawable.button_resource_two)
+                    delay(1500)
+                    binding.tvWriteHintWord.visibility = View.GONE
+                    binding.tvWriteHintTap.background = resources.getDrawable(R.drawable.button_resource)
+                }
+
             } else{
-                Toast.makeText(requireActivity(), "No words for a tip !", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireActivity(), "No words for a tip!", Toast.LENGTH_SHORT).show()
             }
 
         }

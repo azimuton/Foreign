@@ -9,9 +9,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher_for"
+        android:icon="@mipmap/ic_launcher_foreign"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_for_round"
+        android:roundIcon="@mipmap/ic_launcher_foreign_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Foreign"
         tools:targetApi="31">

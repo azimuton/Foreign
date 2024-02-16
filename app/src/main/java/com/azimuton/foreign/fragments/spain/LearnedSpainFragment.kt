@@ -30,8 +30,10 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -44,6 +46,7 @@ class LearnedSpainFragment : Fragment(), LearnedSpainWordsAdapter.ViewHolder.Ite
     @Inject
     lateinit var getAll : SpainLearnedWordGetAllUseCase
     private val viewModel : LearnedSpainViewModel by activityViewModels()
+    private var cor : Job? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -125,21 +128,28 @@ class LearnedSpainFragment : Fragment(), LearnedSpainWordsAdapter.ViewHolder.Ite
 
     @SuppressLint("NotifyDataSetChanged")
     override fun deleteLearnedSpainWords(index: Int) {
+        var count = ""
         binding.cvDialogSpain.visibility = View.VISIBLE
         binding.btDialogOkSpain.setOnClickListener {
             val learnedSpainWords = learnedWordsList[index]
             viewModel.delete(learnedSpainWords)
             coroutineScope.launch(Dispatchers.Main) {
-                binding.tvQuantityOfLearnedWordsSpain.text = learnedWordDatabase.learnedSpainWordDao().count().toString()
+                withContext(Dispatchers.IO) {
+                    count = learnedWordDatabase.learnedSpainWordDao().count().toString()
+                }
+                binding.tvQuantityOfLearnedWordsSpain.text = count
+                getData()
+                adapter.notifyDataSetChanged()
+                viewModel.delete(learnedSpainWords)
+                val toast = Toast.makeText(requireActivity(), "The entry is deleted!", Toast.LENGTH_SHORT)
+                toast.show()
+                cor = CoroutineScope(Dispatchers.Main).launch {
+                    delay(500)
+                    toast.cancel()
+                    cor?.cancel()
+                }
+                binding.cvDialogSpain.visibility = View.GONE
             }
-            getData()
-            adapter.notifyDataSetChanged()
-            activity?.supportFragmentManager
-                ?.beginTransaction()
-                ?.replace(R.id.flMain, LearnedSpainFragment())
-                ?.commit()
-            Toast.makeText(requireActivity(), "The entry is deleted!", Toast.LENGTH_SHORT).show()
-            binding.cvDialogSpain.visibility = View.GONE
         }
         binding.btDialogCancelSpain.setOnClickListener {
             binding.cvDialogSpain.visibility = View.GONE

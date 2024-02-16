@@ -1,5 +1,6 @@
 package com.azimuton.foreign.fragments.spain
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,6 +16,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.azimuton.data.roomstorage.models.spain.LearnedSpainWordEntity
 import com.azimuton.data.roomstorage.room.AppRoomDatabase
+import com.azimuton.foreign.R
 import com.azimuton.foreign.databinding.FragmentWriteSpainBinding
 import com.azimuton.foreign.viewmodels.spain.LearnedSpainViewModel
 import com.azimuton.foreign.viewmodels.spain.WriteSpainViewModel
@@ -22,6 +24,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
@@ -44,6 +47,7 @@ class WriteSpainFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         database = AppRoomDatabase.getDatabase(requireActivity())
@@ -51,6 +55,11 @@ class WriteSpainFragment : Fragment() {
             susp = database.learnedSpainWordDao().count()
         }
         binding.tvWriteChooseWordForCheckSpain.setOnClickListener {
+            coroutineScope.launch(Dispatchers.Main) {
+                binding.tvWriteChooseWordForCheckSpain.background = resources.getDrawable(R.drawable.button_resource_two)
+                delay(350)
+                binding.tvWriteChooseWordForCheckSpain.background = resources.getDrawable(R.drawable.button_resource)
+            }
             coroutineScope.launch {
                 if (susp != 0) {
                     activity?.runOnUiThread {
@@ -71,11 +80,12 @@ class WriteSpainFragment : Fragment() {
             }
         }
         binding.tvWriteCheckSpain.setOnClickListener {
+            coroutineScope.launch(Dispatchers.Main) {
+                binding.tvWriteCheckSpain.background = resources.getDrawable(R.drawable.button_resource_two)
+                delay(350)
+                binding.tvWriteCheckSpain.background = resources.getDrawable(R.drawable.button_resource)
+            }
             if(susp != 0){
-//                val  w : Window? = activity?.window
-//                w?.decorView?.setSystemUiVisibility(
-//                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
-//                            or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
                 hideSystemUI()
                 if(binding.tvWriteWordSpain.text != ""){
                     if(binding.etWriteWordForCheckingSpain.text.isNotEmpty()){
@@ -112,7 +122,14 @@ class WriteSpainFragment : Fragment() {
         }
         binding.tvWriteHintTapSpain.setOnClickListener {
             if(binding.tvWriteWordSpain.text.isNotEmpty()){
-                binding.tvWriteHintWord.text = randomWord.learnedSpainWord
+                coroutineScope.launch(Dispatchers.Main) {
+                    binding.tvWriteHintWord.visibility = View.VISIBLE
+                    binding.tvWriteHintWord.text = randomWord.learnedSpainWord
+                    binding.tvWriteHintTapSpain.background = resources.getDrawable(R.drawable.button_resource_two)
+                    delay(1500)
+                    binding.tvWriteHintWord.visibility = View.GONE
+                    binding.tvWriteHintTapSpain.background = resources.getDrawable(R.drawable.button_resource)
+                }
             } else{
                 Toast.makeText(requireActivity(), "No words for a tip !", Toast.LENGTH_SHORT).show()
             }

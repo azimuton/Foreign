@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,12 +23,16 @@ import com.azimuton.domain.usecase.english.LearnedWordGetAllUseCase
 import com.azimuton.foreign.R
 import com.azimuton.foreign.databinding.FragmentLearnedBinding
 import com.azimuton.foreign.fragments.english.adapters.LearnedWordsAdapter
+import com.azimuton.foreign.fragments.spain.NewWordsSpainFragment
 import com.azimuton.foreign.viewmodels.english.LearnedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.joinAll
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import kotlin.properties.Delegates
 
@@ -42,6 +47,7 @@ class LearnedFragment : Fragment(), LearnedWordsAdapter.ViewHolder.ItemCallback 
     @Inject
     lateinit var getAll : LearnedWordGetAllUseCase
     private val viewModel : LearnedViewModel by activityViewModels()
+    private var cor : Job? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -123,27 +129,30 @@ class LearnedFragment : Fragment(), LearnedWordsAdapter.ViewHolder.ItemCallback 
 
     @SuppressLint("NotifyDataSetChanged")
     override fun deleteLearnedWords(index: Int) {
+        var count = ""
         binding.cvDialog.visibility = View.VISIBLE
         binding.btDialogOk.setOnClickListener {
             val learnedWords = learnedWordsList[index]
             viewModel.delete(learnedWords)
             coroutineScope.launch(Dispatchers.Main) {
-                val count = learnedWordDatabase.learnedWordDao().count().toString()
-                activity?.runOnUiThread {
-                    binding.tvQuantityOfLearnedWords.text = count
+                withContext(Dispatchers.IO) {
+                    count = learnedWordDatabase.learnedWordDao().count().toString()
                 }
+                binding.tvQuantityOfLearnedWords.text = count
+                getData()
+                adapter.notifyDataSetChanged()
+                val toast = Toast.makeText(requireActivity(), "The entry is deleted!", Toast.LENGTH_SHORT)
+                toast.show()
+                cor = CoroutineScope(Dispatchers.Main).launch {
+                    delay(500)
+                    toast.cancel()
+                    cor?.cancel()
+                }
+                binding.cvDialog.visibility = View.GONE
             }
-            getData()
-            adapter.notifyDataSetChanged()
-            activity?.supportFragmentManager
-                ?.beginTransaction()
-                ?.replace(R.id.flMain, LearnedFragment())
-                ?.commit()
-            Toast.makeText(requireActivity(), "The entry is deleted!", Toast.LENGTH_SHORT).show()
-            binding.cvDialog.visibility = View.GONE
-        }
-        binding.btDialogCancel.setOnClickListener {
-            binding.cvDialog.visibility = View.GONE
+            binding.btDialogCancel.setOnClickListener {
+                binding.cvDialog.visibility = View.GONE
+            }
         }
     }
     private fun randomLearned() {

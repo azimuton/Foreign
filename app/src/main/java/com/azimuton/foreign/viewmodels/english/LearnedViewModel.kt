@@ -9,6 +9,7 @@ import com.azimuton.domain.usecase.english.LearnedWordGetAllUseCase
 import com.azimuton.domain.usecase.english.LearnedWordRandomUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.joinAll
 import kotlinx.coroutines.launch
 import javax.inject.Inject

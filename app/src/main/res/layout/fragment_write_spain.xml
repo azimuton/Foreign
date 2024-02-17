@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/circle_new">
+    android:background="@drawable/yellowfonone">
 
     <TextView
         android:id="@+id/tvWriteChooseWordForCheckSpain"
@@ -30,7 +30,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
-        android:textColor="@color/three"
+        android:textColor="@color/broun"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,7 +105,7 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginTop="32dp"
-        android:src="@drawable/clipartkeytwo"
+        android:src="@drawable/okgreenone"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -145,7 +145,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
-        android:src="@drawable/clipartkeytwo"
+        android:src="@drawable/okgreenone"
         app:layout_constraintBottom_toTopOf="@+id/etWriteWordForCheckingSpain"
         app:layout_constraintStart_toStartOf="@+id/etWriteWordForCheckingSpain" />
 

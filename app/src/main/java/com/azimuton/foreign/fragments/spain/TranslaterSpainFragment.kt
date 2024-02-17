@@ -28,9 +28,15 @@ import com.google.mlkit.nl.translate.TranslateLanguage
 import com.google.mlkit.nl.translate.Translation
 import com.google.mlkit.nl.translate.TranslatorOptions
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class TranslaterSpainFragment : Fragment() {
+    private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
     lateinit var binding : FragmentTranslaterSpainBinding
     private lateinit var  russianSpainTranslator : com.google.mlkit.nl.translate.Translator
     private lateinit var  spainRussianTranslator : com.google.mlkit.nl.translate.Translator
@@ -45,6 +51,7 @@ class TranslaterSpainFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.ivChangeLanguagesSpain.setOnClickListener(firstButtonListener)
@@ -54,12 +61,14 @@ class TranslaterSpainFragment : Fragment() {
             binding.tvAlarmMessageSpain.text = ""
             binding.tvSaveTranslateSpain.isEnabled = true
             binding.tvSaveTranslateSpain.alpha = 1f
-//            val  w : Window? = activity?.window
-//            w?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
-//                    or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
             hideSystemUI()
         }
         binding.tvSaveTranslateSpain.setOnClickListener {
+            coroutineScope.launch(Dispatchers.Main) {
+                binding.tvSaveTranslateSpain.background = resources.getDrawable(R.drawable.button_resource_two)
+                delay(350)
+                binding.tvSaveTranslateSpain.background = resources.getDrawable(R.drawable.button_resource)
+            }
             if (binding.etEnterWordForTranslateSpain.text.isNotEmpty() && binding.tvTranslatjngWordSpain.text.isNotEmpty()) {
                 if(binding.tvSpain.text == Constants.SPN && binding.tvRussian.text == Constants.RUS){
                     val spainWord: String = binding.etEnterWordForTranslateSpain.text.toString()
@@ -84,10 +93,15 @@ class TranslaterSpainFragment : Fragment() {
                 }
             } else {
                 Toast.makeText(
-                    requireActivity(), "No data to save!", Toast.LENGTH_SHORT).show()
+                    requireActivity(), "No data !", Toast.LENGTH_SHORT).show()
             }
         }
         binding.tvDoTranslateSpain.setOnClickListener {
+            coroutineScope.launch(Dispatchers.Main) {
+                binding.tvDoTranslateSpain.background = resources.getDrawable(R.drawable.button_resource_two)
+                delay(350)
+                binding.tvDoTranslateSpain.background = resources.getDrawable(R.drawable.button_resource)
+            }
             if (binding.etEnterWordForTranslateSpain.text.isNotEmpty()){
                 text = binding.etEnterWordForTranslateSpain.text.toString()
                 if(binding.tvSpain.text == Constants.SPN && binding.tvRussian.text == Constants.RUS){
@@ -100,9 +114,6 @@ class TranslaterSpainFragment : Fragment() {
             }
             val ims = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             ims.hideSoftInputFromWindow(binding.etEnterWordForTranslateSpain.windowToken, 0)
-//            val  w : Window? = activity?.window
-//            w?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
-//                    or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
             hideSystemUI()
             if(binding.tvTranslatjngWordSpain.text.isEmpty()){
                 binding.progressBarSpainTranslate.visibility = View.VISIBLE
@@ -181,13 +192,11 @@ class TranslaterSpainFragment : Fragment() {
             }
     }
     private val firstButtonListener: View.OnClickListener = View.OnClickListener {
-        // меняем обработчик нажатия кнопки на второй
         binding.tvSpain.text = Constants.RUS
         binding.tvRussian.text = Constants.SPN
         binding.ivChangeLanguagesSpain.setOnClickListener(secondButtonListener)
     }
     private val secondButtonListener: View.OnClickListener = View.OnClickListener {
-        // возвращаем первый обработчик нажатия кнопки
         binding.tvSpain.text = Constants.SPN
         binding.tvRussian.text = Constants.RUS
         binding.ivChangeLanguagesSpain.setOnClickListener(firstButtonListener)

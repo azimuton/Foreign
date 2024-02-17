@@ -33,11 +33,13 @@ class WriteSpainFragment : Fragment() {
     private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
     private lateinit var binding : FragmentWriteSpainBinding
     lateinit var database : AppRoomDatabase
-    lateinit var randomWord : LearnedSpainWordEntity
+    private lateinit var randomWord : LearnedSpainWordEntity
     private val viewModel : LearnedSpainViewModel by activityViewModels()
     private var countRight = 0
     private var countFail = 0
     var susp : Int = 0
+    private lateinit var corcheck : Job
+    private lateinit var corchoose : Job
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,10 +57,11 @@ class WriteSpainFragment : Fragment() {
             susp = database.learnedSpainWordDao().count()
         }
         binding.tvWriteChooseWordForCheckSpain.setOnClickListener {
-            coroutineScope.launch(Dispatchers.Main) {
+           corchoose =  coroutineScope.launch(Dispatchers.Main) {
                 binding.tvWriteChooseWordForCheckSpain.background = resources.getDrawable(R.drawable.button_resource_two)
                 delay(350)
                 binding.tvWriteChooseWordForCheckSpain.background = resources.getDrawable(R.drawable.button_resource)
+               corchoose.cancel()
             }
             coroutineScope.launch {
                 if (susp != 0) {
@@ -80,16 +83,17 @@ class WriteSpainFragment : Fragment() {
             }
         }
         binding.tvWriteCheckSpain.setOnClickListener {
-            coroutineScope.launch(Dispatchers.Main) {
+            corcheck = coroutineScope.launch(Dispatchers.Main) {
                 binding.tvWriteCheckSpain.background = resources.getDrawable(R.drawable.button_resource_two)
                 delay(350)
                 binding.tvWriteCheckSpain.background = resources.getDrawable(R.drawable.button_resource)
+                corcheck.cancel()
             }
             if(susp != 0){
                 hideSystemUI()
                 if(binding.tvWriteWordSpain.text != ""){
                     if(binding.etWriteWordForCheckingSpain.text.isNotEmpty()){
-                        if(randomWord.learnedSpainWord.equals(binding.etWriteWordForCheckingSpain.text.toString(), true) ){
+                        if(randomWord.learnedSpainWord.contentEquals(binding.etWriteWordForCheckingSpain.text.toString(), true) ){
                             countRight++
                             binding.tvRightSpain.text = countRight.toString()
                             binding.ivWriteBadSpain.visibility = View.GONE

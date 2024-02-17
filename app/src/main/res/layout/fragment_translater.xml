@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/circle_new">
+    android:background="@drawable/yellowfonone">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -36,7 +36,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/ic_baseline_swap_horiz_24"
-            app:tint="@color/translatecolor" />
+            app:tint="@color/three" />
 
         <TextView
             android:id="@+id/tvRussian"
@@ -90,7 +90,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/etEnterWordForTranslate"
         app:layout_constraintEnd_toEndOf="@+id/etEnterWordForTranslate"
         app:layout_constraintTop_toTopOf="@+id/etEnterWordForTranslate"
-        app:tint="@color/translatecolor" />
+        app:tint="@color/three" />
 
     <TextView
         android:id="@+id/tvTranslatjngWord"
@@ -101,7 +101,7 @@
         android:shadowColor="@color/black"
         android:shadowDy="3"
         android:shadowRadius="3"
-        android:textColor="@color/translatecolor"
+        android:textColor="@color/three"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -148,7 +148,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/translatecolor" />
+        app:tint="@color/three" />
 
     <ProgressBar
         android:id="@+id/progressBarEnglishTranslate"
@@ -156,7 +156,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:indeterminateTint="@color/translatecolor"
+        android:indeterminateTint="@color/three"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

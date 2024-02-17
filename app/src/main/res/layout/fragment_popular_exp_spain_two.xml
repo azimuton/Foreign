@@ -8,6 +8,10 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
@@ -42,26 +46,26 @@
                     <TextView
                         android:id="@+id/tvE29"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF29"
-                        app:layout_constraintStart_toEndOf="@+id/tvN29"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Muy bien" />
+                        android:text="Muy bien"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF29"
+                        app:layout_constraintStart_toEndOf="@+id/tvN29"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT29"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE29"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Очень хорошо!" />
+                        android:text="Очень хорошо!"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE29" />
 
                     <ImageView
                         android:id="@+id/ivF29"
@@ -88,39 +92,39 @@
 
                     <TextView
                         android:id="@+id/tvN30"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE30"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF30"
-                        app:layout_constraintStart_toEndOf="@+id/tvN30"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Fatal" />
+                        android:text="Fatal"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF30"
+                        app:layout_constraintStart_toEndOf="@+id/tvN30"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT30"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE30"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Ужасно" />
+                        android:text="Ужасно"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE30" />
 
                     <ImageView
                         android:id="@+id/ivF30"
@@ -147,39 +151,39 @@
 
                     <TextView
                         android:id="@+id/tvN31"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE31"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF31"
-                        app:layout_constraintStart_toEndOf="@+id/tvN31"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="¿Qué profesión tiene usted?" />
+                        android:text="¿Qué profesión tiene usted?"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF31"
+                        app:layout_constraintStart_toEndOf="@+id/tvN31"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT31"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE31"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Кто вы по профессии?" />
+                        android:text="Кто вы по профессии?"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE31" />
 
                     <ImageView
                         android:id="@+id/ivF31"
@@ -206,39 +210,39 @@
 
                     <TextView
                         android:id="@+id/tvN32"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE32"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF32"
-                        app:layout_constraintStart_toEndOf="@+id/tvN32"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="¿Está usted casada/o?" />
+                        android:text="¿Está usted casada/o?"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF32"
+                        app:layout_constraintStart_toEndOf="@+id/tvN32"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT32"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE32"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Вы замужем? / Женаты?" />
+                        android:text="Вы замужем? / Женаты?"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE32" />
 
                     <ImageView
                         android:id="@+id/ivF32"
@@ -265,39 +269,39 @@
 
                     <TextView
                         android:id="@+id/tvN33"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE33"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF33"
-                        app:layout_constraintStart_toEndOf="@+id/tvN33"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Te amo / Te quiero" />
+                        android:text="Te amo / Te quiero"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF33"
+                        app:layout_constraintStart_toEndOf="@+id/tvN33"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT33"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE33"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Я люблю тебя" />
+                        android:text="Я люблю тебя"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE33" />
 
                     <ImageView
                         android:id="@+id/ivF33"
@@ -324,39 +328,39 @@
 
                     <TextView
                         android:id="@+id/tvN34"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE34"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF34"
-                        app:layout_constraintStart_toEndOf="@+id/tvN34"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="¡Qué linda!" />
+                        android:text="¡Qué linda!"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF34"
+                        app:layout_constraintStart_toEndOf="@+id/tvN34"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT34"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE34"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Какая красавица!" />
+                        android:text="Какая красавица!"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE34" />
 
                     <ImageView
                         android:id="@+id/ivF34"
@@ -383,39 +387,39 @@
 
                     <TextView
                         android:id="@+id/tvN35"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE35"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF35"
-                        app:layout_constraintStart_toEndOf="@+id/tvN35"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Eres muy hermoso" />
+                        android:text="Eres muy hermoso"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF35"
+                        app:layout_constraintStart_toEndOf="@+id/tvN35"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT35"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE35"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Ты очень красивый" />
+                        android:text="Ты очень красивый"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE35" />
 
                     <ImageView
                         android:id="@+id/ivF35"
@@ -442,39 +446,39 @@
 
                     <TextView
                         android:id="@+id/tvN36"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE36"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF36"
-                        app:layout_constraintStart_toEndOf="@+id/tvN36"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Me gustas" />
+                        android:text="Me gustas"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF36"
+                        app:layout_constraintStart_toEndOf="@+id/tvN36"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT36"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE36"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Ты мне нравишься" />
+                        android:text="Ты мне нравишься"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE36" />
 
                     <ImageView
                         android:id="@+id/ivF36"
@@ -501,39 +505,39 @@
 
                     <TextView
                         android:id="@+id/tvN37"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE37"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF37"
-                        app:layout_constraintStart_toEndOf="@+id/tvN37"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Quiero estar contigo" />
+                        android:text="Quiero estar contigo"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF37"
+                        app:layout_constraintStart_toEndOf="@+id/tvN37"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT37"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE37"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Я хочу быть с тобой" />
+                        android:text="Я хочу быть с тобой"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE37" />
 
                     <ImageView
                         android:id="@+id/ivF37"
@@ -560,39 +564,39 @@
 
                     <TextView
                         android:id="@+id/tvN38"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE38"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF38"
-                        app:layout_constraintStart_toEndOf="@+id/tvN38"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="¿Dónde está?" />
+                        android:text="¿Dónde está?"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF38"
+                        app:layout_constraintStart_toEndOf="@+id/tvN38"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT38"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE38"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Где расположен?" />
+                        android:text="Где расположен?"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE38" />
 
                     <ImageView
                         android:id="@+id/ivF38"
@@ -619,39 +623,39 @@
 
                     <TextView
                         android:id="@+id/tvN39"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE39"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF39"
-                        app:layout_constraintStart_toEndOf="@+id/tvN39"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Siga directo" />
+                        android:text="Siga directo"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF39"
+                        app:layout_constraintStart_toEndOf="@+id/tvN39"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT39"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE39"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Продолжайте прямо" />
+                        android:text="Продолжайте прямо"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE39" />
 
                     <ImageView
                         android:id="@+id/ivF39"
@@ -678,39 +682,39 @@
 
                     <TextView
                         android:id="@+id/tvN40"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE40"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF40"
-                        app:layout_constraintStart_toEndOf="@+id/tvN40"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="¿Cómo se va...?" />
+                        android:text="¿Cómo se va...?"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF40"
+                        app:layout_constraintStart_toEndOf="@+id/tvN40"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT40"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE40"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Как проехать...?" />
+                        android:text="Как проехать...?"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE40" />
 
                     <ImageView
                         android:id="@+id/ivF40"
@@ -737,39 +741,39 @@
 
                     <TextView
                         android:id="@+id/tvN41"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE41"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF41"
-                        app:layout_constraintStart_toEndOf="@+id/tvN41"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="¿Qué autobús va a…?" />
+                        android:text="¿Qué autobús va a…?"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF41"
+                        app:layout_constraintStart_toEndOf="@+id/tvN41"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT41"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE41"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Какой автобус идет…?" />
+                        android:text="Какой автобус идет…?"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE41" />
 
                     <ImageView
                         android:id="@+id/ivF41"
@@ -796,39 +800,39 @@
 
                     <TextView
                         android:id="@+id/tvN42"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE42"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF42"
-                        app:layout_constraintStart_toEndOf="@+id/tvN42"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="¿Cuál es la próxima parada?" />
+                        android:text="¿Cuál es la próxima parada?"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF42"
+                        app:layout_constraintStart_toEndOf="@+id/tvN42"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT42"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE42"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Какая следующая остановка?" />
+                        android:text="Какая следующая остановка?"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE42" />
 
                     <ImageView
                         android:id="@+id/ivF42"
@@ -855,39 +859,39 @@
 
                     <TextView
                         android:id="@+id/tvN43"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE43"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF43"
-                        app:layout_constraintStart_toEndOf="@+id/tvN43"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Está cerca / lejos" />
+                        android:text="Está cerca / lejos"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF43"
+                        app:layout_constraintStart_toEndOf="@+id/tvN43"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT43"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE43"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Это близко / далеко" />
+                        android:text="Это близко / далеко"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE43" />
 
                     <ImageView
                         android:id="@+id/ivF43"
@@ -914,39 +918,39 @@
 
                     <TextView
                         android:id="@+id/tvN44"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE44"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF44"
-                        app:layout_constraintStart_toEndOf="@+id/tvN44"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="¿Dónde se puede comprar?" />
+                        android:text="¿Dónde se puede comprar?"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF44"
+                        app:layout_constraintStart_toEndOf="@+id/tvN44"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT44"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE44"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Где можно купить?" />
+                        android:text="Где можно купить?"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE44" />
 
                     <ImageView
                         android:id="@+id/ivF44"
@@ -973,39 +977,39 @@
 
                     <TextView
                         android:id="@+id/tvN45"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE45"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF45"
-                        app:layout_constraintStart_toEndOf="@+id/tvN45"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Quiero comprar algo" />
+                        android:text="Quiero comprar algo"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF45"
+                        app:layout_constraintStart_toEndOf="@+id/tvN45"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT45"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE45"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Хочу купить что-то" />
+                        android:text="Хочу купить что-то"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE45" />
 
                     <ImageView
                         android:id="@+id/ivF45"
@@ -1032,39 +1036,39 @@
 
                     <TextView
                         android:id="@+id/tvN46"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE46"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF46"
-                        app:layout_constraintStart_toEndOf="@+id/tvN46"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="¿Cuánto cuesta?" />
+                        android:text="¿Cuánto cuesta?"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF46"
+                        app:layout_constraintStart_toEndOf="@+id/tvN46"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT46"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE46"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Сколько стоит?" />
+                        android:text="Сколько стоит?"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE46" />
 
                     <ImageView
                         android:id="@+id/ivF46"
@@ -1091,39 +1095,39 @@
 
                     <TextView
                         android:id="@+id/tvN47"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE47"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF47"
-                        app:layout_constraintStart_toEndOf="@+id/tvN47"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="¿A qué hora cierra esta tienda?" />
+                        android:text="¿A qué hora cierra esta tienda?"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF47"
+                        app:layout_constraintStart_toEndOf="@+id/tvN47"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT47"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE47"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="В котором часу закрывается этот магазин?" />
+                        android:text="В котором часу закрывается этот магазин?"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE47" />
 
                     <ImageView
                         android:id="@+id/ivF47"
@@ -1150,39 +1154,39 @@
 
                     <TextView
                         android:id="@+id/tvN48"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE48"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF48"
-                        app:layout_constraintStart_toEndOf="@+id/tvN48"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Voy a pagar en efectivo / con tarjeta" />
+                        android:text="Voy a pagar en efectivo / con tarjeta"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF48"
+                        app:layout_constraintStart_toEndOf="@+id/tvN48"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT48"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE48"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Буду оплачивать наличными / по карте" />
+                        android:text="Буду оплачивать наличными / по карте"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE48" />
 
                     <ImageView
                         android:id="@+id/ivF48"
@@ -1209,39 +1213,39 @@
 
                     <TextView
                         android:id="@+id/tvN49"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE49"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF49"
-                        app:layout_constraintStart_toEndOf="@+id/tvN49"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Es demasiado caro" />
+                        android:text="Es demasiado caro"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF49"
+                        app:layout_constraintStart_toEndOf="@+id/tvN49"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT49"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE49"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Это слишком дорого" />
+                        android:text="Это слишком дорого"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE49" />
 
                     <ImageView
                         android:id="@+id/ivF49"
@@ -1268,39 +1272,39 @@
 
                     <TextView
                         android:id="@+id/tvN50"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE50"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF50"
-                        app:layout_constraintStart_toEndOf="@+id/tvN50"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Abierto" />
+                        android:text="Abierto"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF50"
+                        app:layout_constraintStart_toEndOf="@+id/tvN50"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT50"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE50"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Открыто" />
+                        android:text="Открыто"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE50" />
 
                     <ImageView
                         android:id="@+id/ivF50"
@@ -1327,39 +1331,39 @@
 
                     <TextView
                         android:id="@+id/tvN51"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE51"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF51"
-                        app:layout_constraintStart_toEndOf="@+id/tvN51"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Cerrado" />
+                        android:text="Cerrado"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF51"
+                        app:layout_constraintStart_toEndOf="@+id/tvN51"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT51"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE51"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Закрыто" />
+                        android:text="Закрыто"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE51" />
 
                     <ImageView
                         android:id="@+id/ivF51"
@@ -1386,39 +1390,39 @@
 
                     <TextView
                         android:id="@+id/tvN52"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE52"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF52"
-                        app:layout_constraintStart_toEndOf="@+id/tvN52"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="No hay entrada" />
+                        android:text="No hay entrada"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF52"
+                        app:layout_constraintStart_toEndOf="@+id/tvN52"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT52"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE52"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Входа нет" />
+                        android:text="Входа нет"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE52" />
 
                     <ImageView
                         android:id="@+id/ivF52"
@@ -1445,39 +1449,39 @@
 
                     <TextView
                         android:id="@+id/tvN53"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE53"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF53"
-                        app:layout_constraintStart_toEndOf="@+id/tvN53"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="No molestar" />
+                        android:text="No molestar"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF53"
+                        app:layout_constraintStart_toEndOf="@+id/tvN53"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT53"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE53"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Не мешать" />
+                        android:text="Не мешать"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE53" />
 
                     <ImageView
                         android:id="@+id/ivF53"
@@ -1504,39 +1508,39 @@
 
                     <TextView
                         android:id="@+id/tvN54"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE54"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF54"
-                        app:layout_constraintStart_toEndOf="@+id/tvN54"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="¡Peligro!" />
+                        android:text="¡Peligro!"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF54"
+                        app:layout_constraintStart_toEndOf="@+id/tvN54"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT54"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE54"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Опасно!" />
+                        android:text="Опасно!"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE54" />
 
                     <ImageView
                         android:id="@+id/ivF54"
@@ -1563,39 +1567,39 @@
 
                     <TextView
                         android:id="@+id/tvN55"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE55"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF55"
-                        app:layout_constraintStart_toEndOf="@+id/tvN55"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Prohibido fumar" />
+                        android:text="Prohibido fumar"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF55"
+                        app:layout_constraintStart_toEndOf="@+id/tvN55"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT55"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE55"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Курить запрещено" />
+                        android:text="Курить запрещено"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE55" />
 
                     <ImageView
                         android:id="@+id/ivF55"
@@ -1622,39 +1626,39 @@
 
                     <TextView
                         android:id="@+id/tvN56"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="-"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvE56"
                         style="@style/english"
-                        app:layout_constraintEnd_toStartOf="@+id/ivF56"
-                        app:layout_constraintStart_toEndOf="@+id/tvN56"
-                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Tengo hambre" />
+                        android:text="Tengo hambre"
+                        app:layout_constraintEnd_toStartOf="@+id/ivF56"
+                        app:layout_constraintStart_toEndOf="@+id/tvN56"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvT56"
                         style="@style/translate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvE56"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        android:text="Я голоден" />
+                        android:text="Я голоден"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvE56" />
 
                     <ImageView
                         android:id="@+id/ivF56"

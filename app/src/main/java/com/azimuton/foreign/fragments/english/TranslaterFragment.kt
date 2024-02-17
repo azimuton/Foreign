@@ -9,19 +9,29 @@ import android.view.ViewGroup
 import android.view.Window
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.azimuton.domain.models.english.Word
 import com.azimuton.foreign.Constants
+import com.azimuton.foreign.R
 import com.azimuton.foreign.databinding.FragmentTranslaterBinding
 import com.azimuton.foreign.viewmodels.english.TranslaterViewModel
 import com.google.mlkit.nl.translate.TranslateLanguage
 import com.google.mlkit.nl.translate.Translation
 import com.google.mlkit.nl.translate.TranslatorOptions
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class TranslaterFragment : Fragment() {
+    private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
     private lateinit var  russianEnglishTranslator : com.google.mlkit.nl.translate.Translator
     private lateinit var  englishRussianTranslator : com.google.mlkit.nl.translate.Translator
     var text : String = ""
@@ -36,6 +46,7 @@ class TranslaterFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.ivChangeLanguages.setOnClickListener(firstButtonListener)
         binding.ivClearET.setOnClickListener {
@@ -44,11 +55,14 @@ class TranslaterFragment : Fragment() {
             binding.tvAlarmMessage.text = ""
             binding.tvSaveTranslate.isEnabled = true
             binding.tvSaveTranslate.alpha = 1f
-            val  w : Window? = activity?.window
-            w?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
-                    or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
+           hideSystemUI()
         }
         binding.tvSaveTranslate.setOnClickListener {
+            coroutineScope.launch(Dispatchers.Main) {
+                binding.tvSaveTranslate.background = resources.getDrawable(R.drawable.button_resource_two)
+                delay(350)
+                binding.tvSaveTranslate.background = resources.getDrawable(R.drawable.button_resource)
+            }
             if (binding.etEnterWordForTranslate.text.isNotEmpty() && binding.tvTranslatjngWord.text.isNotEmpty()) {
                 if(binding.tvEnglish.text == Constants.ENG && binding.tvRussian.text == Constants.RUS){
                     val englishWord: String = binding.etEnterWordForTranslate.text.toString()
@@ -73,10 +87,15 @@ class TranslaterFragment : Fragment() {
                 }
             } else {
                 Toast.makeText(
-                    requireActivity(), "Нет данных для сохранения!", Toast.LENGTH_SHORT).show()
+                    requireActivity(), "No data!", Toast.LENGTH_SHORT).show()
             }
         }
         binding.tvDoTranslate.setOnClickListener {
+            coroutineScope.launch(Dispatchers.Main) {
+                binding.tvDoTranslate.background = resources.getDrawable(R.drawable.button_resource_two)
+                delay(350)
+                binding.tvDoTranslate.background = resources.getDrawable(R.drawable.button_resource)
+            }
             if(binding.tvTranslatjngWord.text.isEmpty()){
                 binding.progressBarEnglishTranslate.visibility = View.VISIBLE
             }
@@ -88,18 +107,13 @@ class TranslaterFragment : Fragment() {
                     prepareLangTransMode()
                 }
             } else {
-                Toast.makeText(requireActivity(), "Напишите слово для перевода!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireActivity(), "Write the word for translation!", Toast.LENGTH_SHORT).show()
             }
             val ims = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             ims.hideSoftInputFromWindow(binding.etEnterWordForTranslate.windowToken, 0)
-            val  w : Window? = activity?.window
-            w?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
-                    or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
+           hideSystemUI()
         }
-        val  w : Window? = activity?.window
-        w?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
-                or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
-
+       hideSystemUI()
     }
     @SuppressLint("SetTextI18n")
     private fun prepareLangTransMode() {
@@ -172,16 +186,26 @@ class TranslaterFragment : Fragment() {
             }
     }
     private val firstButtonListener: View.OnClickListener = View.OnClickListener {
-        // меняем обработчик нажатия кнопки на второй
         binding.tvEnglish.text = Constants.RUS
         binding.tvRussian.text = Constants.ENG
         binding.ivChangeLanguages.setOnClickListener(secondButtonListener)
     }
     private val secondButtonListener: View.OnClickListener = View.OnClickListener {
-        // возвращаем первый обработчик нажатия кнопки
         binding.tvEnglish.text = Constants.ENG
         binding.tvRussian.text = Constants.RUS
         binding.ivChangeLanguages.setOnClickListener(firstButtonListener)
+    }
+    private fun hideSystemUI () {
+        val window : Window? = activity?.window
+        if (window != null) {
+            WindowCompat.setDecorFitsSystemWindows(window, false)
+        }
+        if (window != null) {
+            WindowInsetsControllerCompat (window, window.decorView).let { controller ->
+                controller.hide (WindowInsetsCompat.Type.systemBars ())
+                controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            }
+        }
     }
 
 }

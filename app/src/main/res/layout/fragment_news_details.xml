@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/circle_new">
+    android:background="@drawable/yellowfonone">
 
 
     <ImageView
         android:id="@+id/ivBackToNews"
         android:layout_width="86dp"
         android:layout_height="36dp"
-        android:src="@drawable/backnote"
+        android:src="@drawable/leftarrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,7 +47,7 @@
                 android:shadowColor="@color/black"
                 android:shadowDy="3"
                 android:shadowRadius="3"
-                android:textColor="@color/translatecolor"
+                android:textColor="@color/three"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
@@ -61,7 +61,7 @@
                 android:shadowColor="@color/black"
                 android:shadowDy="3"
                 android:shadowRadius="3"
-                android:textColor="@color/translatecolor"
+                android:textColor="@color/three"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -74,7 +74,7 @@
                 android:shadowColor="@color/black"
                 android:shadowDy="3"
                 android:shadowRadius="3"
-                android:textColor="@color/translatecolor"
+                android:textColor="@color/three"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>

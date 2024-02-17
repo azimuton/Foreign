@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/circle_new">
+    android:background="@drawable/yellowfonone">
 
     <ImageView
         android:id="@+id/imageView77"
@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:textColor="@color/broun"
+        android:textColor="@color/three"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +113,7 @@
         android:shadowDy="3"
         android:shadowRadius="3"
         android:text="Learned words : "
-        android:textColor="@color/translatecolor"
+        android:textColor="@color/three"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/tvQuantityOfLearnedWordsSpain"
@@ -177,7 +177,7 @@
         android:shadowDy="3"
         android:shadowRadius="3"
         android:text="Choose word for checking"
-        android:textColor="@color/translatecolor"
+        android:textColor="@color/three"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -199,7 +199,8 @@
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_close_24" />
+            app:srcCompat="@drawable/ic_baseline_close_24"
+            app:tint="@color/three" />
 
         <ImageView
             android:id="@+id/ivEyeOpenSpain"
@@ -210,7 +211,7 @@
             android:src="@drawable/eyeopen"
             app:layout_constraintEnd_toStartOf="@+id/ivCloseCheckingWordSpain"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/translatecolor" />
+            app:tint="@color/three" />
 
         <ImageView
             android:id="@+id/ivChangeWordsSpain"
@@ -220,7 +221,8 @@
             android:layout_marginEnd="51dp"
             android:src="@drawable/ic_baseline_cached_24"
             app:layout_constraintEnd_toStartOf="@+id/ivCloseCheckingWordSpain"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/three" />
 
         <TextView
             android:id="@+id/tvCheckingWordSpain"
@@ -248,7 +250,7 @@
             android:shadowDy="3"
             android:shadowRadius="3"
             android:text="dhrt"
-            android:textColor="@color/translatecolor"
+            android:textColor="@color/three"
             android:textSize="20sp"
             android:textStyle="bold|italic"
             android:visibility="gone"
@@ -266,7 +268,7 @@
             android:visibility="gone"
             app:layout_constraintEnd_toStartOf="@+id/ivCloseCheckingWordSpain"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/translatecolor" />
+            app:tint="@color/three" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

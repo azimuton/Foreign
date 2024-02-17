@@ -28,6 +28,7 @@ import com.azimuton.foreign.viewmodels.english.LearnViewModel
 import com.azimuton.foreign.R
 import com.azimuton.foreign.fragments.english.adapters.NewWordsAdapter
 import com.azimuton.foreign.databinding.FragmentLearnBinding
+import com.azimuton.foreign.fragments.spain.NewWordsSpainFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -42,6 +43,7 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
     private lateinit var adapter: NewWordsAdapter
     lateinit var wordDatabase : AppRoomDatabase
     private lateinit var wordList: ArrayList<Word>
+    private lateinit var cordata : Job
     @Inject
     lateinit var copyUseCase: WordCopyUseCase
     private val viewModel : LearnViewModel by activityViewModels()
@@ -139,10 +141,11 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
         }
     }
     private fun getData() {
-        coroutineScope.launch {
+        cordata = coroutineScope.launch {
             val wordFromDb: List<Word> = getAll.execute()
             wordList.clear()
             wordList.addAll(wordFromDb)
+            cordata.cancel()
         }
     }
 
@@ -154,7 +157,7 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
         //deleteInject.execute(words)
         viewModel.delete(words)
         getData()
-        adapter.submitList(wordList)
+        adapter.notifyDataSetChanged()
         activity?.supportFragmentManager
             ?.beginTransaction()
             //?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
@@ -173,6 +176,11 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
             viewModel.delete(words)
             getData()
             adapter.notifyDataSetChanged()
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+               // ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                ?.replace(R.id.flMain, LearnFragment())
+                ?.commit()
             hideSystemUI()
             Toast.makeText(requireActivity(), "The entry is deleted!", Toast.LENGTH_SHORT).show()
             binding.cvDialog.visibility = View.GONE

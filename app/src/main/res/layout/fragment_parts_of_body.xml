@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/circle_new">
+    android:background="@drawable/yellowfonone">
 
     <ImageView
         android:id="@+id/ivBackToNewWordsList"
         android:layout_width="78dp"
         android:layout_height="42dp"
-        android:src="@drawable/backnote"
+        android:src="@drawable/leftarrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

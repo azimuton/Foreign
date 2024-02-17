@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/circle_new">
+    android:background="@drawable/yellowfonone">
 
     <ImageView
         android:id="@+id/ivBackFlagSpain"
@@ -86,7 +86,7 @@
         android:shadowRadius="3"
         android:text="Save"
         android:textAllCaps="false"
-        android:textColor="@color/translatecolor"
+        android:textColor="@color/three"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -130,7 +130,7 @@
         android:shadowDy="3"
         android:shadowRadius="3"
         android:text="transfer to the list of learned ->"
-        android:textColor="@color/translatecolor"
+        android:textColor="@color/three"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

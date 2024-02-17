@@ -11,6 +11,6 @@
     android:shadowDy="3"
     android:shadowRadius="3"
     android:textAppearance="?android:attr/textAppearanceLarge"
-    android:textColor="@color/translatecolor"
+    android:textColor="@color/three"
     android:textSize="30sp"
     android:textStyle="bold"></TextView>

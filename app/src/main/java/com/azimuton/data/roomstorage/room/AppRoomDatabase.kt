@@ -53,7 +53,6 @@ abstract class AppRoomDatabase: RoomDatabase() {
                     context.applicationContext,
                     AppRoomDatabase::class.java,
                     "words_database")
-                    //.allowMainThreadQueries()
                     .build()
                 INSTANCE = instance
                 instance

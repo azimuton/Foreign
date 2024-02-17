@@ -161,6 +161,7 @@ class LearnSpainFragment : Fragment(), LearnSpainAdapter.ViewHolder.ItemCallback
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun copyId(index: Int) {
         val words = wordList[index]
         //wordDatabase.spainWordDao().copyId(index)
@@ -169,7 +170,7 @@ class LearnSpainFragment : Fragment(), LearnSpainAdapter.ViewHolder.ItemCallback
             spainDeleteInject.execute(words)
         }
         getData()
-        adapter.submitList(wordList)
+        adapter.notifyDataSetChanged()
         activity?.supportFragmentManager
             ?.beginTransaction()
            // ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
@@ -189,6 +190,11 @@ class LearnSpainFragment : Fragment(), LearnSpainAdapter.ViewHolder.ItemCallback
             }
             getData()
             adapter.notifyDataSetChanged()
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+               // ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
+                ?.replace(R.id.flMain, LearnSpainFragment())
+                ?.commit()
             hideSystemUI()
             Toast.makeText(requireActivity(), "The entry is deleted!", Toast.LENGTH_SHORT).show()
             binding.cvDialog.visibility = View.GONE

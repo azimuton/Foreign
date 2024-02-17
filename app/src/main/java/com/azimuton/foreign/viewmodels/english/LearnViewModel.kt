@@ -11,6 +11,7 @@ import com.azimuton.domain.usecase.english.WordGetAllUseCase
 import com.azimuton.domain.usecase.english.WordInsertUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -32,6 +33,7 @@ class LearnViewModel @Inject constructor(
     fun delete(word : Word){
         viewModelScope.launch(Dispatchers.IO){
             wordDeleteUseCase.execute(word)
+            viewModelScope.cancel()
         }
     }
     fun deleteAll(){

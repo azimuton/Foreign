@@ -12,6 +12,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="@color/broun"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,7 +23,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/circle_new"
+            android:layout_margin="2dp"
+            android:background="@drawable/yellowfonone"
             android:paddingBottom="4dp">
 
             <ImageView
@@ -31,6 +33,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="4dp"
+                android:tint="@color/three"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/baseline_delete_forever_24" />
@@ -44,7 +47,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/ivItemDeleteLearnedWord"
                 app:layout_constraintTop_toTopOf="@+id/ivItemDeleteLearnedWord"
                 app:srcCompat="@drawable/eyeopen"
-                app:tint="@color/translatecolor" />
+                app:tint="@color/three" />
 
             <TextView
                 android:id="@+id/tvItemLearnedWord"
@@ -73,7 +76,8 @@
                 android:shadowColor="@color/black"
                 android:shadowDy="3"
                 android:shadowRadius="3"
-                android:textColor="@color/translatecolor"
+                android:text="srrhrtutdi"
+                android:textColor="@color/three"
                 android:textSize="20sp"
                 android:textStyle="bold|italic"
                 android:visibility="gone"
@@ -92,7 +96,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/ivItemDeleteLearnedWord"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/eyeclose"
-                app:tint="@color/translatecolor" />
+                app:tint="@color/three" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

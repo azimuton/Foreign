@@ -4,10 +4,10 @@
     <shape android:shape="rectangle">
         <gradient android:type="linear"
             android:angle="270"
-            android:startColor="@color/yellow"
+            android:startColor="@color/ic_launcher_foreign_background"
             android:centerY="0.25"
             android:centerColor="@color/white"
-            android:endColor="@color/yellow" />
+            android:endColor="@color/ic_launcher_foreign_background" />
     </shape>
 </item>
 </selector>

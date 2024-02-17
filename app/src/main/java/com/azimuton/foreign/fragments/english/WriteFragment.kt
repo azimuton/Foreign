@@ -33,7 +33,7 @@ class WriteFragment : Fragment() {
     private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
     lateinit var binding : FragmentWriteBinding
     lateinit var database : AppRoomDatabase
-     lateinit var randomWord : LearnedWordEntity
+    private lateinit var randomWord : LearnedWordEntity
     private val viewModel : LearnedViewModel by activityViewModels()
     private var countRight = 0
     private var countFail = 0
@@ -93,7 +93,7 @@ class WriteFragment : Fragment() {
                 hideSystemUI()
                 if(binding.tvWriteWord.text != ""){
                     if(binding.etWriteWordForChecking.text.isNotEmpty()){
-                        if(randomWord.learnedEnglishWord.equals(binding.etWriteWordForChecking.text.toString(), true) ){
+                        if(randomWord.learnedEnglishWord.contentEquals(binding.etWriteWordForChecking.text.toString(),true)){
                             countRight++
                             binding.tvRight.text = countRight.toString()
                             binding.ivWriteBad.visibility = View.GONE
@@ -139,9 +139,6 @@ class WriteFragment : Fragment() {
             }
 
         }
-//        val  w : Window? = activity?.window
-//        w?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
-//                or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
         hideSystemUI()
     }
     private fun hideSystemUI () {

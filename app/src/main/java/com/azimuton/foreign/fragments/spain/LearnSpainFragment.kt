@@ -42,11 +42,12 @@ class LearnSpainFragment : Fragment(), LearnSpainAdapter.ViewHolder.ItemCallback
     private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
     private lateinit var binding: FragmentLearnSpainBinding
     private lateinit var adapter: LearnSpainAdapter
-    lateinit var wordDatabase : AppRoomDatabase
+    private lateinit var wordDatabase : AppRoomDatabase
     private lateinit var wordList: ArrayList<WordSpain>
+    private val viewModel : LearnSpainViewModel by activityViewModels()
+    private var corr : Job? = null
     @Inject
     lateinit var spainCopyUseCase: SpainWordCopyUseCase
-    private val viewModel : LearnSpainViewModel by activityViewModels()
     @Inject
     lateinit var spainInsertInject : SpainWordInsertUseCase
     @Inject
@@ -154,17 +155,17 @@ class LearnSpainFragment : Fragment(), LearnSpainAdapter.ViewHolder.ItemCallback
     }
 
     private fun getData() {
-        coroutineScope.launch {
+        corr = coroutineScope.launch {
             val wordFromDb: List<WordSpain> = spainGetAll.execute()
             wordList.clear()
             wordList.addAll(wordFromDb)
+            corr?.cancel()
         }
     }
 
     @SuppressLint("NotifyDataSetChanged")
     override fun copyId(index: Int) {
         val words = wordList[index]
-        //wordDatabase.spainWordDao().copyId(index)
         viewModel.copyId(index)
         coroutineScope.launch {
             spainDeleteInject.execute(words)
@@ -173,7 +174,6 @@ class LearnSpainFragment : Fragment(), LearnSpainAdapter.ViewHolder.ItemCallback
         adapter.notifyDataSetChanged()
         activity?.supportFragmentManager
             ?.beginTransaction()
-           // ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
             ?.replace(R.id.flMain, LearnSpainFragment())
             ?.commit()
         Toast.makeText(requireActivity(), "Word copied!", Toast.LENGTH_LONG).show()
@@ -192,7 +192,6 @@ class LearnSpainFragment : Fragment(), LearnSpainAdapter.ViewHolder.ItemCallback
             adapter.notifyDataSetChanged()
             activity?.supportFragmentManager
                 ?.beginTransaction()
-               // ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
                 ?.replace(R.id.flMain, LearnSpainFragment())
                 ?.commit()
             hideSystemUI()

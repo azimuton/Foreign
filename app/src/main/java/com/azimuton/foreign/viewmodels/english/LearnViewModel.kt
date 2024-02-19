@@ -33,7 +33,6 @@ class LearnViewModel @Inject constructor(
     fun delete(word : Word){
         viewModelScope.launch(Dispatchers.IO){
             wordDeleteUseCase.execute(word)
-            viewModelScope.cancel()
         }
     }
     fun deleteAll(){

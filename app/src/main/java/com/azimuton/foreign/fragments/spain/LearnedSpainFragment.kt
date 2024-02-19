@@ -47,6 +47,7 @@ class LearnedSpainFragment : Fragment(), LearnedSpainWordsAdapter.ViewHolder.Ite
     lateinit var getAll : SpainLearnedWordGetAllUseCase
     private val viewModel : LearnedSpainViewModel by activityViewModels()
     private var cor : Job? = null
+    private var corr : Job? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -119,10 +120,11 @@ class LearnedSpainFragment : Fragment(), LearnedSpainWordsAdapter.ViewHolder.Ite
     }
 
     private fun getData() {
-        coroutineScope.launch {
+        corr = coroutineScope.launch {
             val wordFromDb: List<LearnedSpainWord> = getAll.execute()
             learnedWordsList.clear()
             learnedWordsList.addAll(wordFromDb)
+            corr?.cancel()
         }
     }
 
@@ -143,7 +145,7 @@ class LearnedSpainFragment : Fragment(), LearnedSpainWordsAdapter.ViewHolder.Ite
                 viewModel.delete(learnedSpainWords)
                 val toast = Toast.makeText(requireActivity(), "The entry is deleted!", Toast.LENGTH_SHORT)
                 toast.show()
-                cor = CoroutineScope(Dispatchers.Main).launch {
+                cor = coroutineScope.launch(Dispatchers.IO) {
                     delay(500)
                     toast.cancel()
                     cor?.cancel()

@@ -18,6 +18,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.azimuton.data.roomstorage.room.AppRoomDatabase
 import com.azimuton.domain.models.english.Word
+import com.azimuton.domain.models.spain.WordSpain
 import com.azimuton.domain.usecase.english.WordCopyUseCase
 import com.azimuton.domain.usecase.english.WordDeleteAllUseCase
 import com.azimuton.domain.usecase.english.WordDeleteUseCase
@@ -34,6 +35,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -41,12 +43,12 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
     private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
     private lateinit var binding: FragmentLearnBinding
     private lateinit var adapter: NewWordsAdapter
-    lateinit var wordDatabase : AppRoomDatabase
+    private lateinit var wordDatabase : AppRoomDatabase
     private lateinit var wordList: ArrayList<Word>
-    private lateinit var cordata : Job
+    private val viewModel : LearnViewModel by activityViewModels()
+    private var corr : Job? = null
     @Inject
     lateinit var copyUseCase: WordCopyUseCase
-    private val viewModel : LearnViewModel by activityViewModels()
     @Inject
     lateinit var insertInject : WordInsertUseCase
     @Inject
@@ -140,27 +142,25 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
             }
         }
     }
+
     private fun getData() {
-        cordata = coroutineScope.launch {
-            val wordFromDb: List<Word> = getAll.execute()
-            wordList.clear()
-            wordList.addAll(wordFromDb)
-            cordata.cancel()
-        }
+    corr = coroutineScope.launch {
+        val wordFromDb: List<Word> = getAll.execute()
+        wordList.clear()
+        wordList.addAll(wordFromDb)
+        corr?.cancel()
+       }
     }
 
     @SuppressLint("NotifyDataSetChanged")
     override fun copyId(index: Int) {
         val words = wordList[index]
-        //wordDatabase.wordDao().copyId(index)
         viewModel.copyId(index)
-        //deleteInject.execute(words)
         viewModel.delete(words)
         getData()
         adapter.notifyDataSetChanged()
         activity?.supportFragmentManager
             ?.beginTransaction()
-            //?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
             ?.replace(R.id.flMain, LearnFragment())
             ?.commit()
         Toast.makeText(requireActivity(), "Word copied!", Toast.LENGTH_LONG).show()
@@ -172,19 +172,17 @@ class LearnFragment : Fragment(), NewWordsAdapter.ViewHolder.ItemCallback {
         binding.rvNewWords.visibility = View.GONE
         binding.btDialogOk.setOnClickListener {
             val words = wordList[index]
-            //deleteInject.execute(words)
             viewModel.delete(words)
             getData()
             adapter.notifyDataSetChanged()
             activity?.supportFragmentManager
                 ?.beginTransaction()
-               // ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
                 ?.replace(R.id.flMain, LearnFragment())
                 ?.commit()
             hideSystemUI()
             Toast.makeText(requireActivity(), "The entry is deleted!", Toast.LENGTH_SHORT).show()
             binding.cvDialog.visibility = View.GONE
-              binding.rvNewWords.visibility = View.VISIBLE
+            binding.rvNewWords.visibility = View.VISIBLE
         }
         binding.btDialogCancel.setOnClickListener {
             binding.cvDialog.visibility = View.GONE

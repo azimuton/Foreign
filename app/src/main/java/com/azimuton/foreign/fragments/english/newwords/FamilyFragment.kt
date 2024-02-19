@@ -14,11 +14,18 @@ import com.azimuton.foreign.databinding.FragmentFamilyBinding
 import com.azimuton.foreign.viewmodels.english.NewWordsViewModel
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class FamilyFragment : Fragment() {
     private lateinit var binding : FragmentFamilyBinding
     private val viewModel: NewWordsViewModel by activityViewModels()
+    private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
+    private var cor : Job? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,112 +52,121 @@ class FamilyFragment : Fragment() {
             val translate : String = binding.tvMother.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivFather.setOnClickListener {
             val english : String = binding.father.text.toString()
             val translate : String = binding.tvFather.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivSister.setOnClickListener {
             val english : String = binding.sister.text.toString()
             val translate : String = binding.tvSister.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivBrother.setOnClickListener {
             val english : String = binding.brother.text.toString()
             val translate : String = binding.tvBrother.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivWife.setOnClickListener {
             val english : String = binding.wife.text.toString()
             val translate : String = binding.tvWife.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivHusband.setOnClickListener {
             val english : String = binding.husband.text.toString()
             val translate : String = binding.tvHusband.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivSon.setOnClickListener {
             val english : String = binding.son.text.toString()
             val translate : String = binding.tvSon.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivDaughter.setOnClickListener {
             val english : String = binding.daughter.text.toString()
             val translate : String = binding.tvDaughter.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivGrandmother.setOnClickListener {
             val english : String = binding.grandmother.text.toString()
             val translate : String = binding.tvGrandmother.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivGrandfather.setOnClickListener {
             val english : String = binding.grandfather.text.toString()
             val translate : String = binding.tvGrandfather.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivFatherInLaw.setOnClickListener {
             val english : String = binding.fatherinlaw.text.toString()
             val translate : String = binding.tvFatherInLaw.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivMotherInLaw.setOnClickListener {
             val english : String = binding.motherinlaw.text.toString()
             val translate : String = binding.tvMotherInLaw.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivBrotherInLaw.setOnClickListener {
             val english : String = binding.brotherinlaw.text.toString()
             val translate : String = binding.tvBrotherInLaw.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivSisterInLaw.setOnClickListener {
             val english : String = binding.sisterinlaw.text.toString()
             val translate : String = binding.tvSisterInLaw.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivUncle.setOnClickListener {
             val english : String = binding.uncle.text.toString()
             val translate : String = binding.tvUncle.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivAunt.setOnClickListener {
             val english : String = binding.aunt.text.toString()
             val translate : String = binding.tvAunt.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
+        }
+    }
+    private fun toast(){
+        val toast = Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT)
+        toast.show()
+        cor = coroutineScope.launch(Dispatchers.IO) {
+            delay(350)
+            toast.cancel()
+            cor?.cancel()
         }
     }
 }

@@ -48,6 +48,7 @@ class LearnedFragment : Fragment(), LearnedWordsAdapter.ViewHolder.ItemCallback 
     lateinit var getAll : LearnedWordGetAllUseCase
     private val viewModel : LearnedViewModel by activityViewModels()
     private var cor : Job? = null
+    private var corr : Job? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -120,10 +121,11 @@ class LearnedFragment : Fragment(), LearnedWordsAdapter.ViewHolder.ItemCallback 
         adapter.submitList(filteredList)
     }
     private fun getData() {
-        coroutineScope.launch {
+       corr =  coroutineScope.launch {
             val wordFromDb: List<LearnedWord> = getAll.execute()
             learnedWordsList.clear()
             learnedWordsList.addAll(wordFromDb)
+           corr?.cancel()
         }
     }
 
@@ -143,16 +145,16 @@ class LearnedFragment : Fragment(), LearnedWordsAdapter.ViewHolder.ItemCallback 
                 adapter.notifyDataSetChanged()
                 val toast = Toast.makeText(requireActivity(), "The entry is deleted!", Toast.LENGTH_SHORT)
                 toast.show()
-                cor = CoroutineScope(Dispatchers.Main).launch {
+                cor = coroutineScope.launch(Dispatchers.IO) {
                     delay(500)
                     toast.cancel()
                     cor?.cancel()
                 }
                 binding.cvDialog.visibility = View.GONE
             }
-            binding.btDialogCancel.setOnClickListener {
-                binding.cvDialog.visibility = View.GONE
-            }
+        }
+        binding.btDialogCancel.setOnClickListener {
+            binding.cvDialog.visibility = View.GONE
         }
     }
     private fun randomLearned() {

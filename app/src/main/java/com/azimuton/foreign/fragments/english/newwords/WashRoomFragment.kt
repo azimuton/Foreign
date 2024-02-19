@@ -14,11 +14,18 @@ import com.azimuton.foreign.databinding.FragmentWashRoomBinding
 import com.azimuton.foreign.viewmodels.english.NewWordsViewModel
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class WashRoomFragment : Fragment() {
     private lateinit var binding : FragmentWashRoomBinding
     private val viewModel: NewWordsViewModel by activityViewModels()
+    private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
+    private var cor : Job? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,133 +52,142 @@ class WashRoomFragment : Fragment() {
             val translate : String = binding.tvWashroom.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivBath.setOnClickListener {
             val english : String = binding.bath.text.toString()
             val translate : String = binding.tvBath.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivToilet.setOnClickListener {
             val english : String = binding.toilet.text.toString()
             val translate : String = binding.tvToilet.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivFlushtank.setOnClickListener {
             val english : String = binding.flushtank.text.toString()
             val translate : String = binding.tvFlushtank.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivToiletseat.setOnClickListener {
             val english : String = binding.toiletseat.text.toString()
             val translate : String = binding.tvToiletseat.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivToiletpaper.setOnClickListener {
             val english : String = binding.toiletpaper.text.toString()
             val translate : String = binding.tvToiletpaper.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivShower.setOnClickListener {
             val english : String = binding.shower.text.toString()
             val translate : String = binding.tvShower.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivShowercabin.setOnClickListener {
             val english : String = binding.showercabin.text.toString()
             val translate : String = binding.tvShowercabin.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivTowel.setOnClickListener {
             val english : String = binding.towel.text.toString()
             val translate : String = binding.tvTowel.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivLaundrybasket.setOnClickListener {
             val english : String = binding.laundrybasket.text.toString()
             val translate : String = binding.tvLaundrybasket.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivWashingmashine.setOnClickListener {
             val english : String = binding.washingmashine.text.toString()
             val translate : String = binding.tvWashingmashine.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivDrainer.setOnClickListener {
             val english : String = binding.drainer.text.toString()
             val translate : String = binding.tvDrainer.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivToothbrush.setOnClickListener {
             val english : String = binding.toothbrush.text.toString()
             val translate : String = binding.tvToothbrush.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivToothpaste.setOnClickListener {
             val english : String = binding.toothpaste.text.toString()
             val translate : String = binding.tvToothpaste.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivSoap.setOnClickListener {
             val english : String = binding.soap.text.toString()
             val translate : String = binding.tvSoap.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivShampoo.setOnClickListener {
             val english : String = binding.shampoo.text.toString()
             val translate : String = binding.tvShampoo.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivSpongeforbody.setOnClickListener {
             val english : String = binding.spongeforbody.text.toString()
             val translate : String = binding.tvSpongeforbody.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivWashbasin.setOnClickListener {
             val english : String = binding.washbasin.text.toString()
             val translate : String = binding.tvWashbasin.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivWashbasincabinet.setOnClickListener {
             val english : String = binding.washbasincabinet.text.toString()
             val translate : String = binding.tvWashbasincabinet.text.toString()
             val word = Word(englishWord = english, translateWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+            toast()
+        }
+    }
+    private fun toast(){
+        val toast = Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT)
+        toast.show()
+        cor = coroutineScope.launch(Dispatchers.IO) {
+            delay(350)
+            toast.cancel()
+            cor?.cancel()
         }
     }
 }

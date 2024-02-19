@@ -14,11 +14,18 @@ import com.azimuton.foreign.databinding.FragmentBerryBinding
 import com.azimuton.foreign.viewmodels.english.NewWordsViewModel
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class BerryFragment : Fragment() {
     private lateinit var binding : FragmentBerryBinding
     private val viewModel: NewWordsViewModel by activityViewModels()
+    private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
+    private var cor : Job? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,43 +43,44 @@ class BerryFragment : Fragment() {
         binding.ivBackToNewWordsList.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
+                ?.setCustomAnimations(R.anim.alfa_up, R.anim.alfa_down)
                 ?.replace(R.id.flMain, NewWordsFragment())
                 ?.commit()
-
+            }
             binding.ivStrawberry.setOnClickListener {
                 val english : String = binding.strawberry.text.toString()
                 val translate : String = binding.tvStrawberry.text.toString()
                 val word = Word(englishWord = english, translateWord = translate)
                 viewModel.insert(word)
-                Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+                toast()
             }
             binding.ivRaspberries.setOnClickListener {
                 val english : String = binding.raspberries.text.toString()
                 val translate : String = binding.tvRaspberries.text.toString()
                 val word = Word(englishWord = english, translateWord = translate)
                 viewModel.insert(word)
-                Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+               toast()
             }
             binding.ivStrawberries.setOnClickListener {
                 val english : String = binding.strawberries.text.toString()
                 val translate : String = binding.tvStrawberries.text.toString()
                 val word = Word(englishWord = english, translateWord = translate)
                 viewModel.insert(word)
-                Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+                toast()
             }
             binding.ivCherries.setOnClickListener {
                 val english : String = binding.cherries.text.toString()
                 val translate : String = binding.tvCherries.text.toString()
                 val word = Word(englishWord = english, translateWord = translate)
                 viewModel.insert(word)
-                Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+                toast()
             }
             binding.ivGooseberry.setOnClickListener {
                 val english : String = binding.gooseberry.text.toString()
                 val translate : String = binding.tvGooseberry.text.toString()
                 val word = Word(englishWord = english, translateWord = translate)
                 viewModel.insert(word)
-                Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
+               toast()
             }
             binding.ivCurrant.setOnClickListener {
                 val english : String = binding.currant.text.toString()
@@ -200,6 +208,15 @@ class BerryFragment : Fragment() {
                 viewModel.insert(word)
                 Toast.makeText(requireActivity(), "Запись скопирована!", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        private fun toast(){
+        val toast = Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT)
+        toast.show()
+         cor = coroutineScope.launch(Dispatchers.Main) {
+            delay(350)
+            toast.cancel()
+            cor?.cancel()
         }
     }
 }

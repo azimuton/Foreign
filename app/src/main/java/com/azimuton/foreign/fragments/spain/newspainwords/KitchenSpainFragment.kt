@@ -17,11 +17,18 @@ import com.azimuton.foreign.fragments.spain.NewWordsSpainFragment
 import com.azimuton.foreign.viewmodels.spain.NewSpainWordsViewModel
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class KitchenSpainFragment : Fragment() {
     private lateinit var binding : FragmentKitchenSpainBinding
     private val viewModel: NewSpainWordsViewModel by activityViewModels()
+    private val coroutineScope = CoroutineScope(Dispatchers.IO + Job())
+    private var cor : Job? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,231 +56,240 @@ class KitchenSpainFragment : Fragment() {
             val translate : String = binding.tvKitchenSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivSpoonSpain.setOnClickListener {
             val spain : String = binding.spoonSpain.text.toString()
             val translate : String = binding.tvSpoonSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivForkSpain.setOnClickListener {
             val spain : String = binding.forkSpain.text.toString()
             val translate : String = binding.tvForkSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivKnifeSpain.setOnClickListener {
             val spain : String = binding.knifeSpain.text.toString()
             val translate : String = binding.tvKnifeSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivTableSpain.setOnClickListener {
             val spain : String = binding.tableSpain.text.toString()
             val translate : String = binding.tvTableSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivChairSpain.setOnClickListener {
             val spain : String = binding.chairSpain.text.toString()
             val translate : String = binding.tvChairSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivKithenstoveSpain.setOnClickListener {
             val spain : String = binding.kithenstoveSpain.text.toString()
             val translate : String = binding.tvKithenstoveSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivSinkSpain.setOnClickListener {
             val spain : String = binding.sinkSpain.text.toString()
             val translate : String = binding.tvSinkSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivBreadboxSpain.setOnClickListener {
             val spain : String = binding.breadboxSpain.text.toString()
             val translate : String = binding.tvBreadboxSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivHodgepodgeSpain.setOnClickListener {
             val spain : String = binding.hodgepodgeSpain.text.toString()
             val translate : String = binding.tvHodgepodgeSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivRefrigeratorSpain.setOnClickListener {
             val spain : String = binding.refrigeratorSpain.text.toString()
             val translate : String = binding.tvRefrigeratorSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivPlateSpain.setOnClickListener {
             val spain : String = binding.plateSpain.text.toString()
             val translate : String = binding.tvPlateSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivCupSpain.setOnClickListener {
             val spain : String = binding.cupSpain.text.toString()
             val translate : String = binding.tvCupSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivSaucerSpain.setOnClickListener {
             val spain : String = binding.saucerSpain.text.toString()
             val translate : String = binding.tvSaucerSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivKithencupboardSpain.setOnClickListener {
             val spain : String = binding.kithencupboardSpain.text.toString()
             val translate : String = binding.tvKithencupboardSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivFoodprocessorSpain.setOnClickListener {
             val spain : String = binding.foodprocessorSpain.text.toString()
             val translate : String = binding.tvFoodprocessorSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivBinSpain.setOnClickListener {
             val spain : String = binding.binSpain.text.toString()
             val translate : String = binding.tvBinSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivHoodSpain.setOnClickListener {
             val spain : String = binding.hoodSpain.text.toString()
             val translate : String = binding.tvHoodSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivOvenSpain.setOnClickListener {
             val spain : String = binding.ovenSpain.text.toString()
             val translate : String = binding.tvOvenSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivBurnerSpain.setOnClickListener {
             val spain : String = binding.burnerSpain.text.toString()
             val translate : String = binding.tvBurnerSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivPanSpain.setOnClickListener {
             val spain : String = binding.panSpain.text.toString()
             val translate : String = binding.tvPanSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivFryingpanSpain.setOnClickListener {
             val spain : String = binding.fryingpanSpain.text.toString()
             val translate : String = binding.tvFryingpanSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivCuttingboardSpain.setOnClickListener {
             val spain : String = binding.cuttingboardSpain.text.toString()
             val translate : String = binding.tvCuttingboardSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivBottleopenerSpain.setOnClickListener {
             val spain : String = binding.bottleopenerSpain.text.toString()
             val translate : String = binding.tvBottleopenerSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivCorkscrewSpain.setOnClickListener {
             val spain : String = binding.corkscrewSpain.text.toString()
             val translate : String = binding.tvCorkscrewSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivGraterSpain.setOnClickListener {
             val spain : String = binding.graterSpain.text.toString()
             val translate : String = binding.tvGraterSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivJuicerSpain.setOnClickListener {
             val spain : String = binding.juicerSpain.text.toString()
             val translate : String = binding.tvJuicerSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivBowlSpain.setOnClickListener {
             val spain : String = binding.bowlSpain.text.toString()
             val translate : String = binding.tvBowlSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivJarSpain.setOnClickListener {
             val spain : String = binding.jarSpain.text.toString()
             val translate : String = binding.tvJarSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivJugSpain.setOnClickListener {
             val spain : String = binding.jugSpain.text.toString()
             val translate : String = binding.tvJugSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivShugarbowlSpain.setOnClickListener {
             val spain : String = binding.shugarbowlSpain.text.toString()
             val translate : String = binding.tvShugarbowlSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivTraySpain.setOnClickListener {
             val spain : String = binding.traySpain.text.toString()
             val translate : String = binding.tvTraySpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
         }
         binding.ivTablewareSpain.setOnClickListener {
             val spain : String = binding.tablewareSpain.text.toString()
             val translate : String = binding.tvTablewareSpain.text.toString()
             val word = WordSpain(spainWord = spain, translateSpainWord = translate)
             viewModel.insert(word)
-            Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT).show()
+            toast()
+        }
+    }
+    private fun toast(){
+        val toast = Toast.makeText(requireActivity(), "Record copied!", Toast.LENGTH_SHORT)
+        toast.show()
+        cor = coroutineScope.launch(Dispatchers.IO) {
+            delay(350)
+            toast.cancel()
+            cor?.cancel()
         }
     }
 }

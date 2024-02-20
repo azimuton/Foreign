@@ -34,6 +34,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -46,6 +47,7 @@ class LearnSpainFragment : Fragment(), LearnSpainAdapter.ViewHolder.ItemCallback
     private lateinit var wordList: ArrayList<WordSpain>
     private val viewModel : LearnSpainViewModel by activityViewModels()
     private var corr : Job? = null
+    private var cortoast : Job? = null
     @Inject
     lateinit var spainCopyUseCase: SpainWordCopyUseCase
     @Inject
@@ -176,7 +178,13 @@ class LearnSpainFragment : Fragment(), LearnSpainAdapter.ViewHolder.ItemCallback
             ?.beginTransaction()
             ?.replace(R.id.flMain, LearnSpainFragment())
             ?.commit()
-        Toast.makeText(requireActivity(), "Word copied!", Toast.LENGTH_LONG).show()
+        val toast = Toast.makeText(requireActivity(), "Word copied!", Toast.LENGTH_SHORT)
+        toast.show()
+        cortoast = coroutineScope.launch(Dispatchers.IO) {
+            delay(350)
+            toast.cancel()
+            cortoast?.cancel()
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")

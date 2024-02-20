@@ -139,9 +139,6 @@ class WriteSpainFragment : Fragment() {
             }
 
         }
-//        val  w : Window? = activity?.window
-//        w?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
-//                or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
         hideSystemUI()
     }
     private fun hideSystemUI () {
